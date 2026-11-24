@@ -2,34 +2,28 @@
 
 ## Title
 
-**Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
+**Standard Load Profile-informed Support Vector Regression for short-term electricity load forecasting**
 
-## Three connected contributions
+## What the study does
 
-1. **SLP construction and characterization** (primary)
-2. **SLP-informed SVR short-term forecasting** (primary, distinct research question)
-3. **Supplementary energy management:** illustrative ToD tariff exposure and BESS procurement economics (Experiment 037)
+Daily electricity use is heterogeneous in shape, magnitude, load factor, and the hours in which energy is taken. The project builds standard load profiles from 15-minute meter data, checks that those profiles describe held-out meters, and tests whether profile information changes short-term support-vector forecasts. Time-of-day prices and battery operation are then used as supplementary questions: do the same pattern groups face different illustrative energy costs, and does storage reduce procurement cost under the stated constraints?
 
-## Contribution A — Load characterization
+## Characterization
 
-CEEW: 84 meters, **43,555** daily profiles. K=2 peak-normalized SLPs (silhouette ≈ **0.242**). **Experiment 036:** five 58/26 meter splits; held-out groups distinguishable (median Cliff's δ load factor **+0.98**, peak-to-average **−0.98**); centroid stability **≈ 0.983**. Pattern **regimes**, not verified consumer categories.
+On the Mathura–Bareilly smart-meter records, **84 meters** and **43,555** complete daily profiles support a two-group, peak-normalized representation (silhouette about **0.242**). The groups differ in mean daily energy (**about 10.93 kWh** and **6.20 kWh**) and load factor (**about 0.47** and **0.20**). They are pattern regimes, not verified consumer classes.
 
-## Contribution B — Forecasting
+Out-of-sample assignment used five meter-level splits (**58** training meters and **26** held-out meters each time). Held-out groups remain distinguishable: median Cliff's delta about **+0.98** for load factor and **−0.98** for the peak-to-average ratio. Matched centroid shapes agree across splits (mean correlation about **0.983**).
 
-Norwegian test macro MAE: persistence **0.4361**, SVR **0.4457**, SVR+SLP **0.4537** — **comparable**; limited incremental benefit from tested encodings. Descriptive SLP validity does not imply forecast gain.
+## Forecasting
 
-## Contribution C — ToD and BESS (Experiment 037)
+On the corrected Norwegian residential cohort, test macro mean absolute error is **0.4361** for persistence, **0.4457** for tuned support-vector regression, and **0.4537** when the tested profile features are included. The methods sit in a similar error band. Profile features did not improve on persistence in that evaluation. That predictive result is separate from the descriptive result above.
 
-After validating SLP characterization, the project asks whether **temporal patterns** imply different **illustrative** ToD bill exposure and whether BESS can shift purchases profitably.
+## Supplementary prices and storage
 
-- **Tariffs:** Configurable **illustrative** INR/kWh scenarios — **not** actual utility rates.
-- **ToD exposure:** Moderate spread medoids — group 0 **+0.6%** vs flat; group 1 **+18.6%** relative ToD increase (MH31 representative day).
-- **BESS:** Under 90% round-trip efficiency, cyclic SOC, and tested spreads, **no positive incremental procurement savings** on medoids (₹0 at 5 kWh / 2 kW). Optimizer selects no operation. **Peak reduction ≠ bill savings** without demand charges.
+Under an illustrative moderate price table (₹5, ₹8, and ₹12 per kWh in off-peak, shoulder, and peak windows), one representative day in the higher-energy group moves from a flat bill of about **₹108.24** to about **₹108.91**. The representative day in the peakier group moves from about **₹20.06** to about **₹23.80** (about **+18.6%**). These are not utility bills.
+
+With 90% round-trip efficiency, a cyclic state of charge, and no demand charge, cost-minimizing storage does not reduce procurement cost on those two days (no incremental saving at 5 kWh and 2 kW). Peak reduction from a separate peak-shaving study is not the same as a lower energy bill when only energy prices apply.
 
 ## Takeaway
 
-**Standard Load Profiles provide a structured representation of electricity consumption that supports forecasting research, temporal demand analysis, and evaluation of energy-management strategies** under explicit assumptions — without claiming guaranteed economic benefits.
-
-## Synopsis
-
-Original Ireland–Spain dual-category track incomplete; synopsis PDF unchanged. Details: `01_synopsis_traceability.md`. Framework diagram: `07_slp_research_framework.md`.
+Standard load profiles give a structured description of daily demand that supports forecasting tests and a disciplined look at time-varying prices and storage. The forecasting comparison and the storage-cost comparison are reported as measured, including where they do not show a gain.

@@ -1,12 +1,14 @@
 # CEEW Mathura–Bareilly Smart Meter Research
 
-## Final project identity (evaluation narrative)
+## Project
 
-**Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
+**Standard Load Profile-informed Support Vector Regression for short-term electricity load forecasting.**
 
-**Contribution A (characterization):** SLP construction, clustering, out-of-sample validation (001–018, 032, **036**). **Contribution B (forecasting):** SLP-informed **SVR** vs baselines (010–018, 024–031). **Contribution C (energy management, supplementary):** SLP-linked **illustrative ToD tariff exposure** and **BESS procurement economics** (**037**); peak-shaving physics (033–035). Framework: `final_submission/07_slp_research_framework.md`. BESS is **not** the project centre.
+The study characterizes recurring daily electricity consumption with standard load profiles, tests whether those profiles describe demand on meters that were not used to form them, and evaluates whether profile information improves short-term support-vector forecasts relative to strong baselines. Time-of-day price exposure and battery operation are supplementary applications of the same profiles. Battery studies are not the centre of the project. Pattern groups are daily load regimes, not verified consumer classes.
 
-**Submission pack:** `final_submission/` (report, presentation, viva, executive summary). **Full experiment evidence** remains in `results/` and in the chronological diary below.
+Writing rules for academic documents: `CLAUDE.md`, `DOCUMENTATION_STYLE_GUIDE.md`, and `REPORT_GENERATION_CHECKLIST.md`.
+
+**Submission pack:** `final_submission/`. The sections below are the internal experiment diary and keep technical traceability; they are not the academic report voice.
 
 ---
 

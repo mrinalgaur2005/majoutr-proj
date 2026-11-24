@@ -1,5 +1,7 @@
 # Viva preparation (60+ questions)
 
+Spoken answers should follow `CLAUDE.md` and `DOCUMENTATION_STYLE_GUIDE.md`: name the analysis (characterization, forecasting comparison, tariff exposure, storage economics), not an experiment index, and do not centre the project on battery dispatch. The notes below retain technical traceability for the speaker.
+
 Each item: **Short answer** (oral) + **Technical detail** + **Evidence**.
 
 ---
