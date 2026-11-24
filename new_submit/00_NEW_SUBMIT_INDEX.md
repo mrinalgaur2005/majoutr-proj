@@ -53,6 +53,24 @@ Artifacts `109_*`–`123_*` preserved unchanged.
 | `133_final_project_report.md` | Full report |
 | `134_final_presentation.md` | Slide deck (Markdown) |
 | `135_viva_preparation.md` | Oral exam Q&A |
-| `136_figure_evidence_index.md` | Figure map |
+| `136_figure_evidence_index.md` | Figure map + claim index |
+| `137_executive_summary.md` | One-page SLP characterization + SVR narrative |
 
-Folder: `final_submission/` (figures in `final_submission/figures/`).
+Folder: `final_submission/` (figures include `exp036_*`). Consistency audit: `final_submission/FINAL_CONSISTENCY_AUDIT.md`.
+
+Narrative refocus (2026-11-25): prior submission text archived under `internal_research_archive/narrative_pre_reframe_2026-11-25/`. **Integrated Experiment 036** in final pack (same date).
+## Experiment 036 (SLP out-of-sample)
+
+| File | Purpose |
+|------|---------|
+| `138_exp036_summary.json` | Out-of-sample SLP validation summary |
+| `139_exp036_results.md` | Results digest |
+| `140_exp036_slp_centroids.png` | Train-derived centroids |
+| `141_exp036_heldout_profiles.png` | Held-out profile bands |
+| `142_exp036_limitations.md` | Limitations |
+
+## Narrative integration (2026-11-25)
+
+| File | Purpose |
+|------|---------|
+| `143_final_consistency_audit.md` | Post-refactor claim/narrative audit |

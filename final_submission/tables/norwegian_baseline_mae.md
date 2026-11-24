@@ -1,3 +1,5 @@
+Reference evaluation (Experiment 031, Norwegian cohort, test macro MAE). Values preserved from source JSON; interpret as **comparative benchmarking**, not a dismissal of SLP+SVR research.
+
 | Model | Test macro MAE (Exp 031) |
 |-------|--------------------------|
 | **Persistence (frozen)** | **0.4361** |

@@ -1,0 +1,13 @@
+{
+  "n_meters": 84,
+  "n_days": 43555,
+  "silhouette_k2_peak": 0.24241505595564203,
+  "seed_ari_min": 0.9987805948527273,
+  "seed_ari_mean": 0.999437179936358,
+  "cluster0_n": 19063,
+  "cluster1_n": 23574,
+  "cluster0_mean_kwh": 10.925662172795468,
+  "cluster1_mean_kwh": 6.195304106218715,
+  "cluster0_lf": 0.46725016958162335,
+  "cluster1_lf": 0.1988278748786752
+}

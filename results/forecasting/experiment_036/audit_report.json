@@ -1,0 +1,35 @@
+{
+  "split_checks": [
+    {
+      "seed": 1042,
+      "disjoint_meters": true,
+      "n_train_m": 58,
+      "n_test_m": 26
+    },
+    {
+      "seed": 1043,
+      "disjoint_meters": true,
+      "n_train_m": 58,
+      "n_test_m": 26
+    },
+    {
+      "seed": 1044,
+      "disjoint_meters": true,
+      "n_train_m": 58,
+      "n_test_m": 26
+    },
+    {
+      "seed": 1045,
+      "disjoint_meters": true,
+      "n_train_m": 58,
+      "n_test_m": 26
+    },
+    {
+      "seed": 1046,
+      "disjoint_meters": true,
+      "n_train_m": 58,
+      "n_test_m": 26
+    }
+  ],
+  "all_disjoint": true
+}

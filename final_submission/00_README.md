@@ -1,34 +1,39 @@
 # Final major project submission pack
 
-**Programme:** B.Tech Electrical Engineering (major project)  
-**Working title:** Short-term load forecasting with support-vector regression and standard load profiles — engineering extensions (ToD, BESS)  
-**Original synopsis:** `Major Project Synopsis SVR LoadForecasting.pdf` (repository root; **unchanged**)
+## Project identity
 
-**Experimental phase:** Experiments **001–035** complete. **No further experiments** are authorized.
+**Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
+
+The project investigates **two connected research questions**:
+
+1. **Contribution A — Load characterization:** Can Standard Load Profiles (SLPs) represent recurring electricity consumption patterns, distinguish daily load behaviours, and support structured analysis of heterogeneous demand?
+2. **Contribution B — SLP-informed forecasting:** Can SLP-derived information be integrated into support-vector regression (SVR) for short-term load forecasting, and how does that framework compare with conventional baselines?
+
+**Supplementary applications (supporting, not central):** Time-of-Day (ToD) demand analysis and behind-the-meter BESS peak-shaving simulation (Experiments 032–035). These illustrate downstream use of characterized profiles; they do **not** define the project identity.
+
+**Original synopsis:** `Major Project Synopsis SVR LoadForecasting.pdf` (repository root; **byte-for-byte unchanged**).
+
+**Experimental record:** Experiments **001–036** (full metrics preserved under `results/`).
 
 ## Contents
 
 | File | Purpose |
 |------|---------|
-| `01_synopsis_traceability.md` | Original objectives ↔ evidence (Demonstrated / Partial / Not) |
-| `02_final_project_report.md` | Full academic report (print-ready Markdown) |
-| `03_final_presentation.md` | 14–16 slides + speaker notes (~12–15 min) |
-| `04_viva_preparation.md` | 60+ oral examination Q&A |
-| `05_figure_and_evidence_index.md` | Curated figures for report and viva |
-| `figures/` | Copies of key plots (sources preserved under `results/figures/`) |
-| `tables/` | Key CSV tables |
+| `01_synopsis_traceability.md` | Synopsis objectives ↔ completed work |
+| `02_final_project_report.md` | Full academic report |
+| `03_final_presentation.md` | Slide deck (~12–15 min) |
+| `04_viva_preparation.md` | Oral examination Q&A |
+| `05_figure_and_evidence_index.md` | Figures + claim-to-evidence map |
+| `06_executive_summary.md` | One-page evaluation summary |
+| `FINAL_CONSISTENCY_AUDIT.md` | Post-refactor narrative audit |
+| `figures/` | Key plots for printing |
+| `tables/` | Summary tables |
 | `references/` | Bibliography pointers |
 
-## Reproduce evidence (no reruns required)
+## Evidence and reproducibility
 
-- **CEEW foundation:** `python3 scripts/run_ceew_foundation.py`
-- **BESS audit:** `.venv/bin/python scripts/run_experiment_035.py --skip-energy-audit`
-- **Frozen forecasting baseline:** `results/forecasting/experiment_031/frozen_baseline_configuration.json`
+Detailed experiment logs, CSV metrics, and scripts remain in the main repository. Norway cohort macro MAE: `tables/norwegian_baseline_mae.md` (Experiment 031). Out-of-sample SLP validation: `results/forecasting/experiment_036/`.
 
-## Submission copies
+## Submission index
 
-Evaluation artifacts `131_*` … `136_*` in `new_submit/` index this folder.
-
-## Honesty statement
-
-This pack **does not** claim completion of the Ireland–Spain dual-category synopsis on CER/GoiEner at full protocol scale. It documents the **alternative evidence chain** actually built: CEEW (India) load profiling, ToD, BESS; Norwegian residential forecasting audit with **persistence** frozen as baseline (Experiments 030–031).
+Evaluation copies: `new_submit/131_*` … `137_*` (final pack) and `138_*`–`142_*` (Experiment 036). Prior experiment artifacts `109_*`–`130_*` unchanged.

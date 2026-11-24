@@ -1,0 +1,3 @@
+- Shape-based (peak-normalized) SLPs; magnitude differences analysed separately on kWh.
+- Groups are daily pattern regimes, not verified consumer categories.
+- Five random meter splits; not geographic stratification.

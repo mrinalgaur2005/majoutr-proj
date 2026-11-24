@@ -7,9 +7,9 @@ Each item: **Short answer** (oral) + **Technical detail** + **Evidence**.
 ## A. Project overview and motivation
 
 **Q1. What is the project about?**  
-Short: Smart-meter load profiling, forecasting benchmarks, ToD analysis, and BESS peak shaving.  
-Detail: Two tracks—CEEW India for profiling/BESS; Norway for forecasting audit.  
-Evidence: `00_README.md`, Exp 001–035.
+Short: **SLP-based load characterization** and **SLP-informed SVR short-term forecasting** on smart-meter data.  
+Detail: Contribution A—profile construction, clustering, **Experiment 036 out-of-sample validation**; Contribution B—SVR±SLP vs baselines (Norway); ToD/BESS supplementary.  
+Evidence: `00_README.md`, `02_final_project_report.md`, Exp 001–036.
 
 **Q2. What problem does BESS address here?**  
 Short: Reduces **consumer grid-import peak** on representative days.  
@@ -27,8 +27,8 @@ Detail: Ireland–Spain dual category **not demonstrated**; see traceability mat
 Evidence: `01_synopsis_traceability.md`.
 
 **Q5. What is the main positive engineering outcome?**  
-Short: Validated BESS physics + persistence forecasting baseline.  
-Evidence: Exp 031, 035.
+Short: **Validated SLP characterization pipeline** including **out-of-sample assignment** (Exp 036) plus transparent **SVR forecasting evaluation** (Exp 031).  
+Evidence: `experiment_036_summary.json`, Exp 031 macro MAE table.
 
 ---
 
@@ -107,6 +107,27 @@ Evidence: Exp 032 cluster summaries.
 Short: Minimum shape distance to centroid on **physical** days.  
 Evidence: Exp 033 representative selection.
 
+**Q20a. What is Experiment 036?**  
+Short: Out-of-sample test that **frozen training SLPs** assign held-out meter-days to distinguishable consumption groups.  
+Evidence: `results/forecasting/experiment_036/results.md`.
+
+**Q20b. Why grouped meter splits?**  
+Short: Prevents the same meter appearing in train and test (leakage).  
+Detail: 58 train / 26 test meters × 5 seeds.  
+Evidence: `split_assignments/split_seed_*.json`, `audit_report.json`.
+
+**Q20c. What is Cliff's delta?**  
+Short: Nonparametric effect size from Mann–Whitney pairs; e.g. median δ **0.98** for load factor on held-out data.  
+Evidence: `tables/heldout_group_statistics.csv`.
+
+**Q20d. Does Exp 036 prove forecasting improvement?**  
+Short: **No**—descriptive validation only.  
+Evidence: Report §10 vs §13.
+
+**Q20e. Silhouette and ARI in context?**  
+Short: Silhouette ≈ **0.242** (K=2 peak); seed ARI ≥ **0.999** in-sample; cross-split centroid corr ≈ **0.983**.  
+Evidence: `verified_context.json`.
+
 ---
 
 ## E. Short-term load forecasting
@@ -140,7 +161,7 @@ Short: Synopsis specified SVR for nonlinear mapping.
 Evidence: Synopsis PDF.
 
 **Q27. SVR test MAE?**  
-Short: **~0.446** tuned vs **0.436** persistence.  
+Short: **~0.446** tuned vs **0.436** persistence — **similar scale**.  
 Evidence: Exp 031 summary.
 
 **Q28. Did tuning help?**  
@@ -159,14 +180,14 @@ Evidence: Future scope in report.
 
 ## G. Persistence and baselines
 
-**Q31. Why did persistence outperform SVR?**  
-Short: Short-horizon demand highly **persistent**; SLP adds noise.  
-Detail: Clean matrix (Exp 030); weak incremental signal.  
-Evidence: Exp 031 baseline zoo.
+**Q31. How did SVR+SLP compare to persistence?**  
+Short: **Comparable macro MAE** (~0.436 vs ~0.446–0.454 on Norwegian test).  
+Detail: Strong lag persistence; tested SLP encodings showed **limited incremental benefit**; full zoo in Exp 031.  
+Evidence: `tables/norwegian_baseline_mae.md`.
 
 **Q32. Was SLP consistently beneficial?**  
-Short: **No** on Norwegian cohort.  
-Evidence: Exp 030–031.
+Short: **Not consistently** in evaluated configurations; some ablations show local MAE movement (CEEW 010–012).  
+Evidence: Exp 030–031; historical experiment reports unchanged.
 
 **Q33. What is frozen baseline?**  
 Short: **Persistence** locked in JSON for future work.  
@@ -334,7 +355,7 @@ Evidence: Exp 035 `energy_balance_all_scenarios.csv`.
 ## N. Synopsis and completion
 
 **Q67. What is demonstrated vs partial?**  
-Short: 3 demonstrated, 5 partial, 3 not (see matrix).  
+Short: 4 demonstrated, 5 partial, 3 not (12 objectives including Exp 036).  
 Evidence: `01_synopsis_traceability.md`.
 
 **Q68. CER status?**  
@@ -350,8 +371,8 @@ Short: CER ingest; multi-day BESS; causal dispatch; revisit SLP with new categor
 Evidence: Report future scope.
 
 **Q71. Strongest slide in presentation?**  
-Short: Baseline MAE + BESS dispatch comparison (honest negative + engineering positive).  
-Evidence: Slides 9 & 13.
+Short: **Experiment 036 held-out validation** (slides 9–12) and **forecasting MAE comparison** (slide 14).  
+Evidence: `03_final_presentation.md`.
 
 **Q72. Biggest mistake avoided?**  
 Short: Exp 030 data audit before trusting SVR gains; Exp 034 before using `loss_kwh`.  

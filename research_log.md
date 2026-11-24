@@ -706,4 +706,20 @@ Cyclic rule feasibility, MILP exclusivity, energy-balance closure, project readi
 
 ## Final submission pack — report, presentation, viva (2026-11-24)
 
-Experimental phase **closed** (no Experiment 036). Deliverables under `final_submission/`; synopsis traceability documents partial completion of original Ireland–Spain objectives. `new_submit/131_*`–`136_*`.
+Deliverables under `final_submission/`; synopsis traceability documents partial completion of original Ireland–Spain objectives. `new_submit/131_*`–`136_*`.
+
+## Experiment 036 — SLP out-of-sample characterization (2026-11-24)
+
+**Question:** Can training-frozen K=2 peak-normalized SLPs characterize held-out CEEW meter-days?
+
+**Design:** Five grouped 70/30 meter splits (seeds 1042–1046); train-only KMeans centroids; nearest-centroid assignment on test; Mann–Whitney + Cliff's δ + BH on unnormalized consumption metrics (Exp 032 time windows).
+
+**Verified context (recomputed):** 84 meters, 43,555 days; silhouette ≈ 0.242; seed ARI ≥ 0.999; cluster energies 10.93 / 6.20 kWh; LF 0.47 / 0.20.
+
+**Results:** All splits leak-free (58/26 meters). Held-out groups differ on all 13 metrics (median BH q < 0.05); dominant effects on load factor (δ ≈ 0.98) and peak-to-average; centroid cross-split correlation ≈ 0.983. Conclusion: **supported**.
+
+**Artifacts:** `results/forecasting/experiment_036/`; `experiments/036_slp_out_of_sample_characterization/`; `new_submit/138_*`–`142_*`. Command: `.venv/bin/python scripts/run_experiment_036.py --verify-repro`.
+
+## Final narrative refactor (2026-11-25)
+
+Unified submission narrative: **Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**. Rewrote `final_submission/` report, presentation, viva, executive summary, figure/claim index; integrated Exp 036 as central characterization evidence. `FINAL_CONSISTENCY_AUDIT.md`; synced `new_submit/131–137` + `143_*`. Synopsis PDF unchanged.

@@ -189,3 +189,9 @@ FIG-132–135: Experiment 028 Norwegian residential exploratory (not Exp 024).
 ## Final evaluation pack
 
 Curated copies and map: `final_submission/05_figure_and_evidence_index.md`.
+
+**Submission-facing interpretation:** Prefer figures F1–F5 in that index for the **SLP + SVR** narrative (profiles, clusters, forecasting evaluation). Historical captions in this file (e.g. early CEEW benchmark notes) remain as **archived experiment context**; consult `final_submission/06_executive_summary.md` for the evaluation storyline.
+
+## Experiment 036
+
+`exp036_*` in `results/forecasting/experiment_036/figures/`.

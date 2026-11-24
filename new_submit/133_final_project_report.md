@@ -2,7 +2,9 @@
 
 ## Title page information
 
-**Title:** Short-Term Electrical Load Forecasting, Time-of-Day Characterisation, and Battery Energy Storage Simulation Using Smart-Meter Data
+**Title:** Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting
+
+**Subtitle:** Daily load-profile construction, out-of-sample SLP validation, SLP-informed SVR evaluation, and supplementary ToD / BESS studies
 
 **Degree:** B.Tech, Electrical Engineering (Major Project)
 
@@ -14,178 +16,162 @@
 
 **Academic year:** 2025–26
 
-**Repository:** `majou-proj` (Experiments 001–035)
-
 ---
 
 ## Abstract
 
-This project examines whether recurring load-profile information from smart-meter data improves short-term forecasting, and how representative load shapes inform time-of-day (ToD) analysis and behind-the-meter battery energy storage system (BESS) peak shaving. A CEEW Mathura–Bareilly dataset (84 meters, 15-minute derived demand, 2019–2021) provides load profiling, K=2 peak-normalized clustering, ToD statistics, and a validated BESS simulation on physical kW profiles. A parallel Norwegian residential cohort (Experiments 030–031) implements a leakage-safe forecasting benchmark after data-quality correction; **persistence** is the frozen baseline (test macro MAE **0.4361**), and support-vector regression (SVR) with standard load profile (SLP) features does not outperform persistence. BESS results on representative medoid meter-days show **13.27%** (rule, cyclic on cluster 0) and **26.69%** (mixed-integer programme, cluster 0) peak reduction, versus **51.17%** / **58.32%** on a spikier cluster 1 medoid, with conversion losses **~0.03–0.12 kWh/day** (not the defective Experiment 033 `loss_kwh` field). The original Ireland–Spain dual-category synopsis is **not** fully completed; an alternative evidence chain is documented with explicit limitations.
+Electricity consumption is heterogeneous across meters and days. This project develops **Standard Load Profile (SLP)** representations from 15-minute smart-meter data, validates their **descriptive usefulness** through rigorous out-of-sample testing, and evaluates **SLP-informed support-vector regression (SVR)** against strong forecasting baselines. On the CEEW Mathura–Bareilly dataset (84 meters, 43,555 complete daily profiles), peak-normalized K=2 clustering identifies two recurring **daily pattern regimes** (not verified consumer categories). **Experiment 036** shows that training-frozen centroids assign held-out meter-days to groups with distinguishable load factor, energy, peakiness, and diurnal structure (13/13 metrics: median Benjamini–Hochberg q < 0.05; median Cliff's δ up to 0.98 for load factor; centroid stability correlation ≈ 0.983). Forecasting evaluation on a corrected Norwegian residential cohort (1,136 households) yields test macro MAE **persistence 0.4361**, **SVR tuned 0.4457**, **SVR+SLP features 0.4537**—**comparable performance** with **limited incremental benefit** from the tested SLP encodings. Supplementary ToD analysis (Experiment 032) and audited BESS simulations on representative physical days (Experiments 033–035) demonstrate downstream applications. The original Ireland–Spain residential/agricultural synopsis comparison was not completed at full protocol scale; traceability is documented without altering stored metrics or the synopsis PDF.
 
-**Keywords:** smart metering, load profiling, clustering, SVR, persistence, time-of-day, BESS, MILP, energy balance
+**Keywords:** standard load profiles, load characterization, clustering, support vector regression, short-term forecasting, smart metering, time-of-day analysis, battery energy storage
 
 ---
 
 ## 1. Introduction
 
-Distribution utilities face rising peak demand and greater variability from electrification. High-resolution smart-meter data enable load profiling, short-horizon forecasting, and consumer-side flexibility studies. This project combines statistical profiling, machine-learning forecasting benchmarks, and a physically consistent BESS dispatch model on real smart-meter observations.
+Distribution planning and demand response depend on understanding **how** electricity is consumed across the day, not only **how much**. Standard Load Profiles compress high-dimensional daily curves into interpretable patterns. Machine-learning forecasters such as SVR can ingest calendar, lag, and profile-derived features—but whether SLP information **helps prediction** is an empirical question distinct from whether SLPs **describe** consumption well.
 
-## 2. Background and motivation
+This project therefore pursues two linked contributions: **(A)** SLP-based load characterization and **(B)** SLP-informed SVR forecasting evaluation.
 
-Recurring diurnal patterns motivate SLP-based features. Support-vector regression offers nonlinear mapping from lag and calendar features. Storage can shave local peaks if dispatch respects state-of-charge (SOC) and efficiency limits. The work follows the engineering chain: **profiles → forecast → ToD → storage application**.
+## 2. Problem statement
 
-## 3. Problem statement
+1. Construct auditable daily load profiles from smart-meter data.
+2. Identify recurring profile regimes and representative SLP centroids.
+3. Validate that SLPs assign meaningfully to **unseen** meters (out-of-sample).
+4. Integrate leakage-safe SLP features into SVR and compare with baselines.
+5. (Supporting) Relate characterized profiles to ToD statistics and illustrative BESS dispatch.
 
-Given 15-minute consumer demand, (i) discover dominant daily shape regimes, (ii) compare forecasting models with rigorous baselines, (iii) characterise ToD and peak behaviour, and (iv) quantify behind-the-meter peak shaving with verified energy accounting.
+## 3. Research objectives
 
-## 4. Original objectives
+| # | Objective | Primary track |
+|---|-----------|---------------|
+| O1 | Build 96-point daily profiles with QA | A |
+| O2 | Peak-normalized clustering and SLP centroids | A |
+| O3 | Out-of-sample SLP assignment and statistical validation | A (Exp 036) |
+| O4 | SLP-informed SVR pipeline and baseline zoo | B |
+| O5 | ToD / BESS as supplementary applications | Supporting |
 
-The unchanged synopsis (`Major Project Synopsis SVR LoadForecasting.pdf`) targets residential (Ireland/CER) and agricultural (Spain/GoiEner) categories, SVR with category SLPs, persistence/ARIMA baselines, MAPE reporting, ToD analysis, and storage/microgrid extensions. See `01_synopsis_traceability.md`.
+Original synopsis objectives (dual geography, CER/GoiEner categories) are mapped in `01_synopsis_traceability.md`.
 
-## 5. Literature review
+## 4. Literature review
 
-Experiment 023 verified nine peer references on load forecasting, SVR, and standard profiles (`results/literature_review/experiment_023/`). SVR+SLP is established in literature but not guaranteed to dominate simple baselines on every cohort.
+Experiment 023 assembled verified references on SVR load forecasting, load-shape features, and smart-meter data quality. Empirical benefit of profile features is dataset- and encoding-dependent; this project reports measured outcomes rather than assumed superiority.
 
-## 6. Dataset descriptions
+## 5. Dataset description
 
-### 6.1 CEEW Mathura–Bareilly
+### 5.1 CEEW Mathura–Bareilly (characterization)
 
-- **Meters:** 84; **interval:** 15 minutes (from 3-minute `t_kWh`).
-- **Period:** largely 2019-05-01 to 2021-10-31.
-- **Daily profiles:** 43,555 complete 96-slot days (Exp 032).
-- **Definition:** `load_kw = interval_energy_kWh / 0.25 h`.
-- **Limitations:** no consumer category field; timezone unverified.
+84 meters; 15-minute `load_kw`; **43,555** eligible daily profiles; predominantly 2019–2021. **No verified residential/agricultural labels.**
 
-### 6.2 Norwegian residential (forecasting track)
+### 5.2 Norwegian residential (forecasting evaluation)
 
-- Used after CER/GoiEner access gates (Experiments 026–031).
-- Cleaned demand matrix (Experiment 030); 1136 households in baseline zoo (Experiment 031).
+Open residential cohort (1,136 households) used after CEEW/CER access gates; corrected demand matrix (Experiment 030). **Evaluation cohort**, not a synopsis geography substitute.
 
-### 6.3 GoiEner / CER (synopsis track)
+### 5.3 GoiEner / CER (synopsis alignment)
 
-- Audited in Experiment 019; **not** full ingestion at synopsis scale.
+Experiment 019 audits: GoiEner CNAE metadata and **15** on-disk agricultural pilot profiles; CER **pending access**. Not presented as a completed dual-country study.
 
-## 7. Data preprocessing and quality assurance
+## 6. Data preprocessing
 
-Duplicate 15-minute bins removed; completeness rules for 96 slots; energy residual checks \(|\\sum load\\cdot0.25 - E_{day}| < 0.5\) kWh for BESS inputs. Norwegian track: memmap corruption found and fixed in Experiment 030 (DEC-030).
+Completeness thresholds, duplicate handling, energy residual checks; 3-minute to 15-minute binning with complete-bin rule; daily profile construction documented in foundation pipeline and Experiment 032.
 
-## 8. Load profile characterisation
+## 7. Daily load-profile construction
 
-Mean daily energy similar weekday/weekend (~8.12 vs 8.17 kWh). Mean load factor **0.312**; mean peak-to-average **4.76** (Exp 032).
+Each meter-day: **96** observations at 15-minute resolution. Metadata includes daily energy (kWh), peak kW, load factor, peak-to-average ratio, and timestamp coverage flags.
 
-## 9. Clustering methodology
+Population summary (Experiment 032): mean load factor **0.312**; mean peak-to-average **4.76**; weekday/weekend daily energy comparable (~8.1 kWh).
 
-K-means on peak-normalized 96-point shapes; **K=2** selected for engineering interpretation. Cluster 0: 19,075 days, mean daily energy **10.93 kWh**, LF **0.467**, P2A **2.25**. Cluster 1: 23,562 days, **6.19 kWh**, LF **0.199**, P2A **6.79**. Clusters describe **shape/magnitude regimes**, not verified “residential/agricultural” labels (DEC research_log).
+## 8. Standard Load Profile generation
 
-## 10. Short-term load forecasting methodology
+SLPs are **representative normalized daily shapes** (centroids) plus optional distance features for forecasting. Peak normalization \(P_t/\max_t P_t\) emphasizes **shape**; magnitude is retained in parallel for energy statistics.
 
-Chronological train/validation/test splits; macro mean absolute error (MAE) over households; SVR with calendar and lag features; SLP-derived features in Norwegian tracks; binding protocol Experiment 024 (approved, execution contingent on data gates).
+## 9. Load-profile characterization and clustering
 
-## 11. Forecasting baseline comparisons
+K-means on peak-normalized shapes; **K=2** retained for engineering interpretability and stability:
 
-Experiment 031 test macro MAE (kW normalised scale): **persistence 0.4361**, SVR tuned **0.4457**, SVR F0 **0.4537**, ridge **0.4641**, seasonal-naive 24h **0.5900**. Frozen baseline: **persistence** (`frozen_baseline_configuration.json`).
+| Group | Days (in-sample fit) | Mean daily kWh | Mean LF | Notes |
+|-------|----------------------|----------------|---------|-------|
+| 0 | 19,063 | 10.93 | 0.467 | Flatter daily shape |
+| 1 | 23,574 | 6.20 | 0.199 | Spikier daily shape |
 
-## 12. SVR performance analysis
+In-sample silhouette (K=2, peak-normalized, subsample): **≈ 0.242**. Seed-to-seed label agreement ARI **≥ 0.999** (`verified_context.json`, Experiment 036). **These are daily pattern regimes, not verified consumer categories.**
 
-SVR is implemented and tuned but **does not establish superiority** over persistence on corrected Norwegian data. Possible factors: high short-horizon persistence, weak incremental value of SLP features after data cleaning, and regime mix. Negative result reported honestly.
+## 10. Experiment 036: Out-of-sample characterization validation
 
-## 13. Time-of-Day analysis
+**Research question:** Can SLPs learned from a subset of meters characterize distinct consumption patterns in previously unseen meters?
 
-Experiment 032: peak timing distributions, weekend vs weekday stacks, load-factor and P2A histograms, cluster centroids. Supports planning **shape** differences between clusters without tariff savings.
+**Design (five repeated splits, seeds 1042–1046):**
 
-## 14. Battery energy storage system model
+- Grouped split: **58 train / 26 test meters** (70/30); no meter leakage.
+- K=2 KMeans on peak-normalized **training days only**; centroids frozen.
+- Test days assigned by nearest centroid (Euclidean).
+- Consumption metrics computed on **held-out** unnormalized observations.
+- Mann–Whitney U, Cliff's δ, Benjamini–Hochberg FDR; circular statistics for peak hour.
+- Reproducibility: duplicate run `stats_match: true`.
 
-Behind-the-meter: grid import \(g_t = \\max(l_t - p^{dis}_t + p^{ch}_t, 0)\) (no export in primary scenarios).
+**Results (held-out):**
 
-**Parameters (illustrative 5 kWh / 2 kW medoid runs):** round-trip efficiency 90%, \(\eta_c=\eta_d=\sqrt{0.9}\), SOC window 10–90%, initial SOC 50%, \(\Delta t = 0.25\) h.
+- **13/13** metrics: median BH-adjusted **q < 0.05** across splits.
+- Median Cliff's δ: load factor **+0.98**; peak-to-average **−0.98**; intra-day CV **−0.70**; daily energy **+0.29**; afternoon energy fraction **−0.40**; peak slot **+0.11**.
+- Mean pairwise matched centroid correlation: **0.983**.
+- **Conclusion:** Training-derived SLPs assign unseen meter-days to groups with distinguishable consumption characteristics. This supports **descriptive** usefulness; it does **not** prove forecasting improvement or consumer-class identity.
 
-SOC dynamics:
-\[
-SOC_{t+1} = SOC_t + \frac{p^{ch}_t \Delta t \eta_c}{E_{cap}} - \frac{p^{dis}_t \Delta t}{E_{cap}\eta_d}
-\]
+**Limitations:** Random meter splits (not geographic stratification); shape–magnitude partial confounding; modest peak-hour effect size.
 
-## 15. Rule-based dispatch
+Evidence: `results/forecasting/experiment_036/`; figures `exp036_*` in `final_submission/figures/`.
 
-Threshold = 75th percentile of daily load; discharge when load exceeds threshold; charge in valleys if grid import stays below threshold. **Procedural** exclusivity (no simultaneous charge/discharge in code path). Often **non-cyclic** SOC (cluster 0 medoid ends at SOC **0.90**).
+## 11. SVR forecasting methodology
 
-## 16. Linear programming (relaxed) optimisation
+RBF SVR with scaled features; chronological splits; macro MAE over households (Experiment 031). Hyperparameter search on validation. No retraining in this documentation pass.
 
-Experiment 033: minimise peak grid import with full-day foresight; cyclic SOC equality end constraints. Formulation allows **\(p^{ch}_t + p^{dis}_t \le P_{max}\)** — exclusivity **not** guaranteed. In **36/320** scenarios implicit negative grid import is **clipped**, breaking clipped energy balance.
+## 12. SLP-informed forecasting framework
 
-## 17. Mixed-integer linear programming (MILP)
+Train-only centroids; past-day profile distances; causality rules per Experiment 024 protocol revisions. Multiple encodings tested on CEEW (012–018) and Norwegian tracks (028–030).
 
-Experiment 035: binary \(z_t\) enforces charge **or** discharge; explicit no-export constraints; SciPy `milp` (HiGHS). **Exclusivity mathematically guaranteed**; medoid peaks match relaxed LP when curtail is zero.
+## 13. Forecasting evaluation and baseline comparisons
 
-## 18. Battery energy accounting
+**Norwegian cohort — test macro MAE (Experiment 031):**
 
-Conversion loss (audit definition):
-\[
-E_{conv} = E^{grid}_{ch}(1-\eta_c) + E^{bat}_{dis}\left(\frac{1}{\eta_d}-1\right)
-\]
+| Model | Test MAE |
+|-------|----------|
+| Persistence | **0.4361** |
+| SVR (tuned) | 0.4457 |
+| SVR F0 (SLP-related features) | 0.4537 |
+| Ridge | 0.4641 |
 
-Stored energy change:
-\[
-\Delta E_{stored} = E_{cap}(SOC_T - SOC_0) = E_{ch,stor} - E_{dis,rem}
-\]
+**Interpretation:** Persistence is a **strong reference** at this horizon. SVR ± tested SLP features remain in a **similar error band**; the evaluation does **not** establish operational advantage from the implemented encodings. Experiment 036 results are **independent** of this forecasting conclusion.
 
-Unclipped balance (always valid):
-\[
-E_{grid,unc} - E_{load} = E^{grid}_{ch} - E^{bat}_{dis}
-\]
+## 14. Discussion
 
-**Do not** use Experiment 033 `loss_kwh` (= \(E_{ch}-E_{dis}+\max(0,E_{ch}-E_{dis})\)).
+- **Characterization vs forecasting:** Experiment 036 shows SLPs can **describe** heterogeneous patterns out-of-sample; Norwegian metrics show **limited predictive increment** from tested SLP features—both statements can hold simultaneously.
+- **Shape vs magnitude:** Peak normalization drives clustering; energy and LF differences are measured on raw kWh/kW curves.
+- **Synopsis gap:** Dual-category Ireland–Spain experiment not completed; CEEW/Norway chain documented transparently.
 
-## 19. Results and discussion
+## 15. Supplementary: Time-of-Day analysis
 
-### 19.1 BESS medoids (5 kWh / 2 kW)
+Experiment 032: peak timing distributions, weekend/weekday stacks, cluster-conditional ToD statistics—links profile regimes to **when** demand occurs.
 
-| Cluster | Meter–date | Rule peak ↓ | MILP peak ↓ | Conv. loss (MILP) kWh |
-|---------|------------|---------------|-------------|------------------------|
-| 0 | BR29 2020-09-06 | **13.27%** (cyclic rule) | **26.69%** | 0.123 |
-| 1 | MH31 2019-11-07 | **51.17%** (non-cyclic) | **58.32%** | 0.053 |
+## 16. Supplementary: BESS applications
 
-`rule_offline_cyclic` achieves SOC closure on cluster 0 only; **infeasible** on cluster 1 under tested constraints (final SOC **≈0.567**).
+Behind-the-meter 5 kWh / 2 kW simulation on physical medoid meter-days (BR29, MH31); rule, LP, MILP dispatch; energy accounting per Experiments 034–035. Medoid peak reductions at baseline sizing: cluster 0 **13.3%** (cyclic rule) / **26.7%** (MILP); cluster 1 **51.2%** / **58.3%**. Illustrative only—not population-wide or network claims.
 
-### 19.2 Sensitivity
+## 17. Limitations
 
-Rule-based medoid heatmaps flat across capacity/power (physical saturation). LP/MILP show capacity dependence on cluster 0 (~20% at 1 kWh to ~27% from 2 kWh upward).
+Incomplete synopsis geographies; clusters ≠ tariff classes; BESS not field-validated; no network/tariff models; GoiEner pilot scale; forecasting cohort ≠ CEEW population.
 
-### 19.3 Forecasting
+## 18. Conclusion
 
-Persistence remains strongest baseline after corrected Norwegian ingest.
+The project delivers credible **SLP construction**, **in-sample and out-of-sample characterization** (Experiment 036), and a full **SLP-informed SVR investigation** with preserved metrics. Load characterization—including frozen-centroid assignment to unseen meters—is the strongest demonstrated engineering thread. Forecasting evaluation shows **comparable** SVR/SLP performance versus persistence, with **limited** demonstrated improvement from tested profile features.
 
-## 20. Engineering implications
+## 19. Future scope
 
-- Distinct load-shape clusters justify **different** storage dispatch strategies (spiky cluster → larger relative peak cuts).
-- MILP provides a **defensible** offline benchmark with cyclic SOC and exclusivity.
-- Forecasting for operations should not assume SVR dominance without re-benchmarking per cohort.
+Geographic or labelled splits; richer SLP encodings; CER/GoiEner ingestion at synopsis scale; causal BESS dispatch coupled to forecasts; per-meter SVR.
 
-## 21. Limitations
+## 20. References
 
-- Representative **two medoid days**, not population-wide BESS performance.
-- No transformer ratings, voltage, or tariffs.
-- Ireland–Spain synopsis categories **not** fully replicated.
-- Relaxed LP can **curtail** energy; must report unclipped vs clipped accounting.
+`references/bibliography.md`; Experiment 023 literature pack.
 
-## 22. Conclusions
+## Appendices
 
-The project delivers a reproducible smart-meter analytics pipeline, honest forecasting benchmarks, ToD characterisation, and an audited BESS model. The synopsis hypothesis that SVR+SLP beats persistence is **not supported** on the Norwegian evidence; BESS peak shaving is **demonstrated** on physical CEEW profiles with rigorous Experiment 034–035 accounting.
-
-## 23. Future scope
-
-- CER residential ingestion if access granted.
-- Full GoiEner CNAE-01 extract with documented units.
-- Multi-day BESS Monte Carlo over eligible meter-days.
-- Couple forecasts to causal (non-foresight) dispatch.
-
-## 24. References
-
-See `references/bibliography.md` and Experiment 023 literature pack.
-
-## Appendix A — Figure list
-
-See `05_figure_and_evidence_index.md`.
-
-## Appendix B — Tables
-
-`tables/final_bess_medoid_comparison.csv`, `tables/norwegian_baseline_mae.md`.
+- **A:** Figure and claim index — `05_figure_and_evidence_index.md`
+- **B:** Tables — `tables/`
+- **C:** Experiment 036 split assignments — `results/forecasting/experiment_036/split_assignments/`

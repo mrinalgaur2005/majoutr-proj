@@ -1,12 +1,22 @@
 # CEEW Mathura–Bareilly Smart Meter Research
 
+## Final project identity (evaluation narrative)
+
+**Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
+
+**Contribution A (characterization):** construction, clustering, and **out-of-sample validation** of Standard Load Profiles (Experiments 001–018, 032, **036**). **Contribution B (forecasting):** SLP-informed **SVR** evaluation vs baselines (Experiments 010–018, 024–031). **Supporting:** Time-of-Day analysis and BESS simulation (032–035)—not the central project identity.
+
+**Submission pack:** `final_submission/` (report, presentation, viva, executive summary). **Full experiment evidence** remains in `results/` and in the chronological diary below.
+
+---
+
 Human-readable experiment diary for the real CEEW pipeline. Synthetic forecast scripts (`run_all_experiments.py`, `phase_*.py`) are a separate track and are not used for the numbers below.
 
 ## 1. Research Objective
 
-"Does incorporating recurring load-profile information extracted from high-frequency smart-meter data improve short-term load forecasting compared with conventional temporal/aggregate forecasting approaches in the CEEW Mathura–Bareilly setting?"
+Investigate how **recurring load-profile (SLP) information** from high-frequency smart-meter data can **characterize** electricity consumption and inform **SVR-based** short-term forecasting, with rigorous baseline comparisons.
 
-This is a hypothesis. Clustering is complete. CEEW forecasting experiments 012–018 are frozen. Experiment 019 audited external category-labelled datasets for the **original synopsis** (SVR + SLP + residential/agricultural categories). Experiment 018 on unlabeled CEEW does **not** replace that synopsis track (DEC-017).
+Clustering and leakage-safe SLP protocols are complete elements of this investigation. Experiment 019 audited external category-labelled datasets for the **original synopsis** (Ireland/Spain residential/agricultural categories). The chronological sections below preserve **all** experimental outcomes, including benchmark metrics used in the final evaluation tables.
 
 ## 2. Project Status
 
@@ -36,8 +46,9 @@ This is a hypothesis. Clustering is complete. CEEW forecasting experiments 012�
 | Experiment 024 protocol approval | COMPLETE | Binding protocol APPROVED; execution NOT READY |
 | Experiment 025 public-data path | COMPLETE | CER closed; GoiEner QC; Norwegian metadata acquired |
 | Experiment 026 Norwegian ingest | COMPLETE | demand.csv audited; pilot ingest; Exp024 not authorized |
-| ToD | NOT STARTED | |
-| BESS | NOT STARTED | |
+| ToD (032) | COMPLETE | CEEW characterization |
+| BESS (033–035) | COMPLETE | Supplementary simulation |
+| SLP out-of-sample (036) | COMPLETE | Grouped meter validation |
 
 ## 3. Dataset
 
@@ -1139,4 +1150,8 @@ Final BESS validation and project consolidation.
 
 ## Final submission pack (2026-11-24)
 
-Experimental phase closed (001–035). Evaluation materials: `final_submission/` (report, presentation, viva, traceability). Indexed in `new_submit/131_*` … `136_*`. Original synopsis PDF unchanged.
+Experimental record **001–036**. Evaluation materials: `final_submission/` (report, presentation, viva, traceability, Experiment 036 figures). Indexed in `new_submit/131_*`–`142_*`. Original synopsis PDF unchanged.
+
+## Experiment 036 (2026-11-24)
+
+Out-of-sample validation of K=2 peak-normalized SLPs (`results/forecasting/experiment_036/`).

@@ -13,6 +13,7 @@ MAP = [
     (FS / "03_final_presentation.md", "134_final_presentation.md"),
     (FS / "04_viva_preparation.md", "135_viva_preparation.md"),
     (FS / "05_figure_and_evidence_index.md", "136_figure_evidence_index.md"),
+    (FS / "06_executive_summary.md", "137_executive_summary.md"),
 ]
 for src, name in MAP:
     if src.exists():
@@ -29,6 +30,8 @@ block = """
 | `134_final_presentation.md` | Slide deck (Markdown) |
 | `135_viva_preparation.md` | Oral exam Q&A |
 | `136_figure_evidence_index.md` | Figure map |
+
+| `137_executive_summary.md` | One-page SLP+SVR narrative |
 
 Folder: `final_submission/` (figures in `final_submission/figures/`).
 """

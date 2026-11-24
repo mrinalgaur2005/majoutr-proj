@@ -1,0 +1,6 @@
+- Data: `daily_profiles.parquet`, 96 slots, completeness filter + energy residual < 0.5 kWh.
+- Peak normalization: P_t / max(P_t) (same as foundation).
+- K=2 KMeans, n_init=20, train-only fit per split.
+- Assignment: nearest frozen centroid (Euclidean).
+- Grouped split: 70% meters train / holdout meters; seeds (1042, 1043, 1044, 1045, 1046).
+- Period slots: morning 24-35, afternoon 36-71, evening 72-83.

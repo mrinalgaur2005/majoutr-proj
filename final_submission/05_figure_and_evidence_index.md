@@ -1,43 +1,56 @@
 # Figure and evidence index
 
-All paths verified against repository on packaging date. **Copies** in `final_submission/figures/`; **authoritative** sources remain under `results/figures/`.
+Authoritative sources under `results/`; **copies** in `final_submission/figures/` for printing.
 
 ## Selected figures
 
 | ID | Repository path | Copy in pack | Exp | Demonstrates | Report § | Slide |
 |----|-----------------|--------------|-----|--------------|----------|-------|
-| F1 | `results/figures/experiment_032/exp032_ceew_mean_daily.png` | Yes | 032 | Mean CEEW daily shape | 8, 13 | 5–6 |
-| F2 | `results/figures/experiment_032/exp032_cluster_profiles.png` | Yes | 032 | K=2 centroids | 9 | 7 |
-| F3 | `results/figures/experiment_032/exp032_peak_to_avg.png` | Yes | 032 | Peak-to-average spread | 13 | 2, 11 |
-| F4 | `results/figures/experiment_031/exp031_test_macro_mae.png` | Yes | 031 | Baseline MAE ranking | 11 | 9 |
-| F5 | `results/figures/experiment_031/exp031_pers_vs_svr_scatter.png` | Yes | 031 | SVR vs persistence per HH | 12 | 10 |
-| F6 | `results/figures/experiment_033/exp033_cluster0_before_after.png` | Yes | 033 | C0 grid vs load | 19 | 14 |
-| F7 | `results/figures/experiment_033/exp033_cluster1_before_after.png` | Yes | 033 | C1 grid vs load | 19 | 14 |
-| F8 | `results/figures/experiment_033/exp033_soc_trajectory.png` | Yes | 033 | SOC over day | 14–15 | 12 |
-| F9 | `results/figures/experiment_035/exp035_dispatch_comparison.png` | Yes | 035 | Method peak % | 19 | 13 |
-| F10 | `results/figures/experiment_035/exp035_heatmap_c0_lp.png` | Yes | 035 | LP capacity sensitivity | 19.2 | — |
-| F11 | `results/figures/experiment_034/exp034_conversion_loss.png` | Yes | 034 | loss_kwh defect | 18 | 15 |
-| F12 | `results/figures/experiment_034/exp034_c0_load_grid.png` | Yes | 034 | Audit load vs grid | 19 | 14 |
+| F1 | `results/figures/experiment_032/exp032_ceew_mean_daily.png` | Yes | 032 | Mean CEEW daily shape | 7 | 2 |
+| F2 | `results/figures/experiment_032/exp032_cluster_profiles.png` | Yes | 032 | K=2 centroids | 9 | 7–8 |
+| F3 | `results/figures/experiment_032/exp032_peak_to_avg.png` | Yes | 032 | Peak-to-average spread | 15 | 16 |
+| F4 | `results/forecasting/experiment_036/figures/exp036_train_centroids.png` | Yes | 036 | Train-derived SLPs | 10 | 9 |
+| F5 | `results/forecasting/experiment_036/figures/exp036_heldout_bands.png` | Yes | 036 | Held-out mean±IQR bands | 10 | 10 |
+| F6 | `results/forecasting/experiment_036/figures/exp036_load_factor.png` | Yes | 036 | LF by assigned group | 10 | 11 |
+| F7 | `results/forecasting/experiment_036/figures/exp036_cliffs_delta_summary.png` | Yes | 036 | Effect sizes | 10 | 11 |
+| F8 | `results/forecasting/experiment_036/figures/exp036_cross_split_stability.png` | Yes | 036 | Centroid stability | 10 | 12 |
+| F9 | `results/figures/experiment_031/exp031_test_macro_mae.png` | Yes | 031 | Baseline MAE ranking | 13 | 14 |
+| F10 | `results/figures/experiment_031/exp031_pers_vs_svr_scatter.png` | Yes | 031 | SVR vs persistence per HH | 13 | 13 |
+| F11 | `results/figures/experiment_035/exp035_dispatch_comparison.png` | Yes | 035 | BESS method peak % | 16 | 17 |
+| F12 | `results/figures/experiment_033/exp033_soc_trajectory.png` | Yes | 033 | SOC trajectory | 16 | 17 |
+| F13 | `results/figures/experiment_033/exp033_cluster0_before_after.png` | Yes | 033 | C0 medoid | 16 | — |
+| F14 | `results/figures/experiment_034/exp034_conversion_loss.png` | Yes | 034 | Energy accounting | 16 | 18 |
 
-## Additional repo-only references (not copied)
+## Claim-to-evidence index
 
-| Path | Use |
-|------|-----|
-| `results/figures/dataset_019/exp019_cnae_division_counts.png` | GoiEner ag audit (synopsis partial) |
-| `results/figures/experiment_034/exp034_heatmap_c1_rule.png` | Rule sensitivity flatness |
-| `results/figures/dataset_019/exp019_dataset_eligibility_table.png` | Synopsis status dashboard |
+| Claim | Experiment | File | Metric / population | Conditions |
+|-------|------------|------|---------------------|------------|
+| 84 CEEW meters | 032, 036 | `verified_context.json` | n_meters | Complete daily table |
+| 43,555 complete days | 032, 036 | same | n_days | QA filters |
+| K=2 silhouette ≈ 0.242 | 036 | `verified_context.json` | sil peak-norm | 10k subsample |
+| Seed ARI ≥ 0.999 | 036 | `verified_context.json` | in-sample labels | 10 seeds |
+| In-sample energies 10.93 / 6.20 kWh | 036 | `verified_context.json` | cluster means | Peak-norm K=2 |
+| Out-of-sample 13/13 BH q<0.05 | 036 | `experiment_036_summary.json` | held-out test days | 5 splits median |
+| Cliff's δ LF median 0.98 | 036 | `tables/heldout_group_statistics.csv` | held-out groups | Mann–Whitney |
+| Centroid corr 0.983 | 036 | `experiment_036_summary.json` | train centroids | 5 splits |
+| No meter leakage | 036 | `audit_report.json` | split meters | 58/26 disjoint |
+| Persistence MAE 0.4361 | 031 | `experiment_031_summary.json` | Norwegian test | macro MAE |
+| SVR MAE 0.4457 | 031 | same | Norwegian test | tuned |
+| SVR+SLP 0.4537 | 031 | same | Norwegian test | F0 features |
+| BESS C0 MILP peak −26.69% | 035 | `final_bess_medoid_comparison.csv` | BR29 medoid | 5 kWh/2 kW |
+| Clusters ≠ ag/res | 032, DEC | `01_synopsis_traceability.md` | — | No category labels |
 
 ## Tables
 
 | File | Content |
 |------|---------|
-| `final_submission/tables/final_bess_medoid_comparison.csv` | Exp 035 dispatch comparison |
-| `final_submission/tables/norwegian_baseline_mae.md` | Frozen baseline table |
+| `final_submission/tables/final_bess_medoid_comparison.csv` | Exp 035 dispatch |
+| `final_submission/tables/norwegian_baseline_mae.md` | Frozen baseline MAE |
 
 ## JSON evidence
 
 | File | Content |
 |------|---------|
+| `results/forecasting/experiment_036/experiment_036_summary.json` | Out-of-sample SLP validation |
 | `results/forecasting/experiment_032/experiment_032_summary.json` | CEEW ToD stats |
 | `results/forecasting/experiment_031/experiment_031_summary.json` | MAE rankings |
-| `results/forecasting/experiment_035/experiment_035_summary.json` | Final BESS verdict |
