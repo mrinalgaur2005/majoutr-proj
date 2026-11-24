@@ -1,0 +1,104 @@
+{
+  "experiment": "027",
+  "date": "2026-11-24",
+  "doi": "10.5281/zenodo.7856848",
+  "n_households": 1136,
+  "hour_1_24_documented": false,
+  "dst_documented_normalization": true,
+  "timezone_iana_documented": false,
+  "p2_population": {
+    "experiment": "027",
+    "date": "2026-11-24",
+    "n_households": 1136,
+    "records_per_household_expected": 13128,
+    "total_demand_rows": 14913408,
+    "calendar_audit": {
+      "n_households": 1136,
+      "hours_in_file": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "duplicate_logical_keys": 0,
+      "id_date_not_24_count": 0,
+      "dst_records_per_household": {
+        "2020-10-25": {
+          "min": 24,
+          "max": 24,
+          "unique": 1
+        },
+        "2021-03-28": {
+          "min": 24,
+          "max": 24,
+          "unique": 1
+        },
+        "2021-10-31": {
+          "min": 24,
+          "max": 24,
+          "unique": 1
+        },
+        "2022-03-27": {
+          "min": 24,
+          "max": 24,
+          "unique": 1
+        }
+      },
+      "expected_records_per_hh": 13128,
+      "unique_dates_per_hh": 547
+    },
+    "prices_alignment_check": {
+      "prices_local": false
+    },
+    "timestamp_interpretations": [
+      "H1_START_00",
+      "H1_START_01"
+    ],
+    "interp_p2_totals": {
+      "H1_START_00": {
+        "n_p2_total": 14719152,
+        "households_with_p2": 1136,
+        "identical_to_other": true
+      },
+      "H1_START_01": {
+        "n_p2_total": 14719152,
+        "households_with_p2": 1136,
+        "identical_to_other": true
+      }
+    },
+    "p2_eligible_origins_total_interp_H1_START_00": 14719152,
+    "p2_train_total": 10246720,
+    "p2_val_total": 2235648,
+    "p2_test_total": 2236784,
+    "households_all_complete_24h_days": 1136,
+    "households_with_zero_p2": 0,
+    "min_p2_per_household": 12957,
+    "median_p2_per_household": 12957.0,
+    "forecasting_authorized": false,
+    "exp024_authorized": false
+  },
+  "recommended_decision": "B",
+  "recommended_decision_label": "CONDITIONALLY READY",
+  "forecasting_authorized": false,
+  "elapsed_sec": 3027.7215830880014
+}

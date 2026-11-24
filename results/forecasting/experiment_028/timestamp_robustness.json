@@ -1,0 +1,6 @@
+{
+  "F0_val_mae_max_abs_diff": 0.08696515226836898,
+  "F1_val_mae_max_abs_diff": 0.08458822244138298,
+  "F2_val_mae_max_abs_diff": 0.0785610211742529,
+  "F1_minus_F0_identical": false
+}

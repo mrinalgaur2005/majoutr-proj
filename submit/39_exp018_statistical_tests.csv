@@ -1,0 +1,2 @@
+comparison,n_meters,n_improved,n_worse,n_tied,median_diff,mean_diff,wilcoxon_p_pratt,boot_median_ci95_low,boot_median_ci95_high
+ridge_delta_cyclic_slp_vs_persistence,68,4,64,0,0.0026684168622491,0.0038601214849317,2.0060375225690687e-10,0.0019334791066078875,0.004084613272706095

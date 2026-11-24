@@ -1,0 +1,1 @@
+Original synopsis **preserved**. Literature shows core method studied before; contribution shifts to **verified categories**, **leakage-safe evaluation**, and **honest baseline comparison** — not algorithmic novelty.

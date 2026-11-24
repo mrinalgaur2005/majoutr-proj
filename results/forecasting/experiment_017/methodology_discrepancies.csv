@@ -1,0 +1,7 @@
+documented_assumption,actual_implementation,matches,consequence,action
+Test period from 2021-01-01 (experiment scripts),test origins t >= 2021-01-01; targets from 2021-01-01 00:15 onward,True,none if interpreted as origin-based split,Keep origin-based wording in frozen spec
+dataset_split.json test starts 2021-01-02,013–016 use VAL_END=2021-01-01 exclusive for test origins,False,012 pooled file may differ slightly at boundary day,Treat 013–016 protocol as frozen; note 012 boundary discrepancy
+eligibility train_rows counts raw bin timestamps < TRAIN_END,usable_* counts forecast origins with complete lag history,False,eligibility CSV train_rows != usable_train_rows,Use usable_* columns in frozen spec
+Timestamps are IST,timezone-naive; CEEW ReadMe silent on zone,False,calendar features unproven civil-time interpretation,UNRESOLVED — do not assign timezone in SLP without evidence
+Experiment 016 improves on persistence,"016 selected always_shrink_meter (=015); pooled −0.41%, median 0",True,016 is diagnostic; not a new model,None
+Competency rule uses MAE not RMSE,documented in 013–015,True,RMSE gains do not trigger SLP,Carry into 018

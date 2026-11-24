@@ -1,0 +1,1018 @@
+{
+  "source": "Agrawal et al., Harvard Dataverse DOI 10.7910/DVN/GOCHJH",
+  "raw_directory": "/home/mrinalgaur/Desktop/majou-proj/data/raw/ceew_mathura_bareilly",
+  "raw_files": [
+    {
+      "name": "CEEW -  ReadMe.txt",
+      "bytes": 4436
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2019.tab",
+      "bytes": 145477114
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2020.csv",
+      "bytes": 345593108
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2021.csv",
+      "bytes": 192682564
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly Aggregated.tab",
+      "bytes": 1006555
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2019.csv",
+      "bytes": 175494264
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2020.csv",
+      "bytes": 182625294
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2021.tab",
+      "bytes": 27261599
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura Aggregated.tab",
+      "bytes": 594593
+    }
+  ],
+  "rows": 21845497,
+  "unique_meters": 84,
+  "meters": [
+    "BR02",
+    "BR03",
+    "BR04",
+    "BR05",
+    "BR06",
+    "BR07",
+    "BR08",
+    "BR09",
+    "BR10",
+    "BR11",
+    "BR12",
+    "BR13",
+    "BR14",
+    "BR15",
+    "BR16",
+    "BR17",
+    "BR18",
+    "BR19",
+    "BR20",
+    "BR22",
+    "BR23",
+    "BR24",
+    "BR26",
+    "BR27",
+    "BR28",
+    "BR29",
+    "BR30",
+    "BR31",
+    "BR32",
+    "BR33",
+    "BR34",
+    "BR35",
+    "BR36",
+    "BR37",
+    "BR38",
+    "BR39",
+    "BR42",
+    "BR43",
+    "BR44",
+    "BR45",
+    "BR46",
+    "BR48",
+    "BR49",
+    "BR50",
+    "BR51",
+    "BR52",
+    "MH01",
+    "MH02",
+    "MH03",
+    "MH06",
+    "MH07",
+    "MH08",
+    "MH09",
+    "MH10",
+    "MH11",
+    "MH12",
+    "MH14",
+    "MH15",
+    "MH17",
+    "MH18",
+    "MH20",
+    "MH21",
+    "MH22",
+    "MH23",
+    "MH24",
+    "MH25",
+    "MH26",
+    "MH27",
+    "MH28",
+    "MH30",
+    "MH31",
+    "MH33",
+    "MH34",
+    "MH35",
+    "MH36",
+    "MH37",
+    "MH38",
+    "MH39",
+    "MH41",
+    "MH42",
+    "MH43",
+    "MH45",
+    "MH46",
+    "MH47"
+  ],
+  "rows_by_city": {
+    "Bareilly": 13946703,
+    "Mathura": 7898794
+  },
+  "timestamp_ranges": {
+    "Bareilly": {
+      "start": "2019-05-09 00:00:00",
+      "end": "2021-10-31 23:57:00"
+    },
+    "Mathura": {
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-20 23:57:00"
+    }
+  },
+  "missing_values": {
+    "interval_energy_kwh": 0,
+    "voltage_v": 0,
+    "current_a": 0,
+    "frequency_hz": 0
+  },
+  "negative_values": {
+    "interval_energy_kwh": 0,
+    "voltage_v": 0,
+    "current_a": 0,
+    "frequency_hz": 0
+  },
+  "zero_values": {
+    "interval_energy_kwh": 3550039,
+    "voltage_v": 1765882,
+    "current_a": 2907678,
+    "frequency_hz": 1765889
+  },
+  "units": {
+    "interval_energy_kwh": "kWh per documented three-minute record; derived load_kw = interval_energy_kwh / 0.05",
+    "voltage_v": "Volt",
+    "current_a": "Amp",
+    "frequency_hz": "Hz"
+  },
+  "empirical_energy_power_check": {
+    "median_derived_load_kw": 0.21999999999999997,
+    "median_voltage_times_current_kw": 0.24615045,
+    "note": "Similar magnitudes support interval-energy interpretation; active power and apparent power need not be identical."
+  },
+  "consumer_category_labels": false,
+  "feeder_or_substation_metadata": false,
+  "weather_fields": false,
+  "per_meter": [
+    {
+      "meter_id": "BR02",
+      "rows": 194400,
+      "start": "2019-07-10 00:00:00",
+      "end": "2021-03-07 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 194348,
+      "gaps_over_3_minutes": 51,
+      "max_gap_minutes": 47523.0
+    },
+    {
+      "meter_id": "BR03",
+      "rows": 124320,
+      "start": "2019-07-10 00:00:00",
+      "end": "2020-09-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 124266,
+      "gaps_over_3_minutes": 53,
+      "max_gap_minutes": 47523.0
+    },
+    {
+      "meter_id": "BR04",
+      "rows": 370560,
+      "start": "2019-07-11 00:00:00",
+      "end": "2021-10-27 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 370541,
+      "gaps_over_3_minutes": 18,
+      "max_gap_minutes": 27363.0
+    },
+    {
+      "meter_id": "BR05",
+      "rows": 228985,
+      "start": "2019-07-11 00:00:00",
+      "end": "2021-08-05 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 228862,
+      "gaps_over_3_minutes": 122,
+      "max_gap_minutes": 105123.0
+    },
+    {
+      "meter_id": "BR06",
+      "rows": 388800,
+      "start": "2019-07-11 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 388780,
+      "gaps_over_3_minutes": 19,
+      "max_gap_minutes": 17283.0
+    },
+    {
+      "meter_id": "BR07",
+      "rows": 165120,
+      "start": "2019-07-11 00:00:00",
+      "end": "2020-08-26 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 165089,
+      "gaps_over_3_minutes": 30,
+      "max_gap_minutes": 20163.0
+    },
+    {
+      "meter_id": "BR08",
+      "rows": 265920,
+      "start": "2019-07-11 00:00:00",
+      "end": "2021-02-16 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 265900,
+      "gaps_over_3_minutes": 19,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "BR09",
+      "rows": 249600,
+      "start": "2019-09-23 00:00:00",
+      "end": "2021-03-07 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 249591,
+      "gaps_over_3_minutes": 8,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR10",
+      "rows": 155040,
+      "start": "2019-07-11 00:00:00",
+      "end": "2020-11-05 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 154981,
+      "gaps_over_3_minutes": 58,
+      "max_gap_minutes": 24483.0
+    },
+    {
+      "meter_id": "BR11",
+      "rows": 383040,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 383026,
+      "gaps_over_3_minutes": 13,
+      "max_gap_minutes": 23043.0
+    },
+    {
+      "meter_id": "BR12",
+      "rows": 267840,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-03-07 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 267815,
+      "gaps_over_3_minutes": 24,
+      "max_gap_minutes": 23043.0
+    },
+    {
+      "meter_id": "BR13",
+      "rows": 313440,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 313313,
+      "gaps_over_3_minutes": 126,
+      "max_gap_minutes": 20163.0
+    },
+    {
+      "meter_id": "BR14",
+      "rows": 221280,
+      "start": "2019-07-16 00:00:00",
+      "end": "2020-12-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 221249,
+      "gaps_over_3_minutes": 30,
+      "max_gap_minutes": 23043.0
+    },
+    {
+      "meter_id": "BR15",
+      "rows": 385920,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 385904,
+      "gaps_over_3_minutes": 15,
+      "max_gap_minutes": 23043.0
+    },
+    {
+      "meter_id": "BR16",
+      "rows": 308160,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-09-28 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 308063,
+      "gaps_over_3_minutes": 96,
+      "max_gap_minutes": 27363.0
+    },
+    {
+      "meter_id": "BR17",
+      "rows": 175286,
+      "start": "2019-07-16 00:00:00",
+      "end": "2020-08-23 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 175268,
+      "gaps_over_3_minutes": 17,
+      "max_gap_minutes": 18075.0
+    },
+    {
+      "meter_id": "BR18",
+      "rows": 267360,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-03-07 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 267336,
+      "gaps_over_3_minutes": 23,
+      "max_gap_minutes": 14403.0
+    },
+    {
+      "meter_id": "BR19",
+      "rows": 382560,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-29 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 382534,
+      "gaps_over_3_minutes": 25,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "BR20",
+      "rows": 59520,
+      "start": "2019-07-16 00:00:00",
+      "end": "2020-01-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 59490,
+      "gaps_over_3_minutes": 29,
+      "max_gap_minutes": 12963.0
+    },
+    {
+      "meter_id": "BR22",
+      "rows": 358080,
+      "start": "2019-09-22 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 358068,
+      "gaps_over_3_minutes": 11,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "BR23",
+      "rows": 152640,
+      "start": "2019-07-17 00:00:00",
+      "end": "2020-06-26 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 152629,
+      "gaps_over_3_minutes": 10,
+      "max_gap_minutes": 24483.0
+    },
+    {
+      "meter_id": "BR24",
+      "rows": 371040,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 371027,
+      "gaps_over_3_minutes": 12,
+      "max_gap_minutes": 64803.0
+    },
+    {
+      "meter_id": "BR26",
+      "rows": 249120,
+      "start": "2019-07-16 00:00:00",
+      "end": "2020-12-26 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 249112,
+      "gaps_over_3_minutes": 7,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR27",
+      "rows": 354319,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 354246,
+      "gaps_over_3_minutes": 72,
+      "max_gap_minutes": 10083.0
+    },
+    {
+      "meter_id": "BR28",
+      "rows": 396960,
+      "start": "2019-07-17 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 396952,
+      "gaps_over_3_minutes": 7,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR29",
+      "rows": 388320,
+      "start": "2019-07-16 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 388299,
+      "gaps_over_3_minutes": 20,
+      "max_gap_minutes": 5763.0
+    },
+    {
+      "meter_id": "BR30",
+      "rows": 351360,
+      "start": "2019-09-15 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 351325,
+      "gaps_over_3_minutes": 34,
+      "max_gap_minutes": 7203.0
+    },
+    {
+      "meter_id": "BR31",
+      "rows": 381600,
+      "start": "2019-07-17 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 381564,
+      "gaps_over_3_minutes": 35,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR32",
+      "rows": 372000,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 371970,
+      "gaps_over_3_minutes": 29,
+      "max_gap_minutes": 7203.0
+    },
+    {
+      "meter_id": "BR33",
+      "rows": 372000,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 371972,
+      "gaps_over_3_minutes": 27,
+      "max_gap_minutes": 7203.0
+    },
+    {
+      "meter_id": "BR34",
+      "rows": 344886,
+      "start": "2019-05-30 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 344816,
+      "gaps_over_3_minutes": 69,
+      "max_gap_minutes": 86970.0
+    },
+    {
+      "meter_id": "BR35",
+      "rows": 375360,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 375336,
+      "gaps_over_3_minutes": 23,
+      "max_gap_minutes": 7203.0
+    },
+    {
+      "meter_id": "BR36",
+      "rows": 365760,
+      "start": "2019-08-28 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 365733,
+      "gaps_over_3_minutes": 26,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR37",
+      "rows": 365760,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 365735,
+      "gaps_over_3_minutes": 24,
+      "max_gap_minutes": 34563.0
+    },
+    {
+      "meter_id": "BR38",
+      "rows": 253440,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-03-04 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 253418,
+      "gaps_over_3_minutes": 21,
+      "max_gap_minutes": 17283.0
+    },
+    {
+      "meter_id": "BR39",
+      "rows": 326400,
+      "start": "2019-08-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 326315,
+      "gaps_over_3_minutes": 84,
+      "max_gap_minutes": 8643.0
+    },
+    {
+      "meter_id": "BR42",
+      "rows": 116640,
+      "start": "2019-08-20 00:00:00",
+      "end": "2021-01-12 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 116617,
+      "gaps_over_3_minutes": 22,
+      "max_gap_minutes": 128163.0
+    },
+    {
+      "meter_id": "BR43",
+      "rows": 270240,
+      "start": "2019-08-22 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 270139,
+      "gaps_over_3_minutes": 100,
+      "max_gap_minutes": 133923.0
+    },
+    {
+      "meter_id": "BR44",
+      "rows": 355680,
+      "start": "2019-08-20 00:00:00",
+      "end": "2021-10-09 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 355658,
+      "gaps_over_3_minutes": 21,
+      "max_gap_minutes": 11523.0
+    },
+    {
+      "meter_id": "BR45",
+      "rows": 380160,
+      "start": "2019-08-20 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 380151,
+      "gaps_over_3_minutes": 8,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR46",
+      "rows": 198240,
+      "start": "2019-08-20 00:00:00",
+      "end": "2021-03-05 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 198156,
+      "gaps_over_3_minutes": 83,
+      "max_gap_minutes": 20163.0
+    },
+    {
+      "meter_id": "BR48",
+      "rows": 286080,
+      "start": "2019-08-20 00:00:00",
+      "end": "2021-08-09 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 286042,
+      "gaps_over_3_minutes": 37,
+      "max_gap_minutes": 118083.0
+    },
+    {
+      "meter_id": "BR49",
+      "rows": 382908,
+      "start": "2019-09-08 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 13788,
+      "three_minute_intervals": 369110,
+      "gaps_over_3_minutes": 9,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR50",
+      "rows": 450240,
+      "start": "2019-09-24 00:00:00",
+      "end": "2021-07-26 23:57:00",
+      "duplicates": 156000,
+      "three_minute_intervals": 294190,
+      "gaps_over_3_minutes": 49,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR51",
+      "rows": 532320,
+      "start": "2019-09-24 00:00:00",
+      "end": "2021-10-31 23:57:00",
+      "duplicates": 171360,
+      "three_minute_intervals": 360948,
+      "gaps_over_3_minutes": 11,
+      "max_gap_minutes": 4323.0
+    },
+    {
+      "meter_id": "BR52",
+      "rows": 287999,
+      "start": "2019-05-09 00:00:00",
+      "end": "2021-03-03 23:57:00",
+      "duplicates": 109920,
+      "three_minute_intervals": 177968,
+      "gaps_over_3_minutes": 110,
+      "max_gap_minutes": 97923.0
+    },
+    {
+      "meter_id": "MH01",
+      "rows": 191025,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 190909,
+      "gaps_over_3_minutes": 115,
+      "max_gap_minutes": 12963.0
+    },
+    {
+      "meter_id": "MH02",
+      "rows": 216466,
+      "start": "2019-05-01 00:00:00",
+      "end": "2020-11-02 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 216431,
+      "gaps_over_3_minutes": 34,
+      "max_gap_minutes": 43203.0
+    },
+    {
+      "meter_id": "MH03",
+      "rows": 216961,
+      "start": "2019-05-12 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 216934,
+      "gaps_over_3_minutes": 26,
+      "max_gap_minutes": 59043.0
+    },
+    {
+      "meter_id": "MH06",
+      "rows": 205291,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 205176,
+      "gaps_over_3_minutes": 114,
+      "max_gap_minutes": 21603.0
+    },
+    {
+      "meter_id": "MH07",
+      "rows": 199652,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 199545,
+      "gaps_over_3_minutes": 106,
+      "max_gap_minutes": 17283.0
+    },
+    {
+      "meter_id": "MH08",
+      "rows": 187677,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 187587,
+      "gaps_over_3_minutes": 89,
+      "max_gap_minutes": 36003.0
+    },
+    {
+      "meter_id": "MH09",
+      "rows": 256320,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 256251,
+      "gaps_over_3_minutes": 68,
+      "max_gap_minutes": 18723.0
+    },
+    {
+      "meter_id": "MH10",
+      "rows": 289919,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 289901,
+      "gaps_over_3_minutes": 17,
+      "max_gap_minutes": 27363.0
+    },
+    {
+      "meter_id": "MH11",
+      "rows": 277441,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 277420,
+      "gaps_over_3_minutes": 20,
+      "max_gap_minutes": 24483.0
+    },
+    {
+      "meter_id": "MH12",
+      "rows": 194855,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 194778,
+      "gaps_over_3_minutes": 76,
+      "max_gap_minutes": 48963.0
+    },
+    {
+      "meter_id": "MH14",
+      "rows": 219913,
+      "start": "2019-05-01 00:00:00",
+      "end": "2020-10-08 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 219874,
+      "gaps_over_3_minutes": 38,
+      "max_gap_minutes": 12963.0
+    },
+    {
+      "meter_id": "MH15",
+      "rows": 270244,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 270203,
+      "gaps_over_3_minutes": 40,
+      "max_gap_minutes": 17100.0
+    },
+    {
+      "meter_id": "MH17",
+      "rows": 200835,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 200686,
+      "gaps_over_3_minutes": 148,
+      "max_gap_minutes": 70563.0
+    },
+    {
+      "meter_id": "MH18",
+      "rows": 203037,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 202931,
+      "gaps_over_3_minutes": 105,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "MH20",
+      "rows": 178727,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 178586,
+      "gaps_over_3_minutes": 140,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "MH21",
+      "rows": 299075,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 299053,
+      "gaps_over_3_minutes": 21,
+      "max_gap_minutes": 7995.0
+    },
+    {
+      "meter_id": "MH22",
+      "rows": 158334,
+      "start": "2019-05-01 00:00:00",
+      "end": "2021-02-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 158217,
+      "gaps_over_3_minutes": 116,
+      "max_gap_minutes": 44643.0
+    },
+    {
+      "meter_id": "MH23",
+      "rows": 240480,
+      "start": "2019-05-09 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 240461,
+      "gaps_over_3_minutes": 18,
+      "max_gap_minutes": 59043.0
+    },
+    {
+      "meter_id": "MH24",
+      "rows": 149814,
+      "start": "2019-05-09 00:00:00",
+      "end": "2021-02-19 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 149729,
+      "gaps_over_3_minutes": 84,
+      "max_gap_minutes": 48585.0
+    },
+    {
+      "meter_id": "MH25",
+      "rows": 286191,
+      "start": "2019-05-09 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 286174,
+      "gaps_over_3_minutes": 16,
+      "max_gap_minutes": 12963.0
+    },
+    {
+      "meter_id": "MH26",
+      "rows": 151684,
+      "start": "2019-05-10 23:48:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 151595,
+      "gaps_over_3_minutes": 88,
+      "max_gap_minutes": 44643.0
+    },
+    {
+      "meter_id": "MH27",
+      "rows": 186019,
+      "start": "2019-05-11 00:00:00",
+      "end": "2021-02-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 185929,
+      "gaps_over_3_minutes": 89,
+      "max_gap_minutes": 27363.0
+    },
+    {
+      "meter_id": "MH28",
+      "rows": 181441,
+      "start": "2019-05-11 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 181372,
+      "gaps_over_3_minutes": 68,
+      "max_gap_minutes": 205923.0
+    },
+    {
+      "meter_id": "MH30",
+      "rows": 204001,
+      "start": "2019-05-11 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 203904,
+      "gaps_over_3_minutes": 96,
+      "max_gap_minutes": 11523.0
+    },
+    {
+      "meter_id": "MH31",
+      "rows": 168480,
+      "start": "2019-05-12 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 168397,
+      "gaps_over_3_minutes": 82,
+      "max_gap_minutes": 106563.0
+    },
+    {
+      "meter_id": "MH33",
+      "rows": 159319,
+      "start": "2019-05-12 00:00:00",
+      "end": "2021-02-16 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 159229,
+      "gaps_over_3_minutes": 89,
+      "max_gap_minutes": 36003.0
+    },
+    {
+      "meter_id": "MH34",
+      "rows": 123165,
+      "start": "2019-05-14 00:00:00",
+      "end": "2021-02-19 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 123084,
+      "gaps_over_3_minutes": 80,
+      "max_gap_minutes": 51843.0
+    },
+    {
+      "meter_id": "MH35",
+      "rows": 184264,
+      "start": "2019-05-15 00:00:00",
+      "end": "2021-02-17 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 184212,
+      "gaps_over_3_minutes": 51,
+      "max_gap_minutes": 57603.0
+    },
+    {
+      "meter_id": "MH36",
+      "rows": 229527,
+      "start": "2019-05-15 00:00:00",
+      "end": "2021-02-19 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 229455,
+      "gaps_over_3_minutes": 71,
+      "max_gap_minutes": 79203.0
+    },
+    {
+      "meter_id": "MH37",
+      "rows": 243360,
+      "start": "2019-05-26 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 243345,
+      "gaps_over_3_minutes": 14,
+      "max_gap_minutes": 139683.0
+    },
+    {
+      "meter_id": "MH38",
+      "rows": 92709,
+      "start": "2019-05-15 00:00:00",
+      "end": "2020-07-13 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 92659,
+      "gaps_over_3_minutes": 49,
+      "max_gap_minutes": 30243.0
+    },
+    {
+      "meter_id": "MH39",
+      "rows": 109945,
+      "start": "2019-05-15 00:00:00",
+      "end": "2021-02-19 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 109882,
+      "gaps_over_3_minutes": 62,
+      "max_gap_minutes": 61923.0
+    },
+    {
+      "meter_id": "MH41",
+      "rows": 212080,
+      "start": "2019-05-31 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 212006,
+      "gaps_over_3_minutes": 73,
+      "max_gap_minutes": 41763.0
+    },
+    {
+      "meter_id": "MH42",
+      "rows": 239040,
+      "start": "2019-05-30 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 238986,
+      "gaps_over_3_minutes": 53,
+      "max_gap_minutes": 15843.0
+    },
+    {
+      "meter_id": "MH43",
+      "rows": 288000,
+      "start": "2019-05-30 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 287987,
+      "gaps_over_3_minutes": 12,
+      "max_gap_minutes": 18723.0
+    },
+    {
+      "meter_id": "MH45",
+      "rows": 242880,
+      "start": "2019-05-30 00:00:00",
+      "end": "2021-02-20 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 242832,
+      "gaps_over_3_minutes": 47,
+      "max_gap_minutes": 18723.0
+    },
+    {
+      "meter_id": "MH46",
+      "rows": 224642,
+      "start": "2019-05-29 00:00:00",
+      "end": "2021-02-19 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 224544,
+      "gaps_over_3_minutes": 97,
+      "max_gap_minutes": 11523.0
+    },
+    {
+      "meter_id": "MH47",
+      "rows": 215981,
+      "start": "2019-05-29 00:00:00",
+      "end": "2021-02-18 23:57:00",
+      "duplicates": 0,
+      "three_minute_intervals": 215886,
+      "gaps_over_3_minutes": 94,
+      "max_gap_minutes": 24483.0
+    }
+  ]
+}

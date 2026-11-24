@@ -1,0 +1,7 @@
+archive,status,n_members_total,n_cnae01_in_archive,note
+profiles_part01.tar.zst,OK,5000.0,15,
+profiles_part02.tar.zst,ARCHIVE_NOT_ON_DISK,,unknown,~17 profiles est. if typical split
+profiles_part03.tar.zst,ARCHIVE_NOT_ON_DISK,,unknown,~17 profiles est. if typical split
+profiles_part04.tar.zst,ARCHIVE_NOT_ON_DISK,,unknown,~17 profiles est. if typical split
+profiles_part05.tar.zst,ARCHIVE_NOT_ON_DISK,,unknown,~17 profiles est. if typical split
+profiles_part06.tar.zst,ARCHIVE_NOT_ON_DISK,,unknown,~17 profiles est. if typical split

@@ -1,0 +1,2 @@
+model,micro_MAE,micro_MAE_slp,micro_MAE_base,noise_matches_slp_gain,note
+ridge_delta_cyclic_slp_noise,0.1113608546054855,0.1113472747738218,0.1113463579418472,False,Negative control uses training-scaled Gaussian noise independent of target.

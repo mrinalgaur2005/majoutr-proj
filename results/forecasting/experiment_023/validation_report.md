@@ -1,0 +1,7 @@
+- [PASS] cer package created
+- [PASS] goiener package created
+- [PASS] literature bibliography
+- [PASS] protocol audit + v2.1
+- [PASS] synopsis audit
+- [PASS] figures
+- [PASS] no training / no downloads

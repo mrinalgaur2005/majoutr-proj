@@ -1,0 +1,26 @@
+2026-11-24T07:53:31.421508+00:00 start run_experiment_019.py
+2026-11-24T07:53:31.421628+00:00 GET https://zenodo.org/records/22313409/files/README.txt?download=1 -> /home/mrinalgaur/Desktop/majou-proj/data/external/goiener/raw/README.txt
+2026-11-24T07:53:55.344250+00:00 GET https://zenodo.org/records/22313409/files/SHA256SUMS.txt?download=1 -> /home/mrinalgaur/Desktop/majou-proj/data/external/goiener/raw/SHA256SUMS.txt
+2026-11-24T08:27:34.634519+00:00 start run_experiment_019.py
+2026-11-24T08:27:34.634853+00:00 skip existing README.txt
+2026-11-24T08:27:34.635227+00:00 skip existing SHA256SUMS.txt
+2026-11-24T08:27:34.635404+00:00 skip existing metadata_public.csv
+2026-11-24T08:27:37.676053+00:00 tar --use-compress-program=zstd -xf /home/mrinalgaur/Desktop/majou-proj/data/external/goiener/raw/profiles_part01.tar.zst -C /home/mrinalgaur/Desktop/majou-proj/data/external/goiener/raw/profiles_extracted_part01
+2026-11-24T08:29:58.796320+00:00 start run_experiment_019.py
+2026-11-24T08:29:58.796722+00:00 skip existing README.txt
+2026-11-24T08:29:58.797214+00:00 skip existing SHA256SUMS.txt
+2026-11-24T08:29:58.798328+00:00 skip existing metadata_public.csv
+2026-11-24T08:30:00.119048+00:00 selective extract n=400
+2026-11-24T08:30:08.319409+00:00 selective extract failed partial — audit found files only
+2026-11-24T08:30:52.021953+00:00 start run_experiment_019.py
+2026-11-24T08:30:52.022172+00:00 skip existing README.txt
+2026-11-24T08:30:52.022902+00:00 skip existing SHA256SUMS.txt
+2026-11-24T08:30:52.023438+00:00 skip existing metadata_public.csv
+2026-11-24T08:31:09.851578+00:00 selective extract n=399 of 399 requested
+2026-11-24T08:31:57.923258+00:00 done failed=[]
+2026-11-24T08:32:23.708803+00:00 start run_experiment_019.py
+2026-11-24T08:32:23.708888+00:00 skip existing README.txt
+2026-11-24T08:32:23.709198+00:00 skip existing SHA256SUMS.txt
+2026-11-24T08:32:23.709473+00:00 skip existing metadata_public.csv
+2026-11-24T08:32:41.093506+00:00 selective extract n=399 of 399 requested
+2026-11-24T08:33:27.283114+00:00 done failed=[]

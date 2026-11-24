@@ -1,0 +1,8 @@
+{
+  "K": 2,
+  "normalization": "peak",
+  "SEED": 18,
+  "primary_model": "ridge_delta_cyclic_slp",
+  "selection_rule": "lowest validation pooled load MAE among ridge_delta_cyclic variants",
+  "slp_definition": "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_018/preimplementation/slp_feature_definition.md"
+}

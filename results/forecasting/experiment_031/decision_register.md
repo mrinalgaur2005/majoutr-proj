@@ -1,0 +1,2 @@
+- DEC-031-A: Persistence frozen baseline unless validation ranking changes.
+- DEC-031-B: SLP research should benchmark against frozen baseline.

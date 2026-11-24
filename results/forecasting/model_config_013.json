@@ -1,0 +1,926 @@
+{
+  "experiment": "013",
+  "horizon": "H=1, next 15-minute average kW",
+  "split": {
+    "train_before": "2020-07-01",
+    "validation_before": "2021-01-01",
+    "test_from": "2021-01-01"
+  },
+  "lag_definition": "lag_k = load(t-k+1); lag_1 = load(t); target = load(t+1)",
+  "seasonal_naive": "load(t-96)",
+  "cyclic": "sin/cos of target 15-min slot/96, sin/cos of target day-of-week/7, weekend indicator",
+  "eligibility": {
+    "min_usable_train": 1344,
+    "min_usable_validation": 288,
+    "min_usable_test": 288
+  },
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "svr": {
+    "C": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "epsilon": [
+      0.05,
+      0.2
+    ],
+    "gamma": "scale",
+    "chronological_cap": 1500
+  },
+  "scaler": "StandardScaler fit on train for tuning; refit on train+validation for the test model",
+  "competency_rule": "Micro MAE <= 1.02 * persistence micro MAE, macro median MAE <= 1.05 * persistence median MAE, and neither city worse than persistence by more than 10% MAE.",
+  "eligible_meters": 68,
+  "meters_total": 84,
+  "per_meter_selected": [
+    {
+      "meter": "BR02",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.08167330043666804,
+      "val_mae_ridge_cyclic": 0.08116849419134016,
+      "val_mae_svr": 0.08749396901003836
+    },
+    {
+      "meter": "BR04",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.12988906482734283,
+      "val_mae_ridge_cyclic": 0.12998963860865048,
+      "val_mae_svr": 0.1903032691896082
+    },
+    {
+      "meter": "BR05",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.04332068896100763,
+      "val_mae_ridge_cyclic": 0.04289577770240017,
+      "val_mae_svr": 0.0523121762752706
+    },
+    {
+      "meter": "BR06",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.2889924681802624,
+      "val_mae_ridge_cyclic": 0.2883362083506188,
+      "val_mae_svr": 0.2906118076608322
+    },
+    {
+      "meter": "BR08",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.08929964159153102,
+      "val_mae_ridge_cyclic": 0.0894066472633915,
+      "val_mae_svr": 0.10389569691087913
+    },
+    {
+      "meter": "BR09",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 10.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.019854641406475314,
+      "val_mae_ridge_cyclic": 0.020051222450765783,
+      "val_mae_svr": 0.03728985785835244
+    },
+    {
+      "meter": "BR11",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 10.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.12518865587365158,
+      "val_mae_ridge_cyclic": 0.12513959808079148,
+      "val_mae_svr": 0.15448733819182536
+    },
+    {
+      "meter": "BR12",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.16373846898427505,
+      "val_mae_ridge_cyclic": 0.16383075229779656,
+      "val_mae_svr": 0.18727227201444838
+    },
+    {
+      "meter": "BR13",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.056230025992399485,
+      "val_mae_ridge_cyclic": 0.054934973638141635,
+      "val_mae_svr": 0.056587335793290734
+    },
+    {
+      "meter": "BR15",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 10.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.10640524058960203,
+      "val_mae_ridge_cyclic": 0.1062013917933129,
+      "val_mae_svr": 0.19703784044734843
+    },
+    {
+      "meter": "BR16",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.011744708317833214,
+      "val_mae_ridge_cyclic": 0.011795943851601652,
+      "val_mae_svr": 0.02986110619900303
+    },
+    {
+      "meter": "BR18",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.2346654804816911,
+      "val_mae_ridge_cyclic": 0.2354474881899367,
+      "val_mae_svr": 0.2493742998865958
+    },
+    {
+      "meter": "BR19",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 10.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.037617518297104274,
+      "val_mae_ridge_cyclic": 0.03894249069391714,
+      "val_mae_svr": 0.05325722252078678
+    },
+    {
+      "meter": "BR22",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 100.0,
+        "epsilon": 0.2
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.10016142737401032,
+      "val_mae_ridge_cyclic": 0.10032146191401563,
+      "val_mae_svr": 0.19524231696715985
+    },
+    {
+      "meter": "BR24",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.21634364274705378,
+      "val_mae_ridge_cyclic": 0.21634401673956927,
+      "val_mae_svr": 0.2980762098804456
+    },
+    {
+      "meter": "BR27",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.024839149105199278,
+      "val_mae_ridge_cyclic": 0.024808611568738776,
+      "val_mae_svr": 0.04833141922692275
+    },
+    {
+      "meter": "BR28",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.05922140289539645,
+      "val_mae_ridge_cyclic": 0.059246718393831506,
+      "val_mae_svr": 0.1886265657214013
+    },
+    {
+      "meter": "BR29",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.054517502890094126,
+      "val_mae_ridge_cyclic": 0.05496194389569571,
+      "val_mae_svr": 0.12663097883144633
+    },
+    {
+      "meter": "BR30",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.036771458030878335,
+      "val_mae_ridge_cyclic": 0.03698686806819511,
+      "val_mae_svr": 0.07723972612681361
+    },
+    {
+      "meter": "BR31",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.17991098500837294,
+      "val_mae_ridge_cyclic": 0.18059671378667122,
+      "val_mae_svr": 0.20600941960721916
+    },
+    {
+      "meter": "BR32",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.12221915785311711,
+      "val_mae_ridge_cyclic": 0.12246077266926775,
+      "val_mae_svr": 0.14093759844221523
+    },
+    {
+      "meter": "BR33",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.044892196673678324,
+      "val_mae_ridge_cyclic": 0.04483890964138817,
+      "val_mae_svr": 0.05727187844614787
+    },
+    {
+      "meter": "BR34",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.028420137828507906,
+      "val_mae_ridge_cyclic": 0.02831387977913807,
+      "val_mae_svr": 0.04911036226944394
+    },
+    {
+      "meter": "BR35",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.21769063445944573,
+      "val_mae_ridge_cyclic": 0.21670062822192093,
+      "val_mae_svr": 0.21976007354403165
+    },
+    {
+      "meter": "BR36",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.18305756294561393,
+      "val_mae_ridge_cyclic": 0.18290791523540423,
+      "val_mae_svr": 0.25737955784989097
+    },
+    {
+      "meter": "BR37",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15790920241232045,
+      "val_mae_ridge_cyclic": 0.1582030939039803,
+      "val_mae_svr": 0.19648320584286072
+    },
+    {
+      "meter": "BR38",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.30592000329443636,
+      "val_mae_ridge_cyclic": 0.30494110666082064,
+      "val_mae_svr": 0.3333835877431247
+    },
+    {
+      "meter": "BR39",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.02589223499897411,
+      "val_mae_ridge_cyclic": 0.026076828986700426,
+      "val_mae_svr": 0.041014176357686186
+    },
+    {
+      "meter": "BR43",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.023931043066458487,
+      "val_mae_ridge_cyclic": 0.023991681223929327,
+      "val_mae_svr": 0.044504541439593544
+    },
+    {
+      "meter": "BR44",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.011209661302556245,
+      "val_mae_ridge_cyclic": 0.011463159994565727,
+      "val_mae_svr": 0.07880396861599773
+    },
+    {
+      "meter": "BR45",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.19166230933640177,
+      "val_mae_ridge_cyclic": 0.1913082106411766,
+      "val_mae_svr": 0.20250128090490555
+    },
+    {
+      "meter": "BR46",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.01699214005122378,
+      "val_mae_ridge_cyclic": 0.017394160051130075,
+      "val_mae_svr": 0.060451441026919246
+    },
+    {
+      "meter": "BR48",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.01732335516861522,
+      "val_mae_ridge_cyclic": 0.01743176658489303,
+      "val_mae_svr": 0.08386457844490541
+    },
+    {
+      "meter": "BR49",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.13601043417882894,
+      "val_mae_ridge_cyclic": 0.13605704999243465,
+      "val_mae_svr": 0.22289143240128922
+    },
+    {
+      "meter": "BR50",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.06766361680490485,
+      "val_mae_ridge_cyclic": 0.0675018249122857,
+      "val_mae_svr": 0.09324608960323073
+    },
+    {
+      "meter": "BR51",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.24180321921652248,
+      "val_mae_ridge_cyclic": 0.2417294978915591,
+      "val_mae_svr": 0.25504652627456675
+    },
+    {
+      "meter": "MH01",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.064137777602371,
+      "val_mae_ridge_cyclic": 0.06454652135588544,
+      "val_mae_svr": 0.0839937568464403
+    },
+    {
+      "meter": "MH03",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.07958089074907898,
+      "val_mae_ridge_cyclic": 0.07952684914629363,
+      "val_mae_svr": 0.10655689022765286
+    },
+    {
+      "meter": "MH06",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.10532388011001027,
+      "val_mae_ridge_cyclic": 0.10550466330703182,
+      "val_mae_svr": 0.09279207479040241
+    },
+    {
+      "meter": "MH07",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.09185007022386614,
+      "val_mae_ridge_cyclic": 0.09507634766875393,
+      "val_mae_svr": 0.12146706575806804
+    },
+    {
+      "meter": "MH08",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.06282742160606077,
+      "val_mae_ridge_cyclic": 0.06311816222807311,
+      "val_mae_svr": 0.06546062497735484
+    },
+    {
+      "meter": "MH09",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.07468709172779638,
+      "val_mae_ridge_cyclic": 0.07475204337035427,
+      "val_mae_svr": 0.07574537880754725
+    },
+    {
+      "meter": "MH10",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15000146866638925,
+      "val_mae_ridge_cyclic": 0.15169829290375758,
+      "val_mae_svr": 0.31880302424136525
+    },
+    {
+      "meter": "MH11",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.124294544379476,
+      "val_mae_ridge_cyclic": 0.12408276191653611,
+      "val_mae_svr": 0.3420921814251845
+    },
+    {
+      "meter": "MH12",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.03449768875141874,
+      "val_mae_ridge_cyclic": 0.03450766323526338,
+      "val_mae_svr": 0.05019932297460046
+    },
+    {
+      "meter": "MH15",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.06315849377146547,
+      "val_mae_ridge_cyclic": 0.06327991727721591,
+      "val_mae_svr": 0.09144182988608064
+    },
+    {
+      "meter": "MH17",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.0557992069638766,
+      "val_mae_ridge_cyclic": 0.055252785667952053,
+      "val_mae_svr": 0.0609568260757945
+    },
+    {
+      "meter": "MH18",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.07174807263447644,
+      "val_mae_ridge_cyclic": 0.0722031788148627,
+      "val_mae_svr": 0.07335664624610261
+    },
+    {
+      "meter": "MH20",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.036391944945654814,
+      "val_mae_ridge_cyclic": 0.036445495628390605,
+      "val_mae_svr": 0.05096431870025712
+    },
+    {
+      "meter": "MH21",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.11698538052940514,
+      "val_mae_ridge_cyclic": 0.11657230039026223,
+      "val_mae_svr": 0.11909759824998187
+    },
+    {
+      "meter": "MH22",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.1769900869470538,
+      "val_mae_ridge_cyclic": 0.17817607740201602,
+      "val_mae_svr": 0.18984621443542818
+    },
+    {
+      "meter": "MH23",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.1374478564767662,
+      "val_mae_ridge_cyclic": 0.13894992851442553,
+      "val_mae_svr": 0.40815542011713696
+    },
+    {
+      "meter": "MH24",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15278193702991183,
+      "val_mae_ridge_cyclic": 0.1554738200759454,
+      "val_mae_svr": 0.17750652984425527
+    },
+    {
+      "meter": "MH25",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 10.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.13565603328940545,
+      "val_mae_ridge_cyclic": 0.13527921660839717,
+      "val_mae_svr": 0.20386563039927763
+    },
+    {
+      "meter": "MH26",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.05563760433967612,
+      "val_mae_ridge_cyclic": 0.05747104397739538,
+      "val_mae_svr": 0.07896257352478911
+    },
+    {
+      "meter": "MH27",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15106682385183653,
+      "val_mae_ridge_cyclic": 0.15554463288208578,
+      "val_mae_svr": 0.22116886333367447
+    },
+    {
+      "meter": "MH28",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.016075141723448472,
+      "val_mae_ridge_cyclic": 0.017748229935903012,
+      "val_mae_svr": 0.04733985506526518
+    },
+    {
+      "meter": "MH30",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.039755078356277174,
+      "val_mae_ridge_cyclic": 0.03987002985809698,
+      "val_mae_svr": 0.04954084141239677
+    },
+    {
+      "meter": "MH31",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 100.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.009480725950767,
+      "val_mae_ridge_cyclic": 0.009725965162236094,
+      "val_mae_svr": 0.022753231247525586
+    },
+    {
+      "meter": "MH35",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.09789049831327763,
+      "val_mae_ridge_cyclic": 0.09804228112330358,
+      "val_mae_svr": 0.09553806019937545
+    },
+    {
+      "meter": "MH36",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15285669410101424,
+      "val_mae_ridge_cyclic": 0.15305212584353367,
+      "val_mae_svr": 0.18487146637064142
+    },
+    {
+      "meter": "MH37",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.09531749171471006,
+      "val_mae_ridge_cyclic": 0.09537919788386763,
+      "val_mae_svr": 0.09012863810259485
+    },
+    {
+      "meter": "MH41",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.029396696137119323,
+      "val_mae_ridge_cyclic": 0.02937118088835728,
+      "val_mae_svr": 0.06801443785392809
+    },
+    {
+      "meter": "MH42",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.07067455434784937,
+      "val_mae_ridge_cyclic": 0.07071555793498384,
+      "val_mae_svr": 0.08660406225338459
+    },
+    {
+      "meter": "MH43",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.18530831049533533,
+      "val_mae_ridge_cyclic": 0.18519658891505206,
+      "val_mae_svr": 0.2232511933627826
+    },
+    {
+      "meter": "MH45",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.15992809422479126,
+      "val_mae_ridge_cyclic": 0.159689980705068,
+      "val_mae_svr": 0.15751270664381106
+    },
+    {
+      "meter": "MH46",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.04406812213119181,
+      "val_mae_ridge_cyclic": 0.043798228016531326,
+      "val_mae_svr": 0.06461573936638641
+    },
+    {
+      "meter": "MH47",
+      "ridge_lag_alpha": 0.1,
+      "ridge_lag_cyclic_alpha": 0.1,
+      "svr": {
+        "C": 1.0,
+        "epsilon": 0.05
+      },
+      "svr_cap": 1500,
+      "val_mae_ridge_lag": 0.03094167812047656,
+      "val_mae_ridge_cyclic": 0.030874925894804325,
+      "val_mae_svr": 0.05256762824165405
+    }
+  ]
+}

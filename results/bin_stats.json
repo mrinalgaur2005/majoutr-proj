@@ -1,0 +1,15 @@
+{
+  "malformed_timestamps": 0,
+  "off_three_minute_boundaries": 0,
+  "partial_bin_row_counts": {
+    "1": 193,
+    "2": 32,
+    "3": 16,
+    "4": 216,
+    "5": 4188438,
+    "other": 90214
+  },
+  "bins_total": 4279109,
+  "bins_complete": 4188438,
+  "bins_incomplete": 90671
+}

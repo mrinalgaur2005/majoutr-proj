@@ -1,0 +1,10 @@
+{
+  "experiment": "025",
+  "date": "2026-11-24",
+  "elapsed_sec": 0.590999568998086,
+  "goiener_profiles_audited": 15,
+  "cer_status": "UNAVAILABLE_PUBLIC_ONLY",
+  "residential_alternative": "zenodo.7856848 (households.csv local)",
+  "exp024_execution": "NOT_STARTED",
+  "forecasting_run": false
+}

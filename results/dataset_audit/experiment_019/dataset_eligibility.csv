@@ -1,0 +1,7 @@
+dataset,tier,eligible_exp020_track,reason,agriculture_div01_n,access
+GoiEner_v7.1,1,A_cnae_slp_svr,Open CNAE-labelled profiles,100.0,
+CER_ISSDA,1,B_residential_svr,Verified residential code when files obtained,,PENDING_ACCESS
+CEEW_frozen,2,C_supplementary,No category labels; do not overwrite 013-018,,
+EnergyBench_real_subsets,2,optional_replication,Building-use labels; separate from CNAE,,
+EnergyBench_Synthetic_commercial,0,excluded,synthetic/simulated,,open
+EnergyBench_Synthetic_residential,0,excluded,synthetic/simulated,,open

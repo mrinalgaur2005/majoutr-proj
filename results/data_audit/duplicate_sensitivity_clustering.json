@@ -1,0 +1,10 @@
+{
+  "dedup_rule": "Within each source file, keep the first row for each meter_id and timestamp.",
+  "profiles_replaced": 1423,
+  "k2_peak_ari_old_vs_dedup_profiles": 1.0,
+  "new_k2_sizes": [
+    19075,
+    23562
+  ],
+  "matched_labeled_days": 42637
+}

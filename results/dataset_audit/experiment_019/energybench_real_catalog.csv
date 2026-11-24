@@ -1,0 +1,11 @@
+name,tier,category_eb,location,buildings,resolution,unit,weather,metadata_note,agriculture_via_cnae,source
+GoiEner,real,Residential,Spain,25559,1H,kWh,False,"EnergyBench label Residential — Zenodo v7.1 uses CNAE cnae_division, not domestic tariff",use Zenodo metadata not EB label,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+CEEW,real,Residential,India,84,"15min,1H",kWh,False,Region only; project CEEW has no verified res/ag labels (frozen),,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+Prayas,real,Residential,India,116,"15min,1H",kWh,False,Household type in metadata,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+REFIT,real,Residential,UK,20,"15min,1H",kW,False,,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+Enernoc,real,Commercial,USA,100,"15min,1H",kWh,False,Industry/sub-industry type in metadata,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+EWELD,real,Commercial,Southern China,386,"15min,1H",kWh,False,Industry type extractable,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+SGSC,real,Residential,Australia,13735,"30min,1H",kWh,False,Customer type field,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+METER,real,Residential,UK,311,"30min,1H",kW,False,,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+Synthetic_commercial,synthetic,Commercial,simulated,207559,1H,kWh,False,,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0
+Synthetic_residential,synthetic,Residential,simulated,31000000,1H,kWh,False,,,ai-iot/EnergyBench dataset card (accessed during Experiment 019); CC-4.0

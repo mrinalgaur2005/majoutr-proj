@@ -1,0 +1,1394 @@
+{
+  "split": {
+    "train_before": "2020-07-01",
+    "validation_before": "2021-01-01",
+    "test_from": "2021-01-01"
+  },
+  "eligibility": {
+    "min_train": 1344,
+    "min_val": 288,
+    "min_test": 288
+  },
+  "lags": [
+    1,
+    2,
+    4,
+    8,
+    12,
+    24,
+    48,
+    96
+  ],
+  "lag_definition": "column k uses \u0394P(t-k+1); column 0 is \u0394P(t)=P(t)-P(t-1), known at forecast time",
+  "target": "\u0394P(t+1)=P(t+1)-P(t); load forecast P(t)+delta_hat",
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "lambdas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "gate_percentiles": [
+    50,
+    75,
+    90
+  ],
+  "huber_epsilon": [
+    1.35,
+    1.75
+  ],
+  "huber_alpha": [
+    0.0001,
+    0.01,
+    1.0
+  ],
+  "seed_bootstrap": 15,
+  "scaler": "StandardScaler fit on train for tuning; refit on train+validation before test predictions",
+  "selection": "lowest validation micro MAE among learned models; test not used",
+  "per_meter": [
+    {
+      "meter": "BR02",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.07516191073229354,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.07297994914520185,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.16400000378489493,
+      "gate_val_mae": 0.07234256764017427,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0729994861690971,
+      "train_mean_kw": 0.17890317660700428,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.03200000524520874
+    },
+    {
+      "meter": "BR04",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.12376144089531588,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.11980419490894431,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.31599999628961084,
+      "gate_val_mae": 0.12058109365849072,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.1201707162293987,
+      "train_mean_kw": 0.4068160879492588,
+      "movement_tert_low": 0.02399998903274536,
+      "movement_tert_high": 0.08799999952316284
+    },
+    {
+      "meter": "BR05",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.04020002404445479,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.03885693788083051,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.10399999786168337,
+      "gate_val_mae": 0.039147204934767255,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.038895526620861126,
+      "train_mean_kw": 0.11300847339778826,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.03200000151991844
+    },
+    {
+      "meter": "BR06",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.28727592844813143,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.28124472087701624,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.31999996304512024,
+      "gate_val_mae": 0.28270045999862375,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.28157339353669936,
+      "train_mean_kw": 0.5841637805763358,
+      "movement_tert_low": 0.0559999942779541,
+      "movement_tert_high": 0.19599997997283936
+    },
+    {
+      "meter": "BR08",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.08820751734735656,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.08299451675611542,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.13999999314546585,
+      "gate_val_mae": 0.08354398712646188,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.08290118796396569,
+      "train_mean_kw": 0.2864415164307334,
+      "movement_tert_low": 0.016000032424926758,
+      "movement_tert_high": 0.052000001072883606
+    },
+    {
+      "meter": "BR09",
+      "city": "Bareilly",
+      "ridge_alpha": 0.1,
+      "ridge_val_mae": 0.00745508999236578,
+      "shrink_lambda": 1.0,
+      "shrink_val_mae": 0.00745508999236578,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.019999995827674866,
+      "gate_val_mae": 0.00761364425200668,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.009584320573769192,
+      "train_mean_kw": 0.19898530364110642,
+      "movement_tert_low": 0.008000001311302185,
+      "movement_tert_high": 0.035999998450279236
+    },
+    {
+      "meter": "BR11",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.13258906714189322,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.13030916329143374,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.18399999290704727,
+      "gate_val_mae": 0.13298829053794534,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.12831075388686303,
+      "train_mean_kw": 0.29259960377470606,
+      "movement_tert_low": 0.023999996483325958,
+      "movement_tert_high": 0.08799999952316284
+    },
+    {
+      "meter": "BR12",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.1492595691324211,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.13830371302184455,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.25200000405311584,
+      "gate_val_mae": 0.14008238116530794,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.13776165109666225,
+      "train_mean_kw": 0.514325770073264,
+      "movement_tert_low": 0.015999995172023773,
+      "movement_tert_high": 0.047999992966651917
+    },
+    {
+      "meter": "BR13",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.04796326706114716,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.04625664195903287,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.12399999052286148,
+      "gate_val_mae": 0.046458356092483964,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.04623730956948861,
+      "train_mean_kw": 0.18055027803598528,
+      "movement_tert_low": 0.003999993205070496,
+      "movement_tert_high": 0.019999980926513672
+    },
+    {
+      "meter": "BR15",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.09837198491828783,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.09540512886734706,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.17199993133544922,
+      "gate_val_mae": 0.09705701483207435,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.09533969925517766,
+      "train_mean_kw": 0.2993454223546849,
+      "movement_tert_low": 0.007999986410140991,
+      "movement_tert_high": 0.0560000017285347
+    },
+    {
+      "meter": "BR16",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.01096129096923455,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.010427399322322775,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.03999999165534973,
+      "gate_val_mae": 0.010477361612314124,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.010476960915651772,
+      "train_mean_kw": 0.04573092760013727,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.007999993860721588
+    },
+    {
+      "meter": "BR18",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.22518197024227543,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.21702424862631733,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.7399999797344208,
+      "gate_val_mae": 0.21730617195746435,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.21681186477878442,
+      "train_mean_kw": 0.5089218112543938,
+      "movement_tert_low": 0.02399998903274536,
+      "movement_tert_high": 0.09999999403953552
+    },
+    {
+      "meter": "BR19",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.03177196485976435,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.028935177819872104,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.10799998044967651,
+      "gate_val_mae": 0.03015337866236636,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.029785899614177082,
+      "train_mean_kw": 0.10982971040544165,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.03200000524520874
+    },
+    {
+      "meter": "BR22",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.09234614670628065,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.08914757275240678,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.07199997454881668,
+      "gate_val_mae": 0.08979066778066296,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.08929840195100087,
+      "train_mean_kw": 0.3464653827076949,
+      "movement_tert_low": 0.012000001966953278,
+      "movement_tert_high": 0.05199992656707764
+    },
+    {
+      "meter": "BR24",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.21463123506205528,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.21066215561364585,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.6320000290870667,
+      "gate_val_mae": 0.21385489089373774,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.21024174852453653,
+      "train_mean_kw": 0.6018881731937527,
+      "movement_tert_low": 0.040000006556510925,
+      "movement_tert_high": 0.11600000411272049
+    },
+    {
+      "meter": "BR27",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.022819706341135563,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.021631630579631404,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.02000001072883606,
+      "gate_val_mae": 0.02203056484843498,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.02176749608922732,
+      "train_mean_kw": 0.05229227394051843,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0040000006556510925
+    },
+    {
+      "meter": "BR28",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06017558891914814,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.059556786047566354,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.07599999010562897,
+      "gate_val_mae": 0.06013491454603353,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.05979935319855999,
+      "train_mean_kw": 0.2965725539743712,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.06000000238418579
+    },
+    {
+      "meter": "BR29",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.05301872660210371,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.05233039504262713,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.13599998503923416,
+      "gate_val_mae": 0.05243857886089606,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.05230815649363949,
+      "train_mean_kw": 0.29270945651294467,
+      "movement_tert_low": 0.0040000081062316895,
+      "movement_tert_high": 0.04000002145767212
+    },
+    {
+      "meter": "BR30",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.03687852271660545,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.03646747927744096,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.07599999755620956,
+      "gate_val_mae": 0.03639278058868355,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.03648923642586042,
+      "train_mean_kw": 0.15429581732590897,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.02399998903274536
+    },
+    {
+      "meter": "BR31",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.15353840654480033,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.14683629790667724,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.17599999252706766,
+      "gate_val_mae": 0.14728964402943934,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.1472286445033801,
+      "train_mean_kw": 0.5202884519496492,
+      "movement_tert_low": 0.008000001311302185,
+      "movement_tert_high": 0.08400002121925354
+    },
+    {
+      "meter": "BR32",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.11165150105489337,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.10762683420161465,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.335999995470047,
+      "gate_val_mae": 0.1083822739470847,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.10819684311114514,
+      "train_mean_kw": 0.3547370971065335,
+      "movement_tert_low": 0.0040000081062316895,
+      "movement_tert_high": 0.08799993991851807
+    },
+    {
+      "meter": "BR33",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.04288907744153049,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.041469745977591205,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.1159999929368496,
+      "gate_val_mae": 0.0414238890269848,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.04146593874609307,
+      "train_mean_kw": 0.12654557741137107,
+      "movement_tert_low": 0.003999998793005943,
+      "movement_tert_high": 0.02799999713897705
+    },
+    {
+      "meter": "BR34",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.02625225919647361,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.024465664119695425,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.07999999867752194,
+      "gate_val_mae": 0.02466776628701496,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.024576913433066436,
+      "train_mean_kw": 0.12439526381515771,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.008000001311302185
+    },
+    {
+      "meter": "BR35",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.21855948358371774,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.21116620848286,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.3999999761581421,
+      "gate_val_mae": 0.21204976509254864,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.21128298348037788,
+      "train_mean_kw": 0.4113125005232358,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.10400000214576721
+    },
+    {
+      "meter": "BR36",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.17720333566014143,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.17427406933806927,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.05200004577636719,
+      "gate_val_mae": 0.1749140364538047,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.17444440206756803,
+      "train_mean_kw": 0.3796431591950701,
+      "movement_tert_low": 0.019999980926513672,
+      "movement_tert_high": 0.09600001573562622
+    },
+    {
+      "meter": "BR37",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.14819462933578684,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.1426417407546326,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.3479999750852585,
+      "gate_val_mae": 0.143527006052481,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.14240191269959926,
+      "train_mean_kw": 0.44047137225654437,
+      "movement_tert_low": 0.02400001883506775,
+      "movement_tert_high": 0.09200000762939453
+    },
+    {
+      "meter": "BR38",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.3025242029873783,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.29414957068877856,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.5879999995231628,
+      "gate_val_mae": 0.29658445376996134,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.29338710249218414,
+      "train_mean_kw": 0.5959803755636321,
+      "movement_tert_low": 0.019999995827674866,
+      "movement_tert_high": 0.1120000034570694
+    },
+    {
+      "meter": "BR39",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.023884334706948854,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.02256796020247864,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.08799999952316284,
+      "gate_val_mae": 0.022792650779920248,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.022652740459137528,
+      "train_mean_kw": 0.11821045781874928,
+      "movement_tert_low": 0.003999978303909302,
+      "movement_tert_high": 0.008000001311302185
+    },
+    {
+      "meter": "BR43",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.022446159369043064,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.021104898563877084,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.0559999942779541,
+      "gate_val_mae": 0.0213743287067019,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.021193630507490773,
+      "train_mean_kw": 0.07604018552157665,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0040000081062316895
+    },
+    {
+      "meter": "BR44",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.009345832819313149,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.008667855156783283,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.020000003278255463,
+      "gate_val_mae": 0.008745122016369311,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.00866785545098805,
+      "train_mean_kw": 0.03256201878719225,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0
+    },
+    {
+      "meter": "BR45",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.19165740750495577,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.18661859707421832,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.47599998116493225,
+      "gate_val_mae": 0.18623608575940567,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.18565666100740782,
+      "train_mean_kw": 0.5342643359979176,
+      "movement_tert_low": 0.019999995827674866,
+      "movement_tert_high": 0.09200000762939453
+    },
+    {
+      "meter": "BR46",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.013488990306393951,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.01186545329470238,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.07199999690055847,
+      "gate_val_mae": 0.012293687762691014,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.01204081806931504,
+      "train_mean_kw": 0.06746364567486185,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.00800000037997961
+    },
+    {
+      "meter": "BR48",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.015300506857373788,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.014425173829366686,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.06799999624490738,
+      "gate_val_mae": 0.014561454992449919,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.014554679234752373,
+      "train_mean_kw": 0.11376233037903098,
+      "movement_tert_low": 0.003999993205070496,
+      "movement_tert_high": 0.01199999451637268
+    },
+    {
+      "meter": "BR49",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.13104355616923213,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.12678233885586684,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.2760000228881836,
+      "gate_val_mae": 0.12785402137751328,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.12670132059773,
+      "train_mean_kw": 0.40584684342161614,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.052000001072883606
+    },
+    {
+      "meter": "BR50",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06093520993869688,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.05749605915382136,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.14800000190734863,
+      "gate_val_mae": 0.05831190452540067,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.05720046136199424,
+      "train_mean_kw": 0.20958814146547528,
+      "movement_tert_low": 0.01199999451637268,
+      "movement_tert_high": 0.035999998450279236
+    },
+    {
+      "meter": "BR51",
+      "city": "Bareilly",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.23234886429051912,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.2257226681379894,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.4119999408721924,
+      "gate_val_mae": 0.22857846025913287,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.2260076639154107,
+      "train_mean_kw": 0.670029394485314,
+      "movement_tert_low": 0.040000006556510925,
+      "movement_tert_high": 0.11599999666213989
+    },
+    {
+      "meter": "MH01",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.05940261941268706,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.05585331779555553,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.12799999248236418,
+      "gate_val_mae": 0.05618647292633254,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.05601770325020685,
+      "train_mean_kw": 0.20575418568726692,
+      "movement_tert_low": 0.0040000081062316895,
+      "movement_tert_high": 0.040000006556510925
+    },
+    {
+      "meter": "MH03",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.08033079006277542,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.07905096651893985,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.012000001966953278,
+      "gate_val_mae": 0.08015727428206249,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.07897921965503693,
+      "train_mean_kw": 0.1658508200782556,
+      "movement_tert_low": 0.003999978303909302,
+      "movement_tert_high": 0.035999998450279236
+    },
+    {
+      "meter": "MH06",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.09709520336465868,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.08973093870160091,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.171999990940094,
+      "gate_val_mae": 0.0902936631867042,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.09020253452817258,
+      "train_mean_kw": 0.2604147577580495,
+      "movement_tert_low": 0.01199999451637268,
+      "movement_tert_high": 0.04400000721216202
+    },
+    {
+      "meter": "MH07",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.07960031778995491,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.07399794792348591,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.2200000137090683,
+      "gate_val_mae": 0.07326131227828621,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0745791090554392,
+      "train_mean_kw": 0.4659957754217713,
+      "movement_tert_low": 0.01199999451637268,
+      "movement_tert_high": 0.056000073750813804
+    },
+    {
+      "meter": "MH08",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.05583496606459111,
+      "shrink_lambda": 0.75,
+      "shrink_val_mae": 0.055695071808207576,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.03200000524520874,
+      "gate_val_mae": 0.05512038038612839,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.055839195106554426,
+      "train_mean_kw": 0.2235689903642032,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.0560000017285347
+    },
+    {
+      "meter": "MH09",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06396831077639689,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.05717030980039368,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.08799999952316284,
+      "gate_val_mae": 0.058805325267885525,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.057241004613228924,
+      "train_mean_kw": 0.1687912118885343,
+      "movement_tert_low": 0.004000000189989805,
+      "movement_tert_high": 0.019999995827674866
+    },
+    {
+      "meter": "MH10",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.1491565643892256,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.1483789219413672,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.06800007820129395,
+      "gate_val_mae": 0.1504866294725055,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.14830756107634438,
+      "train_mean_kw": 0.761705469970469,
+      "movement_tert_low": 0.03999999910593033,
+      "movement_tert_high": 0.10799998044967651
+    },
+    {
+      "meter": "MH11",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.12406651025959936,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.12027008261266643,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.09200000762939453,
+      "gate_val_mae": 0.12231163866679937,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.12009924351144138,
+      "train_mean_kw": 0.5257845443519289,
+      "movement_tert_low": 0.008000016212463379,
+      "movement_tert_high": 0.06000000238418579
+    },
+    {
+      "meter": "MH12",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.032755926498283926,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.03178940347797901,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.03599999891594052,
+      "gate_val_mae": 0.03166111363425555,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0318037098160586,
+      "train_mean_kw": 0.16084071526433089,
+      "movement_tert_low": 0.003999999724328518,
+      "movement_tert_high": 0.02000000001862645
+    },
+    {
+      "meter": "MH15",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06124947261820044,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.06017376469660214,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.024000000208616257,
+      "gate_val_mae": 0.060815526424784765,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.06006720063015512,
+      "train_mean_kw": 0.17642540087101255,
+      "movement_tert_low": 0.012000001966953278,
+      "movement_tert_high": 0.04399999976158142
+    },
+    {
+      "meter": "MH17",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.040749227912714986,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.0363521578891568,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.06399999558925629,
+      "gate_val_mae": 0.03520909948931444,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.03649913664744567,
+      "train_mean_kw": 0.06865649222524238,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0040000006556510925
+    },
+    {
+      "meter": "MH18",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06400782804123449,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.06144170267499331,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.24400001764297485,
+      "gate_val_mae": 0.06088899421471396,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0616235552493454,
+      "train_mean_kw": 0.2748532721197427,
+      "movement_tert_low": 0.0040000081062316895,
+      "movement_tert_high": 0.03999999910593033
+    },
+    {
+      "meter": "MH20",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.03347703527865687,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.030108709838826846,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.03999999910593033,
+      "gate_val_mae": 0.03011284825509377,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.030088083717432452,
+      "train_mean_kw": 0.06683390116525059,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0040000006556510925
+    },
+    {
+      "meter": "MH21",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.10920028120597398,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.10744288832490671,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.0960000017657876,
+      "gate_val_mae": 0.10842176475074466,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.10728805071300244,
+      "train_mean_kw": 0.4336293921143066,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.07200001180171967
+    },
+    {
+      "meter": "MH22",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.1623483543875167,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.15655483917573526,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.46800005435943604,
+      "gate_val_mae": 0.15611936010982222,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.15682965352156977,
+      "train_mean_kw": 0.5894450180102688,
+      "movement_tert_low": 0.01600000262260437,
+      "movement_tert_high": 0.08399999141693115
+    },
+    {
+      "meter": "MH23",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.12361909557804279,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.12012891843613614,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.17999997735023499,
+      "gate_val_mae": 0.120196537551045,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.12015382382347832,
+      "train_mean_kw": 0.5923377695215818,
+      "movement_tert_low": 0.02399998903274536,
+      "movement_tert_high": 0.06399998068809509
+    },
+    {
+      "meter": "MH24",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.13912112221017936,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.13428945671193687,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.49599987268447876,
+      "gate_val_mae": 0.13534238537490456,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.13478697310321816,
+      "train_mean_kw": 0.6765553670573186,
+      "movement_tert_low": 0.02799999713897705,
+      "movement_tert_high": 0.09200000762939453
+    },
+    {
+      "meter": "MH25",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.13114510723439493,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.12781459595487626,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.29200002551078796,
+      "gate_val_mae": 0.12673099599818496,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.1276845212956143,
+      "train_mean_kw": 0.40402652041044357,
+      "movement_tert_low": 0.02399998903274536,
+      "movement_tert_high": 0.08399999141693115
+    },
+    {
+      "meter": "MH26",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.048004085008427955,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.04512276364126134,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.1679999977350235,
+      "gate_val_mae": 0.04515475736569074,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.04572548105354536,
+      "train_mean_kw": 0.23918206209083162,
+      "movement_tert_low": 0.007999999448657036,
+      "movement_tert_high": 0.052000001072883606
+    },
+    {
+      "meter": "MH27",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.1279875882781067,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.11756426566165813,
+      "gate_percentile": 75,
+      "gate_tau_kw": 0.1599999964237213,
+      "gate_val_mae": 0.12171621894064945,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.12065174032009914,
+      "train_mean_kw": 0.8688185275629314,
+      "movement_tert_low": 0.012000024318695068,
+      "movement_tert_high": 0.09600001573562622
+    },
+    {
+      "meter": "MH28",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.01312633746684936,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.012421093259633857,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.09599998593330383,
+      "gate_val_mae": 0.01256627617006241,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.012524227794457315,
+      "train_mean_kw": 0.19873988144711816,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.019999995827674866
+    },
+    {
+      "meter": "MH30",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.03688877391472033,
+      "shrink_lambda": 0.5,
+      "shrink_val_mae": 0.036604220447136356,
+      "gate_percentile": 50,
+      "gate_tau_kw": 0.008000001311302185,
+      "gate_val_mae": 0.03636298300786914,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0366527768020234,
+      "train_mean_kw": 0.1296135154185384,
+      "movement_tert_low": 0.004000000189989805,
+      "movement_tert_high": 0.024000003933906555
+    },
+    {
+      "meter": "MH31",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.006834287246577337,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.006084084084296638,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.07199999690055847,
+      "gate_val_mae": 0.006129051554414053,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 0.0001
+      },
+      "huber_val_mae": 0.006489702535519818,
+      "train_mean_kw": 0.1377642388591759,
+      "movement_tert_low": 0.003999996930360794,
+      "movement_tert_high": 0.01599999889731407
+    },
+    {
+      "meter": "MH35",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.09348870067390551,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.08973812379875368,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.19999998807907104,
+      "gate_val_mae": 0.09015257477134189,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.0900611335860166,
+      "train_mean_kw": 0.2729597877767289,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.04399999976158142
+    },
+    {
+      "meter": "MH36",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.1462113946792218,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.14176211302901437,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.40400000661611557,
+      "gate_val_mae": 0.14229173043200818,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.14215371472372473,
+      "train_mean_kw": 0.6721679479035767,
+      "movement_tert_low": 0.016000032424926758,
+      "movement_tert_high": 0.08800005912780762
+    },
+    {
+      "meter": "MH37",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.0906539495961998,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.08670683787573763,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.20799994468688965,
+      "gate_val_mae": 0.08258523497334389,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.08682249361195901,
+      "train_mean_kw": 0.20013541702055843,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.03200000524520874
+    },
+    {
+      "meter": "MH41",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.02852000714501918,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.02729410167837155,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.06800000369548798,
+      "gate_val_mae": 0.02736600919596964,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.02750351384018042,
+      "train_mean_kw": 0.10076063445410625,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.008000001311302185
+    },
+    {
+      "meter": "MH42",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.06441783626580565,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.059423268591532914,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.19600000977516174,
+      "gate_val_mae": 0.05989780921759048,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.059990926492097536,
+      "train_mean_kw": 0.28791933626843524,
+      "movement_tert_low": 0.0040000081062316895,
+      "movement_tert_high": 0.04800000786781311
+    },
+    {
+      "meter": "MH43",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.18092246481962218,
+      "shrink_lambda": 0.25,
+      "shrink_val_mae": 0.17418708592546225,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.312000036239624,
+      "gate_val_mae": 0.1769785907611173,
+      "huber": {
+        "epsilon": 1.75,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.1742489545437384,
+      "train_mean_kw": 0.5085655245490008,
+      "movement_tert_low": 0.03999999165534973,
+      "movement_tert_high": 0.10400000214576721
+    },
+    {
+      "meter": "MH45",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.14928192933696477,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.14187959613728734,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.5519999835640192,
+      "gate_val_mae": 0.14409542628346017,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.14325999596732797,
+      "train_mean_kw": 0.5343567712034201,
+      "movement_tert_low": 0.02399998903274536,
+      "movement_tert_high": 0.10800004005432129
+    },
+    {
+      "meter": "MH46",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.03798527836148342,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.036034928019626676,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.15199999511241913,
+      "gate_val_mae": 0.03618944280107442,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.03639221348226404,
+      "train_mean_kw": 0.21952773082468766,
+      "movement_tert_low": 0.0040000006556510925,
+      "movement_tert_high": 0.02800000086426735
+    },
+    {
+      "meter": "MH47",
+      "city": "Mathura",
+      "ridge_alpha": 100.0,
+      "ridge_val_mae": 0.02821416348808737,
+      "shrink_lambda": 0.0,
+      "shrink_val_mae": 0.02604816157611764,
+      "gate_percentile": 90,
+      "gate_tau_kw": 0.09200000017881393,
+      "gate_val_mae": 0.026480919798140802,
+      "huber": {
+        "epsilon": 1.35,
+        "alpha": 1.0
+      },
+      "huber_val_mae": 0.026073966340532457,
+      "train_mean_kw": 0.0711119195480217,
+      "movement_tert_low": 0.0,
+      "movement_tert_high": 0.0040000081062316895
+    }
+  ],
+  "shrink_global_lambda": 0.25,
+  "summary": {
+    "experiment": "015",
+    "elapsed_sec": 18.852345857001637,
+    "eligible_meters": 68,
+    "meters_total": 84,
+    "test_rows": 835410,
+    "zero_change_max_abs_diff": 0.0,
+    "alignment_max_abs_diff": 0.0,
+    "shrink_global_lambda": 0.25,
+    "validation_selected_model": "shrink_meter",
+    "selected_beats_persistence_on_validation": true,
+    "selected_test_MAE": 0.10701137713724387,
+    "persistence_test_MAE": 0.10744719838755948,
+    "competent_under_013_rule": true,
+    "reproduction_014": {
+      "compared": true,
+      "experiment_014_ridge_delta_MAE": 0.1107844000525177,
+      "experiment_015_ridge_delta_MAE": 0.11078440005251777,
+      "abs_diff": 6.938893903907228e-17,
+      "match_tol_1e-6": true
+    },
+    "huber_failures": [],
+    "inference": "Wilcoxon and bootstrap use one MAE per meter, not individual 15-minute rows.",
+    "not_tested": [
+      "SLP",
+      "ToD",
+      "BESS",
+      "calendar-cycle ridge",
+      "load-lag ridge",
+      "horizons other than H=1"
+    ],
+    "macro_median_MAE_persistence": 0.0548593995200793,
+    "macro_median_MAE_selected": 0.0557244877035038,
+    "shrink_meter_lambda_counts": {
+      "0.25": 26,
+      "0.5": 8,
+      "1.0": 1,
+      "0.0": 32,
+      "0.75": 1
+    },
+    "shrink_meter_meters_better": 26,
+    "shrink_meter_meters_worse": 10,
+    "shrink_meter_meters_tie": 32,
+    "interpretation": "Pooled test MAE can fall slightly while the median meter does not improve. The Experiment 013 band allows a median MAE up to 5% worse than persistence; meeting that band is not a meter-wide win."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "n_tests": 11,
+  "n_pass": 11,
+  "tests": [
+    {
+      "test": "zero_capacity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "zero_power",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "unclipped_energy_identity",
+      "pass": true,
+      "detail": "0.0"
+    },
+    {
+      "test": "clipped_grid_residual_exp033_lp",
+      "pass": true,
+      "detail": "curtail=1.8974kWh residual=1.8974"
+    },
+    {
+      "test": "exp034_failure_reproduced",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "milp_no_curtail_balance",
+      "pass": true,
+      "detail": "1.5543122344752192e-15"
+    },
+    {
+      "test": "milp_cyclic_soc",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "milp_exclusivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "rule_no_curtail_balance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "offline_cyclic_isolated_peak_infeasible",
+      "pass": true,
+      "detail": "soc_final=0.3946"
+    },
+    {
+      "test": "offline_cyclic_cluster0_medoid",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

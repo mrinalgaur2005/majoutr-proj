@@ -1,0 +1,25 @@
+{
+  "experiment": "022",
+  "command": "python3 scripts/run_experiment_022.py",
+  "elapsed_sec": 0.00981821400091576,
+  "input_hashes": {
+    "readme": "bdfb5f9f62b16d35640484943ff99251d7e1b049b1c852e28ce89766d35d99b4",
+    "research_log": "05c2a5961d359e2c572f72f771fffe4e60fcc52b4fa474fd02db24f2c680b1b0",
+    "synopsis_pdf": "da7df279e80e56f7976ce7ae28f79247e981af8724f4591c515ba55de032e00d",
+    "exp020_protocol": "a723939fc7ba98d5441bf1e95fc61f64d6c15917d5356c7d765a8c4b82a341c6",
+    "synopsis_align": "c1eedbecd0766abe6448d9042c175478ab98550b60f8200cab23a3340d0c2d24",
+    "exp021_summary": "696f9663c74211c76a4a0b32278c04e310ead9fca31af49c388e2c79a9071c12",
+    "exp020b_summary": "aaa13a8a828e95c3b40f6573472635e56a8e8075d8c32b53192ca357d24dbc33",
+    "cer_checklist": "f58f27d535572a5c0e772b1e765416c9b7c60c7dd98fb14028addc5681a2bf41",
+    "goiener_readme": "ecd7d53f561c50d41098abf538639565f32aabab6afa996931bd458a5e597e6d",
+    "meta": "2c1e5e3a141b613365b39d78b777c3518fc9161f69696d32759c8311fa8d1861"
+  },
+  "persistence_mae_micro_ref": 192.80903012546014,
+  "goiener_expand_recommended": false,
+  "cer_critical_path": true,
+  "slp_benefit_claim_defensible": false,
+  "tod_feasible": "descriptive_only",
+  "bess_feasible": false,
+  "next_action": "Submit/monitor CER ISSDA; obtain GoiEner field definitions; adopt protocol v2 in decision log",
+  "project_completion_estimate": "PARTIAL \u2014 core synopsis forecasting not demonstrated"
+}

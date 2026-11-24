@@ -1,0 +1,62 @@
+{
+  "experiment": "031",
+  "date": "2026-11-24",
+  "exp030_persistence_test_mae": 0.4360807860750077,
+  "exp030_reproduction_ok": {
+    "persistence_val_match": true,
+    "f0_val_match": true,
+    "persistence_test_computed": true
+  },
+  "validation_ranking": {
+    "hgb": 0.45694775675661076,
+    "hod_mean": 0.6689229810728359,
+    "persistence": 0.4349227959857723,
+    "ridge": 0.46977390318340795,
+    "sn168": 0.6892450841993014,
+    "sn24": 0.6016227984011794,
+    "svr_f0": 0.46261503214942373,
+    "svr_tuned": 0.4541045911505867,
+    "train_mean": 0.7017359403146406,
+    "wd_hod_mean": 0.6665301805615738
+  },
+  "test_ranking": {
+    "hgb": 0.45192640898157227,
+    "hod_mean": 0.6148796375750514,
+    "persistence": 0.4360807860750077,
+    "ridge": 0.464052303027787,
+    "sn168": 0.631563036260989,
+    "sn24": 0.5899680612879921,
+    "svr_f0": 0.4537101109006222,
+    "svr_tuned": 0.4456761106410145,
+    "train_mean": 0.6412362773384579,
+    "wd_hod_mean": 0.6118883015414471
+  },
+  "frozen_baseline": {
+    "selected_model": "persistence",
+    "criterion": "lowest_validation_macro_mae",
+    "validation_macro_mae": 0.4349227959857723,
+    "persistence_val_mae": 0.4349227959857723,
+    "svr_f0_val_mae": 0.46261503214942373,
+    "recommendation": "Use persistence as frozen baseline for future SLP work",
+    "frozen_date": "2026-11-24",
+    "feature_set_future_slp": "Evaluate SLP on top of frozen baseline, not SVR alone"
+  },
+  "svr_tuning": {
+    "best": {
+      "kernel": "rbf",
+      "C": 1.0,
+      "epsilon": 0.1,
+      "gamma": "scale"
+    },
+    "tune_subset_val_mae": 0.4728714393401484,
+    "n_households": 40
+  },
+  "pooled_ridge": {
+    "pooled_ridge_val_macro_mae": 0.49253174559563323,
+    "city_onehot_dim": 5
+  },
+  "svr_useful_fraction_val": 0.3890845070422535,
+  "elapsed_sec": 584.8756628029987,
+  "python": "3.12.3",
+  "jobs": 4
+}

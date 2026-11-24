@@ -1,0 +1,25 @@
+{
+  "experiment": "024A",
+  "date": "2026-11-24",
+  "command": "python3 scripts/run_experiment_024a.py",
+  "audit_status": "COMPLETE_WITH_BLOCKERS",
+  "tests_passed": 10,
+  "tests_failed": 0,
+  "tests_blocked": [
+    "J_spring_forward",
+    "J_fall_back"
+  ],
+  "cross_profile_leakage_demonstrated": true,
+  "recommended_f1": "causal_category_template_timestamp_lt_origin",
+  "h1_definition": "t_target = t_origin + delta_native; exact row match",
+  "seasonal_naive": "y(t_target - 24 hours) with exact timestamp lookup",
+  "slp_slot": "slot_target",
+  "timezone_status": "BLOCKED_naive_timestamps_only",
+  "protocol_ready_for_approval": false,
+  "approval_blockers": [
+    "DEC-024A-01 human approval",
+    "CER timestamp convention unverified",
+    "GoiEner/CER IANA timezone undocumented"
+  ],
+  "test_exit_code": 0
+}

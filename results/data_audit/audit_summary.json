@@ -1,0 +1,76 @@
+{
+  "source": "Agrawal et al., Harvard Dataverse DOI 10.7910/DVN/GOCHJH",
+  "raw_directory": "/home/mrinalgaur/Desktop/majou-proj/data/raw/ceew_mathura_bareilly",
+  "raw_files": [
+    {
+      "name": "CEEW -  ReadMe.txt",
+      "bytes": 4436,
+      "sha256": "2673d62300081036425d1842f4f99f9c90f9137a76fef22c2e32c962007a8e13"
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2019.tab",
+      "bytes": 145477114,
+      "sha256": "94520e99e65df85c5e954f946017d6dcf4cc80597d0c665d2f275875793e0b70"
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2020.csv",
+      "bytes": 345593108,
+      "sha256": "a23334d84b93a1620186358e48c2744ad0281057581eea47243b8f2549bcbc58"
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly 2021.csv",
+      "bytes": 192682564,
+      "sha256": "0648ba7aadc5abe69d3b4427f6e9e9d45c2721d8566a7a78003916dce2eb4df5"
+    },
+    {
+      "name": "CEEW - Smart meter data Bareilly Aggregated.tab",
+      "bytes": 1006555,
+      "sha256": "79af0383e93a619231b0a92a814023b26b6dfcbb89831f2dcb3cf19a0e0d0b9e"
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2019.csv",
+      "bytes": 175494264,
+      "sha256": "c09380165e114e7028bbd1a937e08ba7938a2f99e9e41c61e1b606b669afcbe4"
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2020.csv",
+      "bytes": 182625294,
+      "sha256": "e77ddf845b7d00ff1e206556e5657480507cc25a6d0600d6f129dc0c01470c53"
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura 2021.tab",
+      "bytes": 27261599,
+      "sha256": "197e7cf9c2aaa4ae480e880f820f4449584889debed95f8cda8a8e79950cae11"
+    },
+    {
+      "name": "CEEW - Smart meter data Mathura Aggregated.tab",
+      "bytes": 594593,
+      "sha256": "5e04a03993eb86c8de967c1fc9b3af996d63e9e0d4fadc1e377a53b46fb25ec7"
+    }
+  ],
+  "rows": 21845497,
+  "unique_meters": 84,
+  "rows_by_city": {
+    "Bareilly": 13946703,
+    "Mathura": 7898794
+  },
+  "missing_values": {
+    "interval_energy_kwh": 0,
+    "voltage_v": 0,
+    "current_a": 0,
+    "frequency_hz": 0,
+    "load_kw": 0
+  },
+  "negative_values": {
+    "interval_energy_kwh": 0,
+    "voltage_v": 0,
+    "current_a": 0,
+    "frequency_hz": 0,
+    "load_kw": 0
+  },
+  "zero_values": {
+    "interval_energy_kwh": 3550039
+  },
+  "extreme_load_kw_threshold": 50.0,
+  "extreme_load_kw_rows": 0
+}

@@ -1,0 +1,45 @@
+{
+  "experiment": "015",
+  "elapsed_sec": 18.852345857001637,
+  "eligible_meters": 68,
+  "meters_total": 84,
+  "test_rows": 835410,
+  "zero_change_max_abs_diff": 0.0,
+  "alignment_max_abs_diff": 0.0,
+  "shrink_global_lambda": 0.25,
+  "validation_selected_model": "shrink_meter",
+  "selected_beats_persistence_on_validation": true,
+  "selected_test_MAE": 0.10701137713724387,
+  "persistence_test_MAE": 0.10744719838755948,
+  "competent_under_013_rule": true,
+  "reproduction_014": {
+    "compared": true,
+    "experiment_014_ridge_delta_MAE": 0.1107844000525177,
+    "experiment_015_ridge_delta_MAE": 0.11078440005251777,
+    "abs_diff": 6.938893903907228e-17,
+    "match_tol_1e-6": true
+  },
+  "huber_failures": [],
+  "inference": "Wilcoxon and bootstrap use one MAE per meter, not individual 15-minute rows.",
+  "not_tested": [
+    "SLP",
+    "ToD",
+    "BESS",
+    "calendar-cycle ridge",
+    "load-lag ridge",
+    "horizons other than H=1"
+  ],
+  "macro_median_MAE_persistence": 0.0548593995200793,
+  "macro_median_MAE_selected": 0.0557244877035038,
+  "shrink_meter_lambda_counts": {
+    "0.25": 26,
+    "0.5": 8,
+    "1.0": 1,
+    "0.0": 32,
+    "0.75": 1
+  },
+  "shrink_meter_meters_better": 26,
+  "shrink_meter_meters_worse": 10,
+  "shrink_meter_meters_tie": 32,
+  "interpretation": "Pooled test MAE can fall slightly while the median meter does not improve. The Experiment 013 band allows a median MAE up to 5% worse than persistence; meeting that band is not a meter-wide win."
+}

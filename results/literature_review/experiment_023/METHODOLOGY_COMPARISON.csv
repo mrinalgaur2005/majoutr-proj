@@ -1,0 +1,10 @@
+doi,uses_slp,uses_svr,categories,horizon,baselines,metrics,relevance
+10.1002/er.3048,yes,yes,Mixed residential feeder,24h ahead (hourly models),Neural networks,MAPE,Foundational SLP+SVR STLF
+10.25046/aj040530,yes,yes,Aggregate system load,7–30 day,SVR without SLP,MAPE,Direct SLP+SVR synopsis analogue
+10.3390/app11020500,yes,no,Residential vs agricultural/industrial/commercial,Profiling not 1-step STLF,Single LP per category,Clustering quality,Category-specific profile motivation
+10.1145/3208903.3208923,indirect,yes,Residential clusters,30 minutes ahead,Unclustered models,Accuracy metrics,Category/cluster features for STLF
+10.1049/oap-cired.2021.0236,yes,no,"Domestic, COM, industrial, agricultural",Demand characterisation,Single profile per category,Shape accuracy,Agricultural + residential shape separation
+10.3390/app12199844,no,no,Residential,Day-ahead profile,Naive weekly profile,Forecast accuracy,Naive/persistence benchmarking practice
+10.1007/s40595-018-0119-7,no,no,District feeders,Hourly short-term,Naive hourly,MAPE,Persistence/naive strength
+10.5281/zenodo.22313409,N/A,N/A,CNAE division metadata,Hourly native,N/A,N/A,Track A data semantics
+10.7929/ISSDA/BX59EU,N/A,N/A,Residential and SME trial,30-minute intervals,N/A,N/A,Track B residential synopsis

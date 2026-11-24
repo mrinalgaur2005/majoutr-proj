@@ -1,0 +1,10 @@
+{
+  "selected_model": "persistence",
+  "criterion": "lowest_validation_macro_mae",
+  "validation_macro_mae": 0.4349227959857723,
+  "persistence_val_mae": 0.4349227959857723,
+  "svr_f0_val_mae": 0.46261503214942373,
+  "recommendation": "Use persistence as frozen baseline for future SLP work",
+  "frozen_date": "2026-11-24",
+  "feature_set_future_slp": "Evaluate SLP on top of frozen baseline, not SVR alone"
+}

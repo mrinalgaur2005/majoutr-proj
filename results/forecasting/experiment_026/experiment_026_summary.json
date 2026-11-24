@@ -1,0 +1,12 @@
+{
+  "experiment": "026",
+  "date": "2026-11-24",
+  "demand_downloaded": true,
+  "sha256_demand": "ba2e64e5d08de6fffc56450d3e920c86f954c6fd7af8416704e05b414a705fce",
+  "n_rows": 14913408,
+  "eligible_households": 1136,
+  "p2_structurally_feasible": true,
+  "exp024_authorized": false,
+  "forecasting_run": false,
+  "elapsed_sec": 32.23361398899942
+}

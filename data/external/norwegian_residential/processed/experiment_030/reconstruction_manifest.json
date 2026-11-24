@@ -1,0 +1,12 @@
+{
+  "dtype": "float64",
+  "shape": [
+    1136,
+    13128
+  ],
+  "n_cells_written": 14913408,
+  "duplicate_conflicts": 0,
+  "sha256_file": "ceb0039738ff30a04162b76a7e9e6a0446ffcda63e27dee5ae6729228d918a3d",
+  "sha256_payload": "9a750db30644b36b6c7f05ff99ee6d3a1cdf2dd9e5365948033b5ac20e0b10b0",
+  "created": "2026-11-24"
+}

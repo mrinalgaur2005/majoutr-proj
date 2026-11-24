@@ -1,0 +1,75 @@
+{
+  "coverage_over_100_meters": [
+    {
+      "meter_id": "BR49",
+      "rows": 382908,
+      "unique_timestamps": 369120,
+      "expected_3min_grid": 376800,
+      "row_coverage_percent": 101.621,
+      "unique_coverage_percent": 97.9618,
+      "exact_duplicate_timestamps": 13788,
+      "three_min_slots_with_two_rows": 13788,
+      "within_chunk_duplicate_count_in_meter_quality": 0
+    },
+    {
+      "meter_id": "BR50",
+      "rows": 450240,
+      "unique_timestamps": 294240,
+      "expected_3min_grid": 322560,
+      "row_coverage_percent": 139.5833,
+      "unique_coverage_percent": 91.2202,
+      "exact_duplicate_timestamps": 156000,
+      "three_min_slots_with_two_rows": 156000,
+      "within_chunk_duplicate_count_in_meter_quality": 0
+    },
+    {
+      "meter_id": "BR51",
+      "rows": 532320,
+      "unique_timestamps": 360960,
+      "expected_3min_grid": 369120,
+      "row_coverage_percent": 144.2133,
+      "unique_coverage_percent": 97.7893,
+      "exact_duplicate_timestamps": 171360,
+      "three_min_slots_with_two_rows": 171360,
+      "within_chunk_duplicate_count_in_meter_quality": 0
+    }
+  ],
+  "meter_level_k2": [
+    {
+      "normalization": "peak",
+      "k": 2,
+      "n_meters": 83,
+      "min_complete_days": 14,
+      "silhouette": 0.36502179705547716,
+      "cluster_sizes": "[37, 46]"
+    },
+    {
+      "normalization": "energy",
+      "k": 2,
+      "n_meters": 83,
+      "min_complete_days": 14,
+      "silhouette": 0.557311509338738,
+      "cluster_sizes": "[77, 6]"
+    }
+  ],
+  "temporal": [
+    {
+      "normalization": "peak",
+      "k": 2,
+      "cutoff": "2020-05-21",
+      "n_early": 21313,
+      "n_late": 21324,
+      "ari_early_model_vs_refit_late": 0.8298990701490947,
+      "late_predicted_sizes": "[10640, 10684]"
+    },
+    {
+      "normalization": "energy",
+      "k": 2,
+      "cutoff": "2020-05-21",
+      "n_early": 21313,
+      "n_late": 21324,
+      "ari_early_model_vs_refit_late": 0.6189640899914364,
+      "late_predicted_sizes": "[8988, 12336]"
+    }
+  ]
+}

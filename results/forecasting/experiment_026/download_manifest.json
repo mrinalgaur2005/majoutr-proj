@@ -1,0 +1,18 @@
+{
+  "doi": "10.5281/zenodo.7856848",
+  "version": "v1",
+  "license": "CC-BY-4.0",
+  "files": {
+    "demand.csv": {
+      "url": "https://zenodo.org/records/7856848/files/demand.csv",
+      "size_bytes": 362648777,
+      "md5": "672406cca9ecc3cf1dc7b9c8dacea840",
+      "sha256": "ba2e64e5d08de6fffc56450d3e920c86f954c6fd7af8416704e05b414a705fce",
+      "downloaded": "2026-11-24"
+    },
+    "households.csv": {
+      "sha256": "01edb1e3e1976f4c57921462f3ef17cfa6c21230566612ea82e752c492dec2fb",
+      "local_since": "2025-11-24"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "experiment": "021",
+  "elapsed_sec": 155.13196037000125,
+  "command": "python3 scripts/run_experiment_021.py",
+  "n_profiles": 15,
+  "reproduce_020b_ok": true,
+  "persistence_mae_micro": 192.80903012546014,
+  "decision": {
+    "can_trust_020b": true,
+    "persistence_valid_benchmark": true,
+    "svr_adequate": false,
+    "slp_constructed_correctly_no_leakage": true,
+    "poor_performance_drivers": [
+      "high_zero_fraction",
+      "linear_persistence_strong",
+      "svr_over_smooths_peaks",
+      "shared_category_template"
+    ],
+    "expand_85_justified": false,
+    "fixes_before_scale": [
+      "document flag with publisher",
+      "regime-aware metrics",
+      "per-profile or refined SLP",
+      "feature audit on spikes"
+    ],
+    "next_experiment_recommendation": "021G design-only or CER track \u2014 NOT auto-started",
+    "experiment_class": "B",
+    "slp_evidence_class_020b": "B_small_uncertain"
+  },
+  "input_hashes": {
+    "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_020a/predictions/test_predictions.parquet": "287dfced44c38ee420ce3bb667241c47d4132a5d7fb4e9f4a7f01f86bd257fe6",
+    "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_020b/predictions/aligned_test_predictions.parquet": "ad362a965e43d47453a2d9efd3de1a6b2f3b7ba0a36ffa315341f3dbf84385c3",
+    "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_020b/aligned_micro_metrics.csv": "c87f6dcdcc41dafad3d5daabd1fde9c7b242309d4843b6bfe038c839998159f7"
+  }
+}

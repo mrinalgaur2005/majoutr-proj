@@ -1,0 +1,76 @@
+Traceback (most recent call last):
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 602, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 535, in main
+    feat = feature_integrity_tests(Y, ids, hours, dow, slots, cat_psum, cat_pcnt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 343, in feature_integrity_tests
+    if np.allclose(X0, X1):
+       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/numpy/core/numeric.py", line 2241, in allclose
+    res = all(isclose(a, b, rtol=rtol, atol=atol, equal_nan=equal_nan))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/numpy/core/numeric.py", line 2351, in isclose
+    return within_tol(x, y, atol, rtol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/numpy/core/numeric.py", line 2332, in within_tol
+    return less_equal(abs(x-y), atol + rtol * abs(y))
+                          ~^~
+ValueError: operands could not be broadcast together with shapes (200,6) (200,7) 
+Traceback (most recent call last):
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 598, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 533, in main
+    elig = len(eligible_origins(N_ROWS, *splits(N_ROWS)))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: eligible_origins() takes 3 positional arguments but 4 were given
+Forecasting...
+  forecast 100/1136
+Preparing SLP indices...
+Forecasting...
+  forecast 200/1136
+  forecast 300/1136
+  forecast 400/1136
+  forecast 500/1136
+  forecast 600/1136
+  forecast 700/1136
+  forecast 800/1136
+  forecast 900/1136
+  forecast 1000/1136
+  forecast 1100/1136
+  forecast 1136/1136
+Traceback (most recent call last):
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 873, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 808, in main
+    stats_d = aggregate_stats(met)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mrinalgaur/Desktop/majou-proj/scripts/run_experiment_030.py", line 515, in aggregate_stats
+    boots = [np.mean(d1[rng.integers(0, len(d1), len(d1))]) for _ in range(BOOT_B)]
+                     ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/series.py", line 1072, in __getitem__
+    return self._get_with(key)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/series.py", line 1099, in _get_with
+    return self.loc[key]
+           ~~~~~~~~^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 1153, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 1382, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 1322, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 1520, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 6179, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: '[434, 375, 853, 891, 652, 144, 575, 462, 640, 658, 649, 992, 379, 98, 781, 843, 518, 931, 322, 748, 890, 35, 704, 912, 683, 814, 46, 711, 377, 429, 627, 199, 729, 66, 963, 813, 1002, 421, 459, 832, 825, 93, 457, 528, 859, 517, 752, 1039, 600, 679, 574, 349, 317, 1000, 423, 367, 214, 49, 244, 45, 165, 537, 932, 836, 217, 803, 506, 230, 899, 862, 570, 917, 236, 1007, 1028, 1113, 926, 589, 352, 324, 419, 116, 721, 866, 815, 869, 939, 882, 780, 298, 285, 140, 965, 1131, 276, 290, 480, 279, 482, 896, 448, 369, 227, 969, 701, 995, 731, 876, 321, 903, 886, 972, 160, 159, 622, 179, 41, 734, 241, 826, 564, 578, 1132, 778, 489, 834, 1104, 1073, 1015, 458, 753, 806, 678, 128, 95, 139, 1008, 91, 944, 507, 831, 256, 101, 601, 867, 955, 354, 216, 697, 590, 499, 449, 487, 1, 759, 596, 55, 163, 108, 854, 857, 187, 608, 47, 801, 782, 81, 399, 420, 786, 490, 16, 295, 84, 315, 964, 747, 283, 835, 432, 38, 267, 1121, 138, 208, 618, 856, 984, 723, 887, 113, 481, 381, 852, 617, 546, 26, 657, 121, 178, 1056, 710, 1116, 1038, 975, 717, 43, 28, 427, 532, 728, 426, 131, 1035, 681, 841, 1066, 973, 502, 137, 662, 906, 203, 897, 543, 176, 486, 1052, 1022, 1021, 201, 431, 403, 1091, 602, 1093, 439, 171, 443, 864, 817, 714, 749, 769, 666, 198, 684, 415, 373, 234, 1019, 473, 624, 371, 770, 153, 65, 961, 533, 793, 981, 3, 1058, 645, 406, 358, 211, 117, 132, 407, 630, 794, 996, 292, 735, 25, 797, 17, 1065, 20, 933, 757, 343, 1100, 812, 1009, 348, 948, 656, 1088, 1105, 1061, 94, 435, 779, 90, 22, 333, 172, 270, 591, 1084, 659, 988, 213, 390, 951, 73, 1108, 78, 228, 765, 271, 162, 54, 233, 1029, 243, 675, 189, 136, 474, 289, 1119, 1032, 654, 1086, 582, 695, 5, 219, 941, 320, 905, 438, 577, 844, 764, 112, 549, 1051, 892, 282, 351, 145, 566, 461, 644, 594, 664, 1087, 655, 491, 168, 581, 604, 1057, 790, 558, 526, 222, 1014, 89, 968, 959, 761, 1133, 881, 967, 13, 51, 754, 865, 763, 994, 193, 409, 329, 32, 286, 588, 71, 303, 255, 252, 146, 586, 311, 742, 755, 560, 497, 1005, 436, 607, 863, 124, 938, 309, 970, 767, 672, 296, 99, 323, 494, 452, 824, 272, 920, 493, 410, 580, 868, 833, 966, 673, 27, 297, 130, 492, 1045, 726, 556, 87, 605, 762, 1054, 587, 985, 488, 254, 40, 878, 1018, 237, 246, 839, 861, 370, 445, 1044, 737, 325, 250, 336, 942, 635, 21, 553, 1024, 907, 523, 550, 1072, 33, 186, 1036, 475, 181, 895, 766, 733, 104, 629, 875, 980, 154, 693, 374, 708, 0, 307, 1047, 378, 8, 235, 915, 956, 302, 416, 464, 53, 361, 362, 209, 345, 368, 284, 364, 161, 422, 1068, 775, 522, 524, 732, 223, 563, 837, 258, 971, 158, 184, 326, 661, 685, 380, 1042, 1074, 1127, 440, 353, 946, 148, 177, 962, 545, 74, 129, 727, 1016, 503, 188, 42, 838, 909, 610, 626, 950, 611, 405, 446, 746, 147, 4, 6, 1124, 1082, 1112, 667, 218, 463, 889, 240, 934, 1120, 1025, 412, 982, 14, 485, 800, 998, 840, 744, 15, 787, 974, 1041, 614, 689, 118, 552, 816, 983, 937, 724, 261, 197, 705, 1094, 703, 1026, 97, 453, 904] not in index'

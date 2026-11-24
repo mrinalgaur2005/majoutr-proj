@@ -1,0 +1,6 @@
+model,n_test,n_actual_zero,n_actual_lt_1,n_actual_lt_10,mape_eps_rule
+arima_101,53244,11634,11634,17703,"denom = max(|y|, 1.0)"
+persistence,53244,11634,11634,17703,"denom = max(|y|, 1.0)"
+seasonal_lag24,53244,11634,11634,17703,"denom = max(|y|, 1.0)"
+svr_category_slp,53244,11634,11634,17703,"denom = max(|y|, 1.0)"
+svr_no_slp,53244,11634,11634,17703,"denom = max(|y|, 1.0)"

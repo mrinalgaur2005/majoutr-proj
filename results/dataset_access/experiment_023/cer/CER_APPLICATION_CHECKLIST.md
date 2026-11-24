@@ -1,0 +1,9 @@
+- [ ] ISSDA Dataverse account
+- [ ] Confirm EEA/adequacy eligibility
+- [ ] Download current request form (Terms tab)
+- [ ] List full research team
+- [ ] Supervisor signature (if student)
+- [ ] Institutional signature
+- [ ] Email issda@ucd.ie
+- [ ] Store approval email in CER_CORRESPONDENCE_LOG.md
+- [ ] Download to `data/external/cer/raw/` (not in 023)

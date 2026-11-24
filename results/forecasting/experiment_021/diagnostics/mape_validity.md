@@ -1,0 +1,1 @@
+Near-zero actuals (|y|<1.0): 11634/53244 (21.9%). Synopsis MAPE<8% not meaningful without regime restriction. WAPE/MAE primary.

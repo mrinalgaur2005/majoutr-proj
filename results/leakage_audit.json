@@ -1,0 +1,7 @@
+{
+  "test_holdout_before_tuning": true,
+  "scaler_inside_cv_pipeline": true,
+  "SLP_fit_on_training_only": true,
+  "lags_are_past_only": true,
+  "warning": "Cubic spline interpolation is global/non-causal and can use future observations. It remains a documented limitation; use causal imputation for deployment claims."
+}

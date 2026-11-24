@@ -1,0 +1,9 @@
+{
+  "approval_date": "2026-11-24",
+  "authority": "human_researcher",
+  "binding_protocol_path": "results/forecasting/experiment_024c/protocol_v2_1_final_approval_candidate.md",
+  "approved_decisions": ["DEC-024C-01", "DEC-024C-02", "DEC-024C-03"],
+  "design_approved": true,
+  "execution_authorized": false,
+  "superseded_routes": ["DEC-024-01", "DEC-024A-01", "DEC-024B-01"]
+}

@@ -1,0 +1,40 @@
+{
+  "meters": [
+    "BR49",
+    "BR50",
+    "BR51"
+  ],
+  "duplicated_timestamps": 341148,
+  "by_meter": {
+    "BR49": {
+      "duplicated_timestamps": 13788,
+      "exact_measurement_matches": 13788,
+      "conflicting_measurements": 0,
+      "energy_conflicts": 0,
+      "max_abs_energy_diff_kwh": 0.0,
+      "source_file_pairs": {
+        "CEEW - Smart meter data Bareilly 2020.csv": 13788
+      }
+    },
+    "BR50": {
+      "duplicated_timestamps": 156000,
+      "exact_measurement_matches": 156000,
+      "conflicting_measurements": 0,
+      "energy_conflicts": 0,
+      "max_abs_energy_diff_kwh": 0.0,
+      "source_file_pairs": {
+        "CEEW - Smart meter data Bareilly 2020.csv": 156000
+      }
+    },
+    "BR51": {
+      "duplicated_timestamps": 171360,
+      "exact_measurement_matches": 171360,
+      "conflicting_measurements": 0,
+      "energy_conflicts": 0,
+      "max_abs_energy_diff_kwh": 0.0,
+      "source_file_pairs": {
+        "CEEW - Smart meter data Bareilly 2020.csv": 171360
+      }
+    }
+  }
+}

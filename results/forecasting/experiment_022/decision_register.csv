@@ -1,0 +1,7 @@
+decision_id,statement
+DEC-022,Adopt forecasting_protocol_v2 + metric_framework before any new training
+DEC-022,GoiEner 85-profile extract: NO-GO default
+DEC-022,CER ISSDA: critical path for residential synopsis category
+DEC-022,No SLP benefit claim for publication from 020–021 ag pilot alone
+DEC-022,ToD/BESS remain design-only
+DEC-022,"MAPE<8% reported for synopsis compliance only, not model selection"

@@ -1,0 +1,14 @@
+[
+  {
+    "case": "empty",
+    "peak_reduction_kw": 0.032
+  },
+  {
+    "case": "full",
+    "peak_reduction_kw": 0.04300000000000001
+  },
+  {
+    "case": "zero_capacity",
+    "peak_reduction_kw": 0.0
+  }
+]

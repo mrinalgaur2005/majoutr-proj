@@ -1,0 +1,29 @@
+{
+  "experiment": "024B",
+  "date": "2026-11-24",
+  "command": "python3 scripts/run_experiment_024b.py",
+  "audit_status": "DESIGN_APPROVAL_CANDIDATE",
+  "tests_passed_024b": 16,
+  "tests_failed_024b": 0,
+  "tests_blocked": [
+    "Policy_C_availability_field",
+    "DST_timezone_disambiguation"
+  ],
+  "protocol_ready_for_approval": true,
+  "execution_ready": false,
+  "decisions_proposed": [
+    "DEC-024B-01",
+    "DEC-024B-02",
+    "DEC-024B-03",
+    "DEC-024B-04",
+    "DEC-024B-05"
+  ],
+  "approval_blockers_execution": [
+    "CER ISSDA access",
+    "CER timestamp manifest",
+    "GoiEner cons/flag semantics",
+    "IANA timezone"
+  ],
+  "dec_024a_01_status": "superseded_for_review_by_DEC-024B-01",
+  "test_exit_code": 0
+}

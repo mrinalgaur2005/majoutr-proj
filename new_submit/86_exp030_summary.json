@@ -1,0 +1,61 @@
+{
+  "experiment": "030",
+  "classification": "CORRECTED_NORWEGIAN_RESIDENTIAL",
+  "date": "2026-11-24",
+  "source_verified": true,
+  "reconstruction_gate": true,
+  "feature_integrity": true,
+  "n_households": 1136,
+  "p2_eligible_origins_per_hh": 12957,
+  "p2_reference_027_median": 12957.0,
+  "forecasting": {
+    "val": {
+      "F0": 0.46264027725843254,
+      "F1": 0.48128988782848386,
+      "F2": 0.47107919680545335
+    },
+    "test": {
+      "F0": 0.4538011864767435,
+      "F1": 0.4636030907004844,
+      "F2": 0.4589168413667629
+    },
+    "persistence_val": 0.4349227959857723,
+    "F1_minus_F0_wilcoxon_p": 1.2673576229285762e-136,
+    "F1_minus_F0_mean": 0.01864961057005133,
+    "F1_improve_frac": 0.15316901408450703,
+    "F0_competency_pass_rate": 0.49471830985915494,
+    "F1_improve_frac_val": 0.15316901408450703,
+    "bootstrap_F1_delta_ci": [
+      0.017019787519257656,
+      0.020301016875813472
+    ],
+    "F1_competency": 0.4119718309859155,
+    "F2_competency": 0.4498239436619718
+  },
+  "robustness_exclude_hh18": {
+    "val": {
+      "F0": 0.46273172203084406,
+      "F1": 0.4813857341373378,
+      "F2": 0.4711498764433294
+    },
+    "test": {
+      "F0": 0.45374155860122123,
+      "F1": 0.46347779023374136,
+      "F2": 0.4588080518498438
+    },
+    "persistence_val": 0.4349144917803804,
+    "F1_minus_F0_wilcoxon_p": 1.958108924972672e-136,
+    "F1_minus_F0_mean": 0.018654012106493797,
+    "F1_improve_frac": 0.15330396475770924,
+    "F0_competency_pass_rate": 0.49427312775330395,
+    "F1_improve_frac_val": 0.15330396475770924,
+    "bootstrap_F1_delta_ci": [
+      0.017042155225393606,
+      0.02034260596857478
+    ],
+    "F1_competency": 0.41145374449339206,
+    "F2_competency": 0.44933920704845814
+  },
+  "exp028_interpretation": "028 F1 superiority claim invalid; 030 is authoritative for corrected SLP",
+  "elapsed_sec": 9.021728047999204
+}

@@ -1,0 +1,9 @@
+scenario_id,meter_id,date,cluster,found_in_ceew,energy_residual_max
+cluster0_lower,MH38,2019-09-30,0,True,0.0
+cluster0_typical,MH39,2019-10-07,0,True,8.881784197001252e-16
+cluster0_higher,MH36,2019-08-27,0,True,3.552713678800501e-15
+cluster0_medoid,BR29,2020-09-06,0,True,1.7763568394002505e-15
+cluster1_lower,BR13,2021-01-14,1,True,0.0
+cluster1_typical,BR50,2021-03-09,1,True,0.0
+cluster1_higher,BR31,2020-09-05,1,True,0.0
+cluster1_medoid,MH31,2019-11-07,1,True,2.220446049250313e-15

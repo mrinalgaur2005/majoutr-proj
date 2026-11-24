@@ -1,0 +1,11 @@
+quality_class,model,n
+flag_nonzero,arima_101,29808
+flag_nonzero,persistence,29808
+flag_nonzero,seasonal_lag24,29808
+flag_nonzero,svr_category_slp,29808
+flag_nonzero,svr_no_slp,29808
+flag_zero,arima_101,23436
+flag_zero,persistence,23436
+flag_zero,seasonal_lag24,23436
+flag_zero,svr_category_slp,23436
+flag_zero,svr_no_slp,23436

@@ -1,0 +1,26 @@
+```json
+{
+  "row_level_predictions_stored_exp030": false,
+  "per_household_metrics_available": true,
+  "duplicate_id_split_model": 0,
+  "models": [
+    "F0",
+    "F1",
+    "F2"
+  ],
+  "counts_per_model_split": {
+    "test|F0": 1136,
+    "test|F1": 1136,
+    "test|F2": 1136,
+    "val|F0": 1136,
+    "val|F1": 1136,
+    "val|F2": 1136
+  },
+  "persistence_mae_consistent_across_models": true,
+  "reproduction_checks": {
+    "persistence_val_match": true,
+    "f0_val_match": true,
+    "persistence_test_computed": true
+  }
+}
+```

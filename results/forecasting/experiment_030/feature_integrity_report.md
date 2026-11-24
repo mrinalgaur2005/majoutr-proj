@@ -1,0 +1,6 @@
+```json
+{
+  "pass": true,
+  "failures": []
+}
+```

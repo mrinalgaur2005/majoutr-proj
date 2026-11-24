@@ -1,0 +1,67 @@
+{
+  "n_households": 1136,
+  "shape": [
+    1136,
+    13128
+  ],
+  "non_finite": 0,
+  "negative": 0,
+  "max_value": 19.638,
+  "min_value": 0.0,
+  "unequal_to_csv": 0,
+  "max_abs_diff": 0.0,
+  "hh18_row": 0,
+  "hh18_old_corrupt_rows": [
+    0,
+    3,
+    7,
+    8,
+    9,
+    11,
+    13,
+    18
+  ],
+  "hh18_corruption_comparison": [
+    {
+      "row": 0,
+      "csv_col_via_new": 0.893,
+      "old_f32": 223668528.0
+    },
+    {
+      "row": 3,
+      "csv_col_via_new": 0.231,
+      "old_f32": 4.489864774406923e+21
+    },
+    {
+      "row": 7,
+      "csv_col_via_new": 0.66,
+      "old_f32": 7.683076589990296e+31
+    },
+    {
+      "row": 8,
+      "csv_col_via_new": 0.282,
+      "old_f32": 1.7177135798093349e+19
+    },
+    {
+      "row": 9,
+      "csv_col_via_new": 1.026,
+      "old_f32": 6.742565533197626e+22
+    },
+    {
+      "row": 11,
+      "csv_col_via_new": 0.471,
+      "old_f32": 1.8727951024126427e+31
+    },
+    {
+      "row": 13,
+      "csv_col_via_new": 1.068,
+      "old_f32": 2.7904159426875237e+29
+    },
+    {
+      "row": 18,
+      "csv_col_via_new": 0.515,
+      "old_f32": 1.330661074788474e+37
+    }
+  ],
+  "gate_pass": true
+}

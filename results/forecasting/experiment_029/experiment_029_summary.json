@@ -1,0 +1,205 @@
+{
+  "experiment": "029",
+  "audit_target": "028",
+  "classification": "C",
+  "classification_label": "F1 partially invalid \u2014 category pool corrupted",
+  "f1_category_slp_runtime_correct": false,
+  "heatmap_cause": "The saved snapshot `category_slp_native_slot_train_snapshot.npy` is FIGURE-ONLY. It sums train rows into slot buckets but **includes 8 corrupted float32 values** in memmap row 0 (household ID 18) at calendar rows [0,3,7,8,9,11,13,18]. Slot 90 (2020-10-01 Hour 19) reaches ~2.1e32, dominating `imshow` autoscale so other cells appear zero. **Runtime F1** uses `category_prefix()` on the same memmap, so the corrupt HH18 values also inflate **global** category cumulative means for affected slots (not just the figure).",
+  "corrupt_memmap": {
+    "memmap_path": "/home/mrinalgaur/Desktop/majou-proj/data/external/norwegian_residential/processed/demand_matrix_f32_1136.npy",
+    "n_corrupt_cells": 8,
+    "households_affected": 1,
+    "corrupt_entries": [
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 0,
+        "value": 223668528.0
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 3,
+        "value": 4.489864774406923e+21
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 7,
+        "value": 7.683076589990296e+31
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 8,
+        "value": 1.7177135798093349e+19
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 9,
+        "value": 6.742565533197626e+22
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 11,
+        "value": 1.8727951024126427e+31
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 13,
+        "value": 2.7904159426875237e+29
+      },
+      {
+        "household_index": 0,
+        "ID": 18,
+        "row_index": 18,
+        "value": 1.330661074788474e+37
+      }
+    ]
+  },
+  "saved_template_audit": {
+    "path": "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_028/category_slp_native_slot_train_snapshot.npy",
+    "shape": [
+      168
+    ],
+    "n_finite": 168,
+    "n_nonzero": 168,
+    "n_nan": 0,
+    "min": 1.1700723088810294,
+    "max": 2.1297392362171477e+32,
+    "mean": 1.2677110566470153e+30,
+    "std": 1.6382318575754453e+31,
+    "argmax_index": 90,
+    "argmax_dow_hour": [
+      3,
+      19
+    ],
+    "row_sums": [
+      35.64032028472491,
+      36.29985658688413,
+      35.850209136151,
+      2.129754575166986e+32,
+      36.11591407199523,
+      35.95394237386432,
+      35.806983669344504
+    ],
+    "col_sums_sample": [
+      3591.0841408797255,
+      11.886151983872832,
+      12.285070727443257,
+      7.186083185670492e+16,
+      12.305717457226647,
+      12.04851302313659,
+      11.569702192107435,
+      1.229685753839676e+27
+    ],
+    "purpose_note": "FIGURE ONLY \u2014 not used as F1 runtime feature; runtime uses category_prefix()",
+    "cells_finite_positive": 168,
+    "cells_below_10_kwh": 160
+  },
+  "metrics_reproduction": {
+    "val": {
+      "F0": {
+        "macro_mae_mean_household": 0.46420945306708894,
+        "n_households": 1136
+      },
+      "F1": {
+        "macro_mae_mean_household": 0.46215716086553554,
+        "n_households": 1136
+      },
+      "F2": {
+        "macro_mae_mean_household": 0.47111401454508856,
+        "n_households": 1136
+      },
+      "persistence": 0.4347784955317797
+    },
+    "test": {
+      "F0": {
+        "macro_mae_mean_household": 0.45635277039858924,
+        "n_households": 1136
+      },
+      "F1": {
+        "macro_mae_mean_household": 0.4544361058296385,
+        "n_households": 1136
+      },
+      "F2": {
+        "macro_mae_mean_household": 0.45995454303655636,
+        "n_households": 1136
+      },
+      "persistence": 0.4362776562286452
+    },
+    "matches_aggregate_json_val_f0": true
+  },
+  "stats_reproduction": {
+    "F1_minus_F0_val_mean": -0.002052292201553337,
+    "F1_minus_F0_val_median": -0.0016358094851420257,
+    "F1_improve_frac": 0.835387323943662,
+    "F2_improve_frac": 0.30545774647887325,
+    "wilcoxon_F1": {
+      "stat": 67603.0,
+      "p": 6.8308419976392785e-118
+    },
+    "wilcoxon_F2": {
+      "stat": 153317.0,
+      "p": 4.571956707298948e-53
+    },
+    "bootstrap_mean_delta_F1": {
+      "mean": -0.002052292201553337,
+      "ci_low": -0.0022839598062814647,
+      "ci_high": -0.001805939637095443
+    },
+    "matches_saved_wilcoxon_p_F1": true
+  },
+  "feature_sample_audit": {
+    "sample_household_ID": 23,
+    "memmap_vs_csv_max_abs_diff_own_y": 3.5879999818801878,
+    "f1_feature_variance_memmap_path": 2.6110631508488417e+62,
+    "f1_unique_values_sample": 500,
+    "f1_differs_from_f0_rows": 500,
+    "f2_profile_max_diff_clean_vs_memmap_y": 0.9127090875224626,
+    "f1_global_pool_uses_all_households": true,
+    "category_prefix_poisons_slots_from_hh18_corruption": true
+  },
+  "mirror_audit": {
+    "interpretation": "Track B mirrored from Track A (--finalize-only); not independent replication",
+    "files_copied": [
+      "per_household_metrics_*.csv",
+      "competency_gate_*.csv",
+      "test_predictions_sample_*.csv.gz"
+    ],
+    "max_abs_mae_diff_val_F1": 4.440892098500626e-16,
+    "identical_metrics": true,
+    "timestamp_robustness_json": {
+      "F0_val_mae_max_abs_diff": 2.220446049250313e-16,
+      "F1_val_mae_max_abs_diff": 4.440892098500626e-16,
+      "F2_val_mae_max_abs_diff": 0.0,
+      "F1_minus_F0_identical": true
+    }
+  },
+  "prediction_audit": {
+    "sample_predictions_present": true,
+    "n_rows": 39380,
+    "n_households": 20,
+    "duplicate_origin_keys": 0,
+    "columns": [
+      "track",
+      "ID",
+      "origin_index",
+      "Date",
+      "Hour",
+      "y_true",
+      "pred_persistence",
+      "pred_F0",
+      "pred_F1",
+      "pred_F2"
+    ],
+    "note": "Full-cohort predictions not saved; metrics recomputable only from per_household_metrics CSV"
+  },
+  "f1_improvement_reproducible_from_saved_csv": true,
+  "exp028_conclusions_remain_valid": false,
+  "corrected_experiment_recommended": true,
+  "recommendation": "Re-ingest memmap from demand.csv; rerun F1 with clean data; keep 028 artifacts read-only"
+}

@@ -1,0 +1,36 @@
+{
+  "experiment": "024C",
+  "date": "2026-11-24",
+  "command": "python3 scripts/run_experiment_024c.py",
+  "audit_status": "FINAL_APPROVAL_CANDIDATE",
+  "populations": {
+    "P1": "six_model_common",
+    "P2": "svr_slp_primary",
+    "P3": "diagnostic"
+  },
+  "tests_passed": 13,
+  "tests_failed": 0,
+  "protocol_ready_for_approval": true,
+  "protocol_approved": true,
+  "approval_date": "2026-11-24",
+  "approved_decisions": ["DEC-024C-01", "DEC-024C-02", "DEC-024C-03"],
+  "binding_protocol_status": "APPROVED_BINDING",
+  "execution_ready": false,
+  "dec_024b_01_review": "ready_for_human_review_via_DEC-024C-01",
+  "primary_slp_estimand": "P2",
+  "primary_six_model_estimand": "P1",
+  "decisions_proposed": [
+    "DEC-024C-01",
+    "DEC-024C-02",
+    "DEC-024C-03",
+    "DEC-024C-04",
+    "DEC-024C-05"
+  ],
+  "approval_blockers_execution": [
+    "CER ISSDA",
+    "GoiEner cons/flag",
+    "IANA timezone",
+    "verified t_available"
+  ],
+  "test_exit_code": 0
+}

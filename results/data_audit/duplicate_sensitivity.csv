@@ -1,0 +1,4 @@
+meter_id,current_complete_bins,dedup_complete_bins,current_energy_kwh,dedup_energy_kwh,energy_removed_kwh,matched_days,mean_abs_daily_energy_diff_kwh
+BR49,71066,73824,10542.202,10765.502,-223.3000000000011,740,0.0
+BR50,27648,58848,1424.9360000000001,3119.0280000000002,-1694.092,288,0.0
+BR51,37920,72192,8035.596,15751.836000000001,-7716.240000000002,395,0.0

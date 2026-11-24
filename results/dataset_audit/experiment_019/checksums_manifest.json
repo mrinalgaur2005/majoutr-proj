@@ -1,0 +1,32 @@
+{
+  "files": {
+    "README.txt": "ecd7d53f561c50d41098abf538639565f32aabab6afa996931bd458a5e597e6d",
+    "SHA256SUMS.txt": "4fca9c4f64d0af3b4021506796710ad8dca1e3e237d8efb6d84eda3687c652f1",
+    "metadata_public.csv": "2c1e5e3a141b613365b39d78b777c3518fc9161f69696d32759c8311fa8d1861",
+    "profiles_part01.tar.zst": "d89722a1613a5676249bfdd11f58bd4b6b6872a7a6b6522cbf268469bde74a05"
+  },
+  "verify": {
+    "README.txt": {
+      "expected_sha256": "ecd7d53f561c50d41098abf538639565f32aabab6afa996931bd458a5e597e6d",
+      "got_sha256": "ecd7d53f561c50d41098abf538639565f32aabab6afa996931bd458a5e597e6d",
+      "match": true
+    },
+    "SHA256SUMS.txt": {
+      "expected_sha256": null,
+      "got_sha256": "4fca9c4f64d0af3b4021506796710ad8dca1e3e237d8efb6d84eda3687c652f1",
+      "match": null
+    },
+    "metadata_public.csv": {
+      "expected_sha256": "2c1e5e3a141b613365b39d78b777c3518fc9161f69696d32759c8311fa8d1861",
+      "got_sha256": "2c1e5e3a141b613365b39d78b777c3518fc9161f69696d32759c8311fa8d1861",
+      "match": true
+    },
+    "profiles_part01.tar.zst": {
+      "expected_sha256": "d89722a1613a5676249bfdd11f58bd4b6b6872a7a6b6522cbf268469bde74a05",
+      "got_sha256": "d89722a1613a5676249bfdd11f58bd4b6b6872a7a6b6522cbf268469bde74a05",
+      "match": true
+    }
+  },
+  "extract_dir": "/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/profiles_sample",
+  "archive": "/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/raw/profiles_part01.tar.zst"
+}

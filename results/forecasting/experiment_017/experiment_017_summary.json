@@ -1,0 +1,44 @@
+{
+  "experiment": "017",
+  "elapsed_sec": 6.744346651000001,
+  "audit_status": "AUDIT PASSED WITH UNRESOLVED LIMITATIONS",
+  "checks_passed": [
+    "no_duplicate_complete_bins",
+    "eligibility_matches_exp015",
+    "68_eligible_meters",
+    "no_confirmed_leakage_in_013_016_pipeline",
+    "pred15_row_count_835410",
+    "unique_pred15_keys",
+    "zero_change_equals_persistence",
+    "baseline_metrics_match_saved",
+    "weighted_per_meter_reconciles_pooled",
+    "exp015_016_predictions_aligned"
+  ],
+  "checks_failed": [],
+  "baseline": {
+    "persistence": {
+      "MAE": 0.10744719838755948,
+      "RMSE": 0.2705483721311598
+    },
+    "shrink_meter": {
+      "MAE": 0.10701137713724387,
+      "RMSE": 0.2661103449081865
+    },
+    "shrink_global": {
+      "MAE": 0.10704682295542174,
+      "RMSE": 0.26664161115143986
+    },
+    "ridge_delta": {
+      "MAE": 0.11078440005251777,
+      "RMSE": 0.26210736416138963
+    }
+  },
+  "median_meter_mae_diff_shrink_minus_pers": 0.0,
+  "n_eligible_meters": 68,
+  "n_test_rows": 835410,
+  "timestamp_unresolved": [
+    "Whether naive timestamps are IST, UTC, or another convention is not stated in CEEW ReadMe"
+  ],
+  "experiment_018_ready": true,
+  "decision": "DEC-015"
+}

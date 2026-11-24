@@ -1,0 +1,15 @@
+feature,audit_classification,in_pipeline_013_016,enters_training,enters_validation,enters_test_prediction,uses_info_after_origin_t,reconciliation
+load_lag_k,SAFE,True,indirect (as raw y),indirect,indirect,False,Investigated and used: only past load at origin t.
+delta_lag_k,SAFE,True,indirect,indirect,indirect,False,Used in 014–015 Ridge; ΔP(t) uses P(t) and P(t-1) only.
+calendar_sin_cos_slot,SAFE WITH CONDITIONS,True (013 cyclic only),yes,yes,yes,False,Target slot at t+15m is known at H=1; not future load.
+ridge_alpha,SAFE,True,yes,yes,no (frozen),False,Selected on validation MAE only.
+standard_scaler,SAFE WITH CONDITIONS,True,yes,yes,yes,False,Nested: refit train+val before test; standard in time-series CV.
+shrink_lambda_per_meter,SAFE,True,n/a,n/a (selection),yes,False,Frozen from validation before test scoring.
+shrink_lambda_global,SAFE,True,n/a,selection only,no separate model,False,Not the frozen primary baseline.
+gate_tau,SAFE,True,train percentile,validation MAE,yes,False,Uses |ΔP(t)| at origin only; 015 test worse than persistence.
+train_mean_kw,SAFE,True,no,no,no (subgroup labels only),False,Not a model input in 013–015.
+train_mean_abs_delta,SAFE,True,no,no,no,False,016 diagnostics only; rules used validation.
+movement_tertile_labels,POTENTIAL LEAKAGE,False,no,no,no,True,Audit entry describes forbidden use; subgroup labels use future |ΔP(t+1)|; not in pipeline.
+cluster_assignment_all_period,CONFIRMED LEAKAGE,False,no,no,no,True,Prohibited descriptive clustering; not in 013–016 pipeline.
+experiment_016_rule,SAFE,True,n/a,validation pooled,no new fit,False,Equals always_shrink_meter (015 forecast).
+audit_wording_conflict,na,na,na,na,na,na,"'No confirmed leakage in pipeline' means no CONFIRMED-leakage feature with in_forecasting_pipeline=True; POTENTIAL/CONFIRMED rows document hazards not used as inputs."

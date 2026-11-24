@@ -1,0 +1,13 @@
+{
+  "verified_at": "experiment_018_preimplementation",
+  "implementation_file": "src/preprocessing/aggregate_15min.py",
+  "rule_3min": "load_kw_3min = interval_energy_kwh / 0.05",
+  "rule_15min_complete": "load_kw = energy_15min_kwh / 0.25 when complete (five unique 3-minute points)",
+  "forecasting_input": "data/interim/ceew_15min_bins_dedup.parquet uses the 15-minute rule above",
+  "documentation_corrected": [
+    "results/forecasting/experiment_017/frozen_baseline_specification.md"
+  ],
+  "historical_predictions_modified": false,
+  "dataset_regenerated": false,
+  "conclusion": "Implementation is correct; earlier frozen spec line described 3-minute division only."
+}

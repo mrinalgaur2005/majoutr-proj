@@ -1,0 +1,9 @@
+feature,analysis,uses_test_outcome,median_lambda_nonzero,median_lambda0,spearman_vs_lambda,spearman_p,mannwhitney_p,mannwhitney_U,median_test_helped,median_test_not_helped,spearman_vs_test_mae_diff,note
+train_mean_load_kw,validation_lambda_choice,False,0.3229054020081067,0.18376554618756832,0.2932142352488102,0.01523786583773998,0.006260433320726696,799.0,,,,
+train_mean_load_kw,retrospective_test_mae_diff,True,,,,0.005071698109497939,,,0.4049366814819576,0.19886259199134199,-0.3361293830688269,Retrospective. Not used to choose the selection rule.
+train_mean_abs_delta,validation_lambda_choice,False,0.09735529331543102,0.045696652683763495,0.32639807419926914,0.006598080066609922,0.0026634162004590613,821.0,,,,
+train_mean_abs_delta,retrospective_test_mae_diff,True,,,,0.0018571806879847303,,,0.10778306498287182,0.04861195379226656,-0.3707324199244335,Retrospective. Not used to choose the selection rule.
+train_std_delta,validation_lambda_choice,False,0.1965633345798948,0.10771260583086698,0.2980500710757615,0.013564138235324501,0.004624132437776787,807.0,,,,
+train_std_delta,retrospective_test_mae_diff,True,,,,0.0076390025157327445,,,0.23196999532266505,0.12169782289934196,-0.32084435863027805,Retrospective. Not used to choose the selection rule.
+train_std_load,validation_lambda_choice,False,0.35641350262145977,0.1811983473669215,0.24081211771020858,0.047907559910817625,0.011571689202397512,782.0,,,,
+train_std_load,retrospective_test_mae_diff,True,,,,0.01359473796450527,,,0.37304368903960533,0.1877048294428716,-0.29795715185223987,Retrospective. Not used to choose the selection rule.

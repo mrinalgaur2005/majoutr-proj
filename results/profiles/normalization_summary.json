@@ -1,0 +1,8 @@
+{
+  "profiles_after_complete_days": 43555,
+  "profiles_nonzero_energy": 42637,
+  "profiles_for_clustering": 42637,
+  "all_zero_complete_days_excluded": 918,
+  "mean_row_variance_peak_norm": 0.050927390517757624,
+  "mean_row_variance_energy_norm": 0.00012839945676392824
+}

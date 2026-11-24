@@ -1,0 +1,4 @@
+dataset,category_validity,n_local,resolution,coverage,missingness,units,access,slp_suitable,svr_suitable,tod_suitable,bess_suitable,notes
+CEEW,No verified res/ag labels,84,15 min,2019–2021,High dup bins,kW load,LOCAL,Shape only,Persistence best,Descriptive only,BLOCKED without units bridge,Frozen supplementary
+GoiEner,CNAE-01 activity (n=100 meta),15,1 h,Multi-year,~58% flag≠0 pool,cons UNDOC,15/100 local,Yes,SVR loses vs pers,Load-shape only,BLOCKED until units,No upsample to 15m
+CER,Residential/SME codes,0,30 min,UNVERIFIED,UNVERIFIED,kWh documented,PENDING,Yes,Not tested,Possible residential,Needs access,Critical for residential track

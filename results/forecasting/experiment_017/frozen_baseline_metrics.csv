@@ -1,0 +1,2 @@
+reference,n_rows,n_meters,MAE_kW,RMSE_kW,persistence_MAE_kW,persistence_RMSE_kW,median_meter_MAE_diff,mean_meter_MAE_diff,meters_improved,meters_worsened,meters_tied
+Experiment 015 shrink_meter (frozen baseline),835410,68,0.10701137713724387,0.2661103449081865,0.10744719838755948,0.2705483721311598,0.0,-0.00032668341767638255,26,10,32

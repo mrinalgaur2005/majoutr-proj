@@ -1,0 +1,37 @@
+{
+  "experiment": "024-design",
+  "command": "python3 scripts/run_experiment_024_design.py",
+  "date": "2026-11-24",
+  "elapsed_sec": 2.2746631930003787,
+  "design_status": "DESIGN_READY_WITH_BLOCKERS",
+  "tracks": {
+    "A_goiener": "GATED",
+    "B_cer": "BLOCKED_ACCESS"
+  },
+  "protocol_final": "results/forecasting/experiment_024/forecasting_protocol_v2_1_final.md",
+  "decisions_proposed": [
+    "DEC-024-01",
+    "DEC-024-02",
+    "DEC-024-03",
+    "DEC-024-04",
+    "DEC-024-05",
+    "DEC-024-06"
+  ],
+  "inspected_files": [
+    "results/forecasting/experiment_022/forecasting_protocol_v2.md",
+    "results/dataset_audit/experiment_023/forecasting_protocol_v2_1.md",
+    "scripts/run_experiment_020_forecast.py",
+    "results/forecasting/experiment_021/experiment_021_summary.json"
+  ],
+  "figures": [
+    "exp024_design_workflow.png",
+    "exp024_dual_track.png",
+    "exp024_split_leakage.png",
+    "exp024_readiness.png",
+    "exp024_slp_workflow.png",
+    "exp024_model_comparison.png",
+    "exp024_synopsis_dependencies.png"
+  ],
+  "ready_to_execute": false,
+  "next_human_action": "Approve DEC-024-01; submit CER ISSDA (DEC-024-02); optionally send GoiEner query"
+}

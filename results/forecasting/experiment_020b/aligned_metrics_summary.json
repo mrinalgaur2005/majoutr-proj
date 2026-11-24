@@ -1,0 +1,116 @@
+{
+  "micro": [
+    {
+      "model": "arima_101",
+      "aggregation": "micro",
+      "MAE": 510.98049544034507,
+      "RMSE": 891.0810735661795,
+      "MAPE_pct": 4288.177436370553,
+      "WAPE_pct": 84.21970357889256,
+      "R2": 0.3287411054904473,
+      "n": 53244,
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "persistence",
+      "aggregation": "micro",
+      "MAE": 192.80903012546014,
+      "RMSE": 528.679556191651,
+      "MAPE_pct": 311.47607731029825,
+      "WAPE_pct": 31.778745978369304,
+      "R2": 0.7637125540301166,
+      "n": 53244,
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "seasonal_lag24",
+      "aggregation": "micro",
+      "MAE": 354.64459845240776,
+      "RMSE": 843.6320908245908,
+      "MAPE_pct": 3093.6135477959033,
+      "WAPE_pct": 58.45245214649126,
+      "R2": 0.39832523439203216,
+      "n": 53244,
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "svr_category_slp",
+      "aggregation": "micro",
+      "MAE": 258.96433379828056,
+      "RMSE": 658.3461938698753,
+      "MAPE_pct": 1385.148663462926,
+      "WAPE_pct": 42.682449965534545,
+      "R2": 0.6335925691266655,
+      "n": 53244,
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "svr_no_slp",
+      "aggregation": "micro",
+      "MAE": 261.2207041628792,
+      "RMSE": 665.6634531395271,
+      "MAPE_pct": 1430.8920608706317,
+      "WAPE_pct": 43.054344480034416,
+      "R2": 0.6254023559182154,
+      "n": 53244,
+      "evaluation_population": "all_aligned"
+    }
+  ],
+  "macro": [
+    {
+      "model": "arima_101",
+      "MAE": 520.7767476240193,
+      "RMSE": 754.0098947183534,
+      "MAPE_pct": 3193.6510208977074,
+      "WAPE_pct": 103.58693067842553,
+      "R2": -0.1821774156660287,
+      "n_profiles": 15,
+      "aggregation": "macro",
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "persistence",
+      "MAE": 213.52508908327084,
+      "RMSE": 464.7861230454638,
+      "MAPE_pct": 257.8665736874912,
+      "WAPE_pct": 46.61703869014675,
+      "R2": 0.3828003450881974,
+      "n_profiles": 15,
+      "aggregation": "macro",
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "seasonal_lag24",
+      "MAE": 385.77573726276086,
+      "RMSE": 751.9262740456365,
+      "MAPE_pct": 1957.1395053587826,
+      "WAPE_pct": 84.75354028429497,
+      "R2": -0.296207862484605,
+      "n_profiles": 15,
+      "aggregation": "macro",
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "svr_category_slp",
+      "MAE": 286.9051322564375,
+      "RMSE": 584.2487785567147,
+      "MAPE_pct": 1010.1033159294752,
+      "WAPE_pct": 58.66437288439083,
+      "R2": 0.21242568714009377,
+      "n_profiles": 15,
+      "aggregation": "macro",
+      "evaluation_population": "all_aligned"
+    },
+    {
+      "model": "svr_no_slp",
+      "MAE": 288.9748436416379,
+      "RMSE": 588.3002343442943,
+      "MAPE_pct": 1050.09210392124,
+      "WAPE_pct": 58.977190763713686,
+      "R2": 0.20705154066024992,
+      "n_profiles": 15,
+      "aggregation": "macro",
+      "evaluation_population": "all_aligned"
+    }
+  ]
+}

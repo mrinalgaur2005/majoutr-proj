@@ -1,0 +1,24 @@
+{
+  "experiment": "020_audit",
+  "elapsed_sec": 17.565138566000314,
+  "gates": {
+    "GATE1_dataset_integrity_full": false,
+    "GATE1_local_integrity": true,
+    "GATE1_partial": "15/100 profiles extracted locally",
+    "GATE2_profile_quality": true,
+    "GATE3_category_validity_residential": false,
+    "GATE3_category_validity_agriculture": true,
+    "GATE3_note": "CER residential PENDING_ACCESS; not a completed two-category synopsis study.",
+    "GATE4_slp_readiness": true,
+    "GATE5_forecast_readiness": true,
+    "GATE6_evaluation_readiness": true,
+    "GATE_note": "Full 100-profile audit needs parts 02\u201306 on disk or --allow-download."
+  },
+  "n_cnae01_metadata": 100,
+  "n_cnae01_extracted": 15,
+  "cer_access": "PENDING_ACCESS",
+  "forecasting_authorized": true,
+  "agriculture_only_pilot": true,
+  "no_download_mode": true,
+  "two_category_synopsis_complete": false
+}

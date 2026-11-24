@@ -1,0 +1,2 @@
+- DEC-030-A: Rebuild matrix via RAM+np.save (open_memmap scalar write unsafe on this host).
+- DEC-030-B: Exp028 F1 claims superseded by 030 when gates pass.

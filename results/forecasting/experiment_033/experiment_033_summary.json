@@ -1,0 +1,77 @@
+{
+  "experiment": "033",
+  "date": "2026-11-24",
+  "representatives": [
+    {
+      "scenario_id": "cluster0_lower",
+      "meter_id": "MH38",
+      "date": "2019-09-30",
+      "cluster": 0,
+      "role": "lower"
+    },
+    {
+      "scenario_id": "cluster0_typical",
+      "meter_id": "MH39",
+      "date": "2019-10-07",
+      "cluster": 0,
+      "role": "typical"
+    },
+    {
+      "scenario_id": "cluster0_higher",
+      "meter_id": "MH36",
+      "date": "2019-08-27",
+      "cluster": 0,
+      "role": "higher"
+    },
+    {
+      "scenario_id": "cluster0_medoid",
+      "meter_id": "BR29",
+      "date": "2020-09-06",
+      "cluster": 0,
+      "role": "medoid"
+    },
+    {
+      "scenario_id": "cluster1_lower",
+      "meter_id": "BR13",
+      "date": "2021-01-14",
+      "cluster": 1,
+      "role": "lower"
+    },
+    {
+      "scenario_id": "cluster1_typical",
+      "meter_id": "BR50",
+      "date": "2021-03-09",
+      "cluster": 1,
+      "role": "typical"
+    },
+    {
+      "scenario_id": "cluster1_higher",
+      "meter_id": "BR31",
+      "date": "2020-09-05",
+      "cluster": 1,
+      "role": "higher"
+    },
+    {
+      "scenario_id": "cluster1_medoid",
+      "meter_id": "MH31",
+      "date": "2019-11-07",
+      "cluster": 1,
+      "role": "medoid"
+    }
+  ],
+  "n_scenarios_simulated": 320,
+  "medoid_peak_reduction_rule_5kwh_2kw": [
+    {
+      "scenario_id": "cluster0_medoid",
+      "peak_reduction_pct": 13.273195876288655,
+      "peak_reduction_kw": 0.10299999999999998
+    },
+    {
+      "scenario_id": "cluster1_medoid",
+      "peak_reduction_pct": 51.17187500000001,
+      "peak_reduction_kw": 0.131
+    }
+  ],
+  "optimization_ran": true,
+  "elapsed_sec": 2.477862471001572
+}

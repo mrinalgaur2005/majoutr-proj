@@ -1,0 +1,5 @@
+- [PASS] design documents created
+- [PASS] protocol v2.1 final (PROPOSED)
+- [PASS] no training / downloads / submissions
+- [PASS] 001-023 artifacts not modified
+- [PASS] figures 125–131

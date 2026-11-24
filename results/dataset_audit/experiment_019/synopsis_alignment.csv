@@ -1,0 +1,14 @@
+requirement,dataset,evidence_path,support_level,limitation,status
+Residential consumer category,CER_ISSDA,cer_schema_from_manifest.md,PENDING_ACCESS,GoiEner has no verified domestic CNAE label,PARTIAL
+Agricultural consumer category,GoiEner_v7.1,category_counts.csv,n_cnae_01=100,CNAE activity not tariff segment,SUPPORTED
+Two distinct synopsis categories,multi_dataset,dataset_comparison.csv,GoiEner ag + CER res,Single dataset unlikely,MULTI_TRACK
+SLP construction,GoiEner+CER,experiment_020_protocol.md,category-specific profiles,CEEW shape-only frozen,PLANNED_020
+SVR with SLP features,synopsis,experiment_020_protocol.md,designed,CEEW used Ridge for audit,PLANNED_020
+15-minute or hourly horizon,mixed,sampling_resolution_audit.csv,sample_median_min=60.0,Do not upsample,HOUR_OR_30MIN_PRIMARY
+Persistence and ARIMA baselines,synopsis,experiment_020_protocol.md,required,—,PLANNED_020
+Weather covariates,sparse,energybench_real_catalog.csv,subset-dependent,GoiEner v7.1 public metadata has no weather,PARTIAL
+Chronological 70/15/15 split,synopsis,experiment_020_protocol.md,per-consumer calendar,CEEW uses different date cutoffs (frozen),PLANNED_020
+MAPE below 8% target,synopsis,experiment_020_protocol.md,reporting target,CEEW MAE-primary track separate,TBD_020
+Category vs aggregate forecasting,synopsis,experiment_020_protocol.md,required,—,PLANNED_020
+ToD planning application,downstream,experiment_020_protocol.md,design only in 020,not in 019,PLANNED_020
+Microgrid solar-stability simulation,downstream,experiment_020_protocol.md,design only,not in 019,PLANNED_020

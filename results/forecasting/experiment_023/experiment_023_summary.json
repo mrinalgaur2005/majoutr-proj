@@ -1,0 +1,11 @@
+{
+  "experiment": "023",
+  "command": "python3 scripts/run_experiment_023.py",
+  "elapsed_sec": 1.388881943999877,
+  "papers_reviewed": 9,
+  "cer_status": "PREPARED_NOT_SUBMITTED",
+  "goiener_query_status": "DRAFT_ONLY",
+  "novelty_conclusion": "MODERATE",
+  "goiener_expand": false,
+  "next_action": "Human: complete and submit CER ISSDA request; send GoiEner query"
+}

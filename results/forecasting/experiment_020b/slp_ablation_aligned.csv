@@ -1,0 +1,2 @@
+wilcoxon_p,n_improved,n_worsened,mean_delta_mae,median_delta_mae,micro_delta_mae,bootstrap_mean_ci,bootstrap_median_ci,evaluation_population,n_profiles,n_observations_paired
+0.072998046875,10,5,-2.0697113852004216,-0.5123346296671514,-2.256370364598638,"[-5.254843117570109, 0.91446178729595]","[-4.843929588076037, 0.14096355482084277]",all_aligned,15,2048

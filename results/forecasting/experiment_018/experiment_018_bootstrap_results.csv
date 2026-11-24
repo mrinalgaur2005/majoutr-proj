@@ -1,0 +1,2 @@
+comparison,seed,n_boot,unit,median_diff,mean_diff,boot_median_ci95_low,boot_median_ci95_high,n_improved,n_worse,n_tied
+ridge_delta_cyclic_slp_vs_persistence,18,2000,meter,0.0026684168622492007,0.003860121484931713,0.0019334791066078875,0.004084613272706095,4,64,0

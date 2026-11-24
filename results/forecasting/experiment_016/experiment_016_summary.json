@@ -1,0 +1,89 @@
+{
+  "experiment": "016",
+  "elapsed_sec": 2.567042747999949,
+  "baseline_reproduced": true,
+  "reproduction": [
+    {
+      "model": "zero_change",
+      "saved_MAE": 0.1074471983875594,
+      "recomputed_MAE": 0.10744719838755948,
+      "saved_RMSE": 0.2705483721311598,
+      "recomputed_RMSE": 0.2705483721311598,
+      "mae_abs_diff": 8.326672684688674e-17,
+      "match": true
+    },
+    {
+      "model": "ridge_delta",
+      "saved_MAE": 0.1107844000525177,
+      "recomputed_MAE": 0.11078440005251777,
+      "saved_RMSE": 0.2621073641613896,
+      "recomputed_RMSE": 0.26210736416138963,
+      "mae_abs_diff": 6.938893903907228e-17,
+      "match": true
+    },
+    {
+      "model": "shrink_meter",
+      "saved_MAE": 0.1070113771372438,
+      "recomputed_MAE": 0.10701137713724387,
+      "saved_RMSE": 0.2661103449081865,
+      "recomputed_RMSE": 0.2661103449081865,
+      "mae_abs_diff": 6.938893903907228e-17,
+      "match": true
+    },
+    {
+      "model": "shrink_global",
+      "saved_MAE": 0.1070468229554217,
+      "recomputed_MAE": 0.10704682295542174,
+      "saved_RMSE": 0.2666416111514398,
+      "recomputed_RMSE": 0.26664161115143986,
+      "mae_abs_diff": 4.163336342344337e-17,
+      "match": true
+    }
+  ],
+  "counts": {
+    "n_meters": 68,
+    "n_test_rows": 835410,
+    "lambda0": 32,
+    "lambda_nonzero": 36,
+    "test_helped": 26,
+    "test_hurt": 10,
+    "test_tied": 32,
+    "val_help_test_help": 26,
+    "val_help_test_hurt": 10,
+    "val_help_test_tie": 0,
+    "lambda0_and_test_tie": 32
+  },
+  "pooled": {
+    "zero_change": {
+      "MAE": 0.10744719838755948,
+      "RMSE": 0.2705483721311598
+    },
+    "shrink_meter": {
+      "MAE": 0.10701137713724387,
+      "RMSE": 0.2661103449081865
+    },
+    "shrink_global": {
+      "MAE": 0.10704682295542174,
+      "RMSE": 0.26664161115143986
+    },
+    "ridge_delta": {
+      "MAE": 0.11078440005251777,
+      "RMSE": 0.26210736416138963
+    }
+  },
+  "median_test_mae_diff_shrink": 0.0,
+  "mean_test_mae_diff_shrink": -0.0003266834176763769,
+  "selected_rule": "always_shrink_meter",
+  "selected_rule_test_MAE": 0.10701137713724387,
+  "selected_rule_median_meter_diff": 0.0,
+  "top5_share_of_net_pooled_gain": 0.6410943713842018,
+  "seed": 16,
+  "decision": "DEC-014",
+  "not_tested": [
+    "SLP",
+    "ToD",
+    "BESS",
+    "new Ridge fits",
+    "retuned step-level gate"
+  ]
+}

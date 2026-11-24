@@ -1,0 +1,2 @@
+comparison,null,alternative,n_used,step,statistic,p_value,mae_lag_cyclic,mae_lag_cyclic_slp,mae_reduction_pct
+lag_cyclic_slp vs lag_cyclic,median paired absolute-error difference is zero,two-sided,103733,8,1655218432.0,0.0,0.556504487991333,0.518398642539978,6.84735631942749

@@ -1,0 +1,101 @@
+file_id,path,n_rows,start,end,median_interval_h,duplicate_timestamps,cons_missing,cons_negative,cons_zero,cons_median,flag_nonzero,flag_nonzero_frac,forecast_target,forecast_target_note,audit_status,extracted,archive
+00489,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/00489.csv,13655.0,2020-12-21 01:00:00,2022-07-13 00:00:00,1.0,1.0,0.0,0.0,65.0,16.0,7798.0,0.5710728670816551,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+01003,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/01003.csv,34728.0,2020-02-08 01:00:00,2024-01-25 00:00:00,1.0,4.0,0.0,0.0,437.0,1443.0,20664.0,0.5950241879751209,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+02631,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/02631.csv,23593.0,2021-05-17 01:00:00,2024-01-25 00:00:00,1.0,3.0,0.0,0.0,4409.0,31.0,14426.0,0.6114525494850167,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+02817,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/02817.csv,53928.0,2017-11-30 01:00:00,2024-01-25 00:00:00,1.0,6.0,0.0,0.0,40479.0,0.0,30912.0,0.573208722741433,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+02858,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/02858.csv,18767.0,2021-12-01 01:00:00,2024-01-22 01:00:00,1.0,2.0,0.0,0.0,2.0,231.0,10416.0,0.5550167847817978,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03095,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03095.csv,432.0,2021-06-28 01:00:00,2021-07-16 00:00:00,1.0,0.0,0.0,0.0,0.0,265.0,432.0,1.0,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03552,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03552.csv,52416.0,2018-02-01 01:00:00,2024-01-25 00:00:00,1.0,6.0,0.0,0.0,28415.0,0.0,30912.0,0.5897435897435898,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03554,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03554.csv,10488.0,2022-11-14 01:00:00,2024-01-25 00:00:00,1.0,1.0,0.0,0.0,0.0,370.0,5208.0,0.4965675057208238,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03898,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03898.csv,3769.0,2021-06-19 01:00:00,2021-11-23 00:00:00,1.0,1.0,0.0,0.0,0.0,187.0,3218.0,0.8538073759617936,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03912,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03912.csv,552.0,2023-06-01 01:00:00,2023-06-24 00:00:00,1.0,0.0,0.0,0.0,141.0,121.0,552.0,1.0,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03960,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03960.csv,34749.0,2020-02-07 01:00:00,2024-01-25 00:00:00,1.0,4.0,0.0,0.0,1.0,1006.0,20664.0,0.5946645946645946,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+03972,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/03972.csv,20113.0,2019-08-08 01:00:00,2021-11-23 00:00:00,1.0,3.0,0.0,0.0,494.0,340.0,12170.0,0.6050812907075026,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+04717,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/04717.csv,58225.0,2017-05-31 01:00:00,2024-01-25 00:00:00,1.0,7.0,0.0,0.0,204.0,250.0,34442.0,0.5915328467153285,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+04721,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/04721.csv,10392.0,2021-11-19 01:00:00,2023-01-26 00:00:00,1.0,1.0,0.0,0.0,4202.0,29.5,5208.0,0.5011547344110855,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+04949,/home/mrinalgaur/Desktop/majou-proj/data/external/goiener/interim/cnae01_profiles/profiles/04949.csv,19248.0,2020-11-01 01:00:00,2023-01-12 00:00:00,1.0,2.0,0.0,0.0,316.0,2737.0,10416.0,0.5411471321695761,cons,Harmonized hourly grid consumption (README); end-of-interval timestamp.,OK,,
+05632,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+05718,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+05778,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+05814,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+05834,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+06114,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+06191,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+06272,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+06739,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+07736,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+08412,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+08572,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+08674,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+09602,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+09757,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+10065,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+10290,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+10407,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+10872,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+11794,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+12585,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+12743,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+12943,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+13010,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+13335,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+13921,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+14097,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+14456,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+14531,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+14772,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+14879,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+15828,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+16003,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+16086,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+16444,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+16630,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+16980,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+17494,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+17656,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+17658,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+17840,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+18322,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+18478,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+19253,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+19333,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+19535,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+20018,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+20095,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+20284,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+20538,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+22213,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+23611,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+23688,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+23706,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+23948,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+24223,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+24444,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+24660,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+24667,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+24884,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+25017,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+25231,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+25771,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+26099,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+26279,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+26323,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+26898,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+27046,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+27275,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+27545,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+27835,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+28127,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+28754,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+28929,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+29133,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+29257,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30036,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30093,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30105,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30173,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30315,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30425,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30549,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30559,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK
+30567,,,,,,,,,,,,,,,MISSING,False,NOT_ON_DISK

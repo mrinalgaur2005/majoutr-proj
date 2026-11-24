@@ -1,0 +1,13 @@
+Coarse validation search on 40 HH:
+```json
+{
+  "best": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "epsilon": 0.1,
+    "gamma": "scale"
+  },
+  "tune_subset_val_mae": 0.4728714393401484,
+  "n_households": 40
+}
+```

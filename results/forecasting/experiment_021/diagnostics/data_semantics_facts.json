@@ -1,0 +1,10 @@
+{
+  "metadata_n_profiles": 28900,
+  "cnae_division_01_n": 100,
+  "local_cnae01_extracted": 15,
+  "cons_documentation": "README: 'Electricity consumption' (harmonized from SIMEL); original magnitude before normalization.",
+  "cons_units_in_readme": "not explicitly stated (no kWh label in profile README)",
+  "timestamp_convention_readme": "End-of-interval labels in source; annual matrix shifted to consumption hour (profile CSVs pre-shift stage per README)",
+  "timezone_in_readme": "not specified (naive timestamps in files)",
+  "self_gen_documentation": "README: self-consumption, generation, import/export when available"
+}

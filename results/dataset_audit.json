@@ -1,0 +1,20 @@
+{
+  "data_source": "SYNTHETIC: IndianFeederTelemetryGenerator",
+  "real_CEEW_data_present": false,
+  "meters": 6,
+  "temporal_coverage": {
+    "start": "2026-09-17 00:00:00",
+    "end": "2026-10-31 23:57:00"
+  },
+  "original_sampling_minutes": [
+    3.0
+  ],
+  "rows": 21600,
+  "missing_cells": 4523,
+  "missing_percent": 1.9036195286195288,
+  "duplicate_timestamps": 0,
+  "irregular_intervals": 0,
+  "negative_meter_values": 0,
+  "outlier_policy": "No automatic outlier removal; synthetic generator clips loads to positive values.",
+  "labels": "Generator assigns latent alternating residential/agricultural mechanisms; K-Means labels are inferred profiles, not external labels."
+}

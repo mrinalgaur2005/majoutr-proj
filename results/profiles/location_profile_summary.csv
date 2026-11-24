@@ -1,0 +1,3 @@
+city,n_profiles,n_meters,mean_daily_energy_kwh,mean_peak_load_kw,median_peak_slot
+Bareilly,26395,46,8.357323394582307,1.1758451221822315,54.0
+Mathura,16242,38,8.233742519394163,1.2275586750400198,43.0

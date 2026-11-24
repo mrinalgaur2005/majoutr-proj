@@ -1,0 +1,8 @@
+rule,validation_pooled_MAE,n_meters_on_shrink
+always_shrink_meter,0.10069760791387784,68
+shrink_if_train_abs_delta_ge_p50,0.1008141714672324,34
+shrink_if_Bareilly,0.1009218597593579,36
+shrink_if_train_abs_delta_ge_p75,0.10103170781154128,17
+shrink_if_Mathura,0.10111701089846384,32
+shrink_if_train_abs_delta_ge_p90,0.10117497505673251,7
+always_persistence,0.10134126274394391,0

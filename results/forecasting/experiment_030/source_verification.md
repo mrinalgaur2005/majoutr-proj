@@ -1,0 +1,1 @@
+Source MD5/SHA256 verified: {'demand_size_bytes': 362648777, 'md5': '672406cca9ecc3cf1dc7b9c8dacea840', 'sha256': 'ba2e64e5d08de6fffc56450d3e920c86f954c6fd7af8416704e05b414a705fce', 'matches_exp026_manifest': True, 'n_rows_csv': 14913408, 'expected_n_rows': 14913408, 'n_rows_ok': True}

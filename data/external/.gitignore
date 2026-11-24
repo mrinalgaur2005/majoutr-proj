@@ -1,0 +1,8 @@
+# Large external downloads — keep manifests/checksums in results/dataset_audit/
+goiener/raw/profiles_part*.tar.zst
+goiener/raw/profiles_extracted/
+goiener/raw/annual_consumption_raw.csv.zst
+cer/raw/
+energybench/raw/
+**/*.csv.zst
+**/*.tar.zst

@@ -1,0 +1,20 @@
+{
+  "experiment": "019",
+  "completed_at_utc": "2026-11-24T08:31:57.922665+00:00",
+  "elapsed_sec": 65.90091967900025,
+  "goiener_n_profiles_metadata": 28900,
+  "goiener_n_cnae01_agriculture": 100,
+  "cer_access": "PENDING_ACCESS",
+  "residential_and_agricultural_single_dataset": false,
+  "recommended_primary": "GoiEner_v7.1 (CNAE) + CER residential (when ISSDA approved); CEEW supplementary",
+  "decision_id": "DEC-017",
+  "validation_failed": [],
+  "figures": [
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_cnae_division_counts.png",
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_sampling_resolution_comparison.png",
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_coverage_distribution.png",
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_missingness_comparison.png",
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_example_daily_profiles_by_cnae.png",
+    "/home/mrinalgaur/Desktop/majou-proj/results/figures/dataset_019/exp019_dataset_eligibility_table.png"
+  ]
+}

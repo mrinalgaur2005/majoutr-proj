@@ -1,0 +1,21 @@
+requirement,evidence,experiments,status,remaining_work,blocking_dependency,achievability_note
+Original RQ: SLP improves short-term forecasting,020–021 ag pilot; CEEW 012–018,"020,021",PARTIAL,No beat persistence; weak SLP,GoiEner semantics + CER,NEEDS REVISION
+Residential category track,019 CER docs; 020 gates,"019,020",BLOCKED,PENDING_ACCESS,ISSDA approval,NOT STARTED
+Agricultural category track,020 pilot n=15,019–021,PARTIAL,85/100 not on disk,Publisher flag/units,NEEDS REVISION
+SVR + category SLP,020 implemented,020–021,PARTIAL,SVR not competent vs persistence,Protocol v2 + baselines,PARTIAL
+Persistence baseline,020/021 validated,020–021,COMPLETE,—,—,COMPLETE
+ARIMA baseline,020 pilot,020,PARTIAL,Poor MAE vs persistence,—,COMPLETE
+"MAPE, RMSE, R² reporting",020/020A,"020,020A",PARTIAL,MAPE unstable near zero,Metric framework v2,NEEDS REVISION
+Synopsis MAPE < 8%,020 report,020,NOT SCIENTIFICALLY JUSTIFIED,Pooled MAPE ≫8%,Report separately,NOT SCIENTIFICALLY JUSTIFIED
+Chronological 70/15/15,020 forecast code,020,COMPLETE,Per profile,—,COMPLETE
+ToD analysis,020 protocol design,019,NOT STARTED,No tariff data,Tariffs + labels,NOT STARTED
+BESS / microgrid,020 protocol design,019,NOT STARTED,Units + econ params,Semantics + tariffs,NOT STARTED
+CEEW clustering / profiles,001–011,001–011,COMPLETE,Unlabeled,—,COMPLETE
+CEEW forecasting (shrinkage),012–016,012–016,COMPLETE,Persistence wins MAE,Supplementary,COMPLETE
+External dataset audit,019,019,COMPLETE,—,—,COMPLETE
+Two-category synopsis complete,—,019,NOT STARTED,Missing residential data,CER,BLOCKED
+Publication-ready novelty review,023 NOVELTY_ASSESSMENT,023,COMPLETE,Expand paper set if publishing,—,NEEDS REVISION
+Literature review,023 PAPER_BIBLIOGRAPHY,023,COMPLETE,—,—,COMPLETE
+CER access package,023,023,PARTIAL,Human submit,ISSDA,BLOCKED
+GoiEner author query,023,023,PARTIAL,Human send,Author,BLOCKED
+Hypothesis demonstrated,020–021,020–021,NOT DEMONSTRATED,Persistence wins,Data+models,NOT DEMONSTRATED

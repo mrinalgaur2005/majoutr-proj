@@ -1,0 +1,11 @@
+{
+  "demand_md5_expected": "672406cca9ecc3cf1dc7b9c8dacea840",
+  "demand_path": "/home/mrinalgaur/Desktop/majou-proj/data/external/norwegian_residential/raw/demand.csv",
+  "n_households": 1136,
+  "n_rows_per_household": 13128,
+  "seed": 24,
+  "bootstrap_B": 5000,
+  "C_grid": [
+    10.0
+  ]
+}

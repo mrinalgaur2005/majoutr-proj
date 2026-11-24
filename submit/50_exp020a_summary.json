@@ -1,0 +1,25 @@
+{
+  "experiment": "020A",
+  "elapsed_sec": 621.7784608679995,
+  "command": "python3 scripts/run_experiment_020a.py",
+  "n_profiles": 15,
+  "decisions": {
+    "A_slp_improvement_reproducible_on_mean_MAPE": true,
+    "B_persists_MAE_RMSE_WAPE": {
+      "MAE_slp_better_count": 10,
+      "MAE_worse_count": 5,
+      "median_MAE_svr_no_slp": 246.33554303505304,
+      "median_MAE_svr_slp": 241.19996692893068,
+      "WAPE_improves_mean": true
+    },
+    "C_profiles_improved_mae": "10/15",
+    "D_any_learned_beats_persistence_mae_mean": false,
+    "E_mape_8pct_meaningful": false,
+    "E_note": "High zero/near-zero rate inflates MAPE; WAPE more stable; synopsis 8% target not met.",
+    "F_expand_85_profiles_justified": false,
+    "F_note": "No persistence beat; SLP gain marginal; need full CNAE-01 sample + CER before expand.",
+    "reproduction_checks_passed": 25,
+    "reproduction_checks_total": 25,
+    "wilcoxon_mae_diff_p": 0.072998046875
+  }
+}

@@ -1,0 +1,14 @@
+feature,definition,available_at_t,uses_future,fit_data,select_data,per_meter,classification,notes,in_forecasting_pipeline
+load_lag_k,"P(t-k+1) for k in {1,2,4,8,12,24,48,96}",True,False,n/a (raw observation),n/a,True,SAFE,Lag 1 is P(t); only past/current load at origin,True
+delta_lag_k,ΔP(t-k+1); column 0 is ΔP(t)=P(t)-P(t-1),True,False,n/a,n/a,True,SAFE,015 gate uses |ΔP(t)| only,True
+calendar_sin_cos_slot,sin/cos of 15-min slot of target time t+15m,True,False,n/a,n/a,False,SAFE WITH CONDITIONS,Known calendar of next interval at H=1; 013 cyclic model only,True
+ridge_alpha,Ridge penalty,True,False,train rows for scaler; compare alphas on validation,validation delta/load MAE,True,SAFE,Test not used for alpha,True
+standard_scaler,Per-meter StandardScaler on feature columns,True,False,train only during tuning; train+validation for final refit,validation for alpha only,True,SAFE WITH CONDITIONS,Final scaler includes validation rows before test predict — standard nested protocol,True
+shrink_lambda_per_meter,"λ in {0,0.25,0.5,0.75,1} on validation ridge delta",True,False,n/a,validation MAE of λ·Δ̂,True,SAFE,Frozen before test; λ=0 reproduces persistence,True
+shrink_lambda_global,λ minimizing pooled validation MAE,True,False,n/a,validation pooled across meters,False,SAFE,Selected 0.25; no test tuning,True
+gate_tau,Percentile of training |ΔP| for recent-movement gate,True,False,training |ΔP| distribution,"validation MAE over percentiles {50,75,90}",True,SAFE,Gate input is |ΔP(t)| at forecast time,True
+train_mean_kw,Mean load on bins before TRAIN_END,True,False,training bins only,n/a,True,SAFE,"Used for subgroup labels, not 015 model input",True
+train_mean_abs_delta,Mean |ΔP| on training origins,True,False,training origins,016 rule thresholds on validation only,True,SAFE,016 diagnostic thresholds frozen from train distribution percentiles,True
+movement_tertile_labels,|ΔP(t+1)| tertiles,False,True,cuts from train only,n/a,True,POTENTIAL LEAKAGE,Retrospective evaluation subgroup only — not a model input,False
+cluster_assignment_all_period,K-means labels from full-sample clustering,False,True,n/a,n/a,True,CONFIRMED LEAKAGE,Not used in 013–016; DEC-009 prohibits in forecasting,False
+experiment_016_rule,Validation-pooled rule choice,True,False,n/a,validation pooled MAE only,False,SAFE,Selected always_shrink_meter; equals 015 forecast,True

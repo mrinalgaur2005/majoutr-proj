@@ -1,0 +1,9 @@
+{
+  "sha256": {
+    "results/forecasting/predictions/experiment_015/test_predictions.parquet": "4b8e4cef46fe810127b4f6252d18ecb35a57f21b64e0d258702410371ccabb72",
+    "results/forecasting/experiment_015/micro_load_metrics.csv": "51429c320f4e492b0fedca381d5629a85aeb88229b9f20b101e503d359d69fa3",
+    "results/forecasting/experiment_015/model_config_015.json": "0444a52c75b8a77d83be21724e9879c9239212ad187346f3966ca1512a7814f3",
+    "results/forecasting/experiment_015/per_meter_eligibility.csv": "aa8e259e8ee3616b74c8497ba4121bd37e831e4a159ae21e4b56986d9902d3d0",
+    "results/forecasting/experiment_017/frozen_baseline_metrics.csv": "924188d47fbd55c5548927ef68312fa3f0696c80726382cbe9ee637507447953"
+  }
+}

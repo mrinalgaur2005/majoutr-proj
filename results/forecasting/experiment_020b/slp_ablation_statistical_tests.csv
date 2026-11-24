@@ -1,0 +1,4 @@
+test,population,p_value,n_profiles,mean_delta_mae
+wilcoxon_all_aligned,all_aligned,0.072998046875,15,-2.0697113852004216
+wilcoxon_flag_zero,flag_zero_only,0.38037109375,12,-0.9720346101487651
+wilcoxon_flag_nonzero,flag_nonzero_only,0.305419921875,13,-2.362705752514763

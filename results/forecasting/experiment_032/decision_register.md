@@ -1,0 +1,2 @@
+- DEC-032-A: Reuse K=2 peak clustering.
+- DEC-032-B: BESS Exp 033 uses normalized centroids + flagged units.

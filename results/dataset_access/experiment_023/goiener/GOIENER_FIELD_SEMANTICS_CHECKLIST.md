@@ -1,0 +1,7 @@
+- [ ] cons units
+- [ ] cons definition
+- [ ] timestamp convention confirmed
+- [ ] flag definition
+- [ ] flag ↔ imputation mapping
+- [ ] cross-archive schema
+- [ ] publication permission

@@ -1,0 +1,3 @@
+normalization,k,cutoff,n_early,n_late,ari_early_model_vs_refit_late,late_predicted_sizes
+peak,2,2020-05-21,21313,21324,0.8298990701490947,"[10640, 10684]"
+energy,2,2020-05-21,21313,21324,0.6189640899914364,"[8988, 12336]"

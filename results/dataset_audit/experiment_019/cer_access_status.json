@@ -1,0 +1,20 @@
+{
+  "doi": "10.7929/ISSDA/BX59EU",
+  "study_id": "0012-00",
+  "access_status": "PENDING_ACCESS",
+  "access_url": "https://www.ucd.ie/issda/data/commissionforenergyregulationcer/",
+  "restriction": "EEA and adequacy-decision countries only",
+  "interval_minutes": 30,
+  "interval_unit": "kWh per 30-minute period",
+  "category_fields": [
+    "Residential",
+    "SME",
+    "Other (allocation Code)"
+  ],
+  "agriculture_category_documented": false,
+  "literature_scale": {
+    "residential_approx": 5000,
+    "sme_approx": 650,
+    "source": "ISSDA/CESSDA abstract, not audited"
+  }
+}

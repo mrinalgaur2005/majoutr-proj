@@ -1,0 +1,6 @@
+item,status,detail
+causal_centroids_cutoff_strict,SAFE,profiles date < origin day
+no_all_period_cluster_labels,SAFE,CausalSLP refits K=2 per cutoff
+self_test_future_profile,SAFE,run_experiment_018 leakage_self_test
+energy_normalization_sensitivity,NOT_RUN,validation-only track deferred
+validation_predictions_parquet,NOT_SAVED,test predictions saved; val preds not persisted in v1 run

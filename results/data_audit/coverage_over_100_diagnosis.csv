@@ -1,0 +1,4 @@
+meter_id,rows,unique_timestamps,expected_3min_grid,row_coverage_percent,unique_coverage_percent,exact_duplicate_timestamps,three_min_slots_with_two_rows,within_chunk_duplicate_count_in_meter_quality
+BR49,382908,369120,376800,101.621,97.9618,13788,13788,0
+BR50,450240,294240,322560,139.5833,91.2202,156000,156000,0
+BR51,532320,360960,369120,144.2133,97.7893,171360,171360,0

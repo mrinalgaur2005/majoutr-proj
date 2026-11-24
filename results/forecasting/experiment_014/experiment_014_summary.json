@@ -1,0 +1,35 @@
+{
+  "experiment": "014",
+  "zero_change_equals_persistence_max_abs_diff": 0.0,
+  "eligible_meters": 68,
+  "test_rows": 835410,
+  "micro_load_MAE": {
+    "zero_change": 0.10744719838755948,
+    "ridge_delta": 0.11078440005251777,
+    "ridge_load": 0.11690353068220025,
+    "ridge_both": 0.11666060528157131,
+    "ridge_delta_cyclic": 0.11134635793793046
+  },
+  "micro_delta_MAE": {
+    "zero_change": 0.10744719838755948,
+    "ridge_delta": 0.11078440005251777,
+    "ridge_load": 0.11690353068220025,
+    "ridge_both": 0.11666060528157131,
+    "ridge_delta_cyclic": 0.11134635793793046
+  },
+  "best_model_by_micro_load_MAE": "zero_change",
+  "competency_ridge_both": {
+    "micro_ok": false,
+    "macro_ok": false,
+    "city_ok": true,
+    "competent": false
+  },
+  "meters_MAE_won_vs_persistence": {
+    "ridge_delta": 5,
+    "ridge_load": 5,
+    "ridge_both": 6,
+    "ridge_delta_cyclic": 4
+  },
+  "decision_case": "B",
+  "next_step": "Do not add SLP; residual skill may be localized to large movements only."
+}

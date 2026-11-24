@@ -1,0 +1,26 @@
+{
+  "delta_lags": [
+    "delta_lag_1",
+    "delta_lag_2",
+    "delta_lag_4",
+    "delta_lag_8",
+    "delta_lag_12",
+    "delta_lag_24",
+    "delta_lag_48",
+    "delta_lag_96"
+  ],
+  "gate_feature": "|\u0394P(t)| = |P(t)-P(t-1)|",
+  "forbidden_at_inference": [
+    "actual \u0394P(t+1)",
+    "actual P(t+1)",
+    "test error",
+    "test movement tertile"
+  ],
+  "retrospective_only": "movement_group tertiles of |\u0394P(t+1)| from each meter's training distribution",
+  "subgroups": {
+    "peak_17_21": "target timestamp hour 17 through 21 inclusive",
+    "weekend": "target timestamp dayofweek >= 5",
+    "high_load_meter": "meter training-mean load >= median of eligible meters",
+    "near_zero_load_lt_0.05": "retrospective |actual load| < 0.05 kW"
+  }
+}

@@ -1,0 +1,2 @@
+dataset,mean_numeric_missing_frac,total_negatives_sample,total_zeros_sample,imputation_in_annual_matrix,imputation_in_individual_profiles
+GoiEner_v7.1_sample,0.28315640261511255,5102,36463934,yes_documented,pre_imputation_stage

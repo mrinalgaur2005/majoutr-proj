@@ -1,0 +1,12 @@
+test_id,origin_timestamp,target_timestamp,native_resolution,partition,expected_eligibility,explanation,tags
+A1,2020-01-06 10:00,2020-01-06 11:00,hourly,train,yes,H=1 exact ts,
+C1,2020-01-01 10:00,2020-01-01 11:00,hourly,n/a,no,missing 11:00 row,gap
+D1,2020-01-01 11:00,2020-01-01 12:00,hourly,n/a,yes,exact despite earlier gap,
+G1,2020-01-03 23:00,2020-01-04 00:00,hourly,train,yes,midnight SLP target slot 120,
+K1,idx68,idx69,hourly,train,yes,same partition,
+K2,idx69,idx70,hourly,cross,no,target in val,reject
+B1,2020-03-02 08:00,2020-03-02 08:30,half_hourly,train,yes,30m H=1,
+E1,2020-01-01 10:00,2020-01-01 11:00,hourly,n/a,no,duplicate 11:00,dup
+I1,2020-03-15 12:00,2020-03-15 13:00,hourly,val,yes,causal F1 excludes B June,leakage_demo
+J1,spring-forward,n/a,hourly,blocked,blocked,timezone meta missing,DST
+J2,fall-back,n/a,hourly,blocked,blocked,timezone meta missing,DST

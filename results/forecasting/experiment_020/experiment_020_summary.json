@@ -1,0 +1,19 @@
+{
+  "experiment": "020_track_A_pilot",
+  "n_profiles": 15,
+  "no_download_mode": true,
+  "cer_track": "BLOCKED_PENDING_ACCESS",
+  "two_category_synopsis_complete": false,
+  "synopsis_mape_below_8pct": false,
+  "best_model_by_mean_MAPE": {
+    "model": "persistence",
+    "MAE": 213.52508908327084,
+    "RMSE": 464.7861230454638,
+    "MAPE_pct": 257.8665736874912,
+    "WAPE_pct": 46.61703869014675,
+    "R2": 0.3828003450881974,
+    "n_profiles": 15
+  },
+  "slp_improves_vs_svr_no_slp": true,
+  "elapsed_sec": 618.9638189969992
+}

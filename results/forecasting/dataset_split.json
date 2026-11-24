@@ -1,0 +1,20 @@
+{
+  "train": [
+    "2019-05-02 00:00:00",
+    "2020-06-30 23:45:00",
+    2109423
+  ],
+  "validation": [
+    "2020-07-01 00:00:00",
+    "2020-12-31 21:45:00",
+    891056
+  ],
+  "test": [
+    "2021-01-02 00:00:00",
+    "2021-10-31 21:45:00",
+    829864
+  ],
+  "rule": "Train bins before 2020-07-01; validation through 2020-12-31; test from 2021-01-01. Mathura ends 2021-02-20.",
+  "dedup_bins": "data/interim/ceew_15min_bins_dedup.parquet",
+  "cluster_labels_used": false
+}

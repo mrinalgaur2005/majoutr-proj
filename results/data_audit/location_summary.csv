@@ -1,0 +1,3 @@
+location,meters,total_observations,mean_coverage_percent,median_coverage_percent,total_duplicate_timestamps,total_extreme_load_kw
+Mathura,38,7898794,67.77382105263158,65.0932,0,0
+Bareilly,46,13946703,89.51192173913043,92.7621,0,0

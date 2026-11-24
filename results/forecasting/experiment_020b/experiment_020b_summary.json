@@ -1,0 +1,29 @@
+{
+  "experiment": "020B",
+  "command": "python3 scripts/run_experiment_020b.py",
+  "seed": 202,
+  "n_bootstrap": 5000,
+  "elapsed_sec": 134.35205619200133,
+  "n_profiles": 15,
+  "n_aligned_observations_per_model": 53244,
+  "decisions": {
+    "RQ1_alignment_changes_comparisons": false,
+    "RQ1_note": "020A parquet already aligned; 020 macro had mixed-origin pairing.",
+    "RQ2_macro_vs_micro_differ": true,
+    "RQ3_imputation_affects_metrics": true,
+    "RQ4_slp_on_flag_zero_mean_delta_mae": -0.9720346101487651,
+    "RQ5_leakage_free_template": true,
+    "RQ6_020a_conclusions_stand": true,
+    "persistence_strongest_mae_micro": true,
+    "slp_wilcoxon_p_all_aligned": 0.072998046875,
+    "expand_85_profiles_justified": false,
+    "slp_hypothesis_class": "B"
+  },
+  "aligned_micro_mae": {
+    "persistence": 192.80903012546014,
+    "seasonal_lag24": 354.64459845240776,
+    "arima_101": 510.98049544034507,
+    "svr_no_slp": 261.2207041628792,
+    "svr_category_slp": 258.96433379828056
+  }
+}

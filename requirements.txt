@@ -1,0 +1,12 @@
+pyarrow>=14.0.0
+numpy==1.26.4
+pandas==2.1.4
+scipy==1.11.4
+matplotlib==3.6.3
+seaborn
+scikit-learn==1.4.1.post1
+statsmodels==0.15.0
+# Optional: needed only for the legacy PyPSA dispatch scripts; unavailable in
+# the current environment, so those scripts were not represented as results.
+pypsa>=0.28
+highspy

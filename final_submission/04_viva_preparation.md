@@ -1,0 +1,358 @@
+# Viva preparation (60+ questions)
+
+Each item: **Short answer** (oral) + **Technical detail** + **Evidence**.
+
+---
+
+## A. Project overview and motivation
+
+**Q1. What is the project about?**  
+Short: Smart-meter load profiling, forecasting benchmarks, ToD analysis, and BESS peak shaving.  
+Detail: Two tracks—CEEW India for profiling/BESS; Norway for forecasting audit.  
+Evidence: `00_README.md`, Exp 001–035.
+
+**Q2. What problem does BESS address here?**  
+Short: Reduces **consumer grid-import peak** on representative days.  
+Detail: Behind-the-meter dispatch only; no network model.  
+Evidence: Exp 033–035 medoid tables.
+
+**Q3. Why smart meters?**  
+Short: 15-minute resolution reveals peaks and shapes.  
+Detail: CEEW 84 meters, 43,555 complete daily profiles.  
+Evidence: Exp 032 summary.
+
+**Q4. Did you achieve the original synopsis?**  
+Short: **Partially**—alternative evidence chain.  
+Detail: Ireland–Spain dual category **not demonstrated**; see traceability matrix.  
+Evidence: `01_synopsis_traceability.md`.
+
+**Q5. What is the main positive engineering outcome?**  
+Short: Validated BESS physics + persistence forecasting baseline.  
+Evidence: Exp 031, 035.
+
+---
+
+## B. Electrical load profiles
+
+**Q6. Define load factor.**  
+Short: Mean demand / peak demand.  
+Detail: CEEW mean LF **0.312**; cluster 0 **0.467**, cluster 1 **0.199**.  
+Evidence: Exp 032.
+
+**Q7. Define peak-to-average ratio.**  
+Short: Peak kW / mean kW.  
+Detail: Mean P2A **4.76**; cluster 1 spikier (**6.79**).  
+Evidence: Exp 032.
+
+**Q8. What is a daily load profile?**  
+Short: 96 × 15-min **kW** values per meter-day.  
+Evidence: `daily_profiles.parquet`.
+
+**Q9. Units of `load_kw`?**  
+Short: **kW** (power), from kWh/0.25 h.  
+Evidence: Exp 032 readiness JSON.
+
+**Q10. Why not normalised profiles for BESS sizing?**  
+Short: Centroids are **shape** only.  
+Detail: BESS uses physical medoid days (Exp 033 medoids).  
+Evidence: Exp 032 `bess_representative_profiles.json` disclaimer.
+
+---
+
+## C. Dataset and preprocessing
+
+**Q11. How many CEEW meters?**  
+Short: **84**.  
+Evidence: Exp 032.
+
+**Q12. Time range?**  
+Short: ~May 2019 – Oct 2021.  
+Evidence: README §3.
+
+**Q13. What is a “complete day”?**  
+Short: 96 intervals, completeness ≥ 98%, energy check.  
+Evidence: Exp 033 prep.
+
+**Q14. Norwegian data role?**  
+Short: Forecasting benchmark after CEEW gates on CER.  
+Evidence: DEC-017, Exp 026–031.
+
+**Q15. Why was Experiment 030 needed?**  
+Short: Fix corrupted demand matrix / ingest bugs.  
+Evidence: Exp 030 report.
+
+---
+
+## D. Clustering
+
+**Q16. Why K=2?**  
+Short: Stable shape split; engineering interpretability.  
+Detail: Not sole statistical optimum for all K.  
+Evidence: Clustering audit 001–010.
+
+**Q17. Why peak normalization?**  
+Short: Separate **shape** from magnitude for clustering.  
+Evidence: `cluster_centroids.csv`.
+
+**Q18. Are clusters residential vs agricultural?**  
+Short: **No.**  
+Detail: DEC research_log; no category labels.  
+Evidence: `01_synopsis_traceability.md`.
+
+**Q19. Cluster 0 vs 1 in plain terms?**  
+Short: C0 flatter/higher energy; C1 spikier/lower energy.  
+Evidence: Exp 032 cluster summaries.
+
+**Q20. How were BESS medoids chosen?**  
+Short: Minimum shape distance to centroid on **physical** days.  
+Evidence: Exp 033 representative selection.
+
+---
+
+## E. Short-term load forecasting
+
+**Q21. Forecast horizon?**  
+Short: Protocol-defined short-term (Exp 024); Norwegian hourly steps.  
+Evidence: `forecasting_protocol_v2.md`.
+
+**Q22. Primary metric?**  
+Short: **MAE** (macro over households).  
+Evidence: Exp 031.
+
+**Q23. Train/validation/test?**  
+Short: Chronological 70/15/15 style per protocol.  
+Evidence: Exp 024 approved protocol.
+
+**Q24. What is persistence?**  
+Short: Forecast = previous observed value / recent history.  
+Evidence: Exp 031 frozen baseline.
+
+**Q25. Is forecasting complete on CEEW?**  
+Short: **Frozen** at Exp 018; not final thesis headline.  
+Evidence: README.
+
+---
+
+## F. SVR and machine learning
+
+**Q26. Why SVR?**  
+Short: Synopsis specified SVR for nonlinear mapping.  
+Evidence: Synopsis PDF.
+
+**Q27. SVR test MAE?**  
+Short: **~0.446** tuned vs **0.436** persistence.  
+Evidence: Exp 031 summary.
+
+**Q28. Did tuning help?**  
+Short: Slightly vs untuned SVR, not vs persistence.  
+Evidence: Exp 031.
+
+**Q29. Overfitting risk?**  
+Short: Val/test macro used; household-level scatter checked.  
+Evidence: `exp031_pers_vs_svr_scatter.png`.
+
+**Q30. Would more data fix SVR?**  
+Short: Unclear; not tested—honest limitation.  
+Evidence: Future scope in report.
+
+---
+
+## G. Persistence and baselines
+
+**Q31. Why did persistence outperform SVR?**  
+Short: Short-horizon demand highly **persistent**; SLP adds noise.  
+Detail: Clean matrix (Exp 030); weak incremental signal.  
+Evidence: Exp 031 baseline zoo.
+
+**Q32. Was SLP consistently beneficial?**  
+Short: **No** on Norwegian cohort.  
+Evidence: Exp 030–031.
+
+**Q33. What is frozen baseline?**  
+Short: **Persistence** locked in JSON for future work.  
+Evidence: `frozen_baseline_configuration.json`.
+
+**Q34. Seasonal naive performance?**  
+Short: Worse (~0.59 test MAE).  
+Evidence: Exp 031.
+
+**Q35. Compare MAE to peak reduction?**  
+Short: Different problems—forecast error kW vs BESS peak %.  
+Evidence: Report §18 vs §19.
+
+---
+
+## H. Time-of-Day analysis
+
+**Q36. What ToD metrics did you compute?**  
+Short: Peak timing, weekday/weekend, LF, P2A.  
+Evidence: Exp 032 figures.
+
+**Q37. Tariff ToD savings?**  
+Short: **Not calculated**—no tariff.  
+Evidence: Exp 033 limitations.
+
+**Q38. Weekend vs weekday energy?**  
+Short: Similar means (~8.12 vs 8.17 kWh).  
+Evidence: Exp 032 JSON.
+
+**Q39. How does ToD link to BESS?**  
+Short: Informs representative **shapes** and thresholds.  
+Evidence: Exp 032 → 033.
+
+**Q40. GoiEner ToD?**  
+Short: 15 profiles only; units undocumented.  
+Evidence: Exp 032.
+
+---
+
+## I. Battery energy storage
+
+**Q41. Battery size in main example?**  
+Short: **5 kWh**, **2 kW**.  
+Evidence: Exp 035 comparison table.
+
+**Q42. Round-trip efficiency?**  
+Short: **90%** (\(\sqrt{0.9}\) per direction).  
+Evidence: Exp 033 battery_model.
+
+**Q43. BESS medoid meters?**  
+Short: **BR29** (C0), **MH31** (C1).  
+Evidence: Exp 033 summary.
+
+**Q44. Peak reduction cluster 0 MILP?**  
+Short: **26.69%**.  
+Evidence: Exp 035 CSV.
+
+**Q45. Peak reduction cluster 1 MILP?**  
+Short: **58.32%**.  
+Evidence: Exp 035 CSV.
+
+**Q46. Population-wide BESS claim?**  
+Short: **No**—representative days only.  
+Evidence: Exp 035 limitations.
+
+---
+
+## J. Battery SOC and efficiency
+
+**Q47. Why is cyclic SOC important?**  
+Short: Fair energy comparison; no hidden stored energy.  
+Evidence: Exp 034–035.
+
+**Q48. Rule dispatch final SOC cluster 0?**  
+Short: **0.90** (non-cyclic).  
+Evidence: Exp 035 table.
+
+**Q49. Why cluster 1 cyclic rule infeasible?**  
+Short: Cannot restore 50% SOC without violating threshold/no-export.  
+Detail: Final SOC **~0.567** after offline rule.  
+Evidence: `cyclic_soc_validation.md`.
+
+**Q50. What is rule_offline_cyclic?**  
+Short: Charge budget capped to peak-shave need + restoration.  
+Evidence: Exp 035; works on C0 medoid.
+
+**Q51. SOC limits?**  
+Short: 10% min, 90% max.  
+Evidence: Battery params.
+
+---
+
+## K. Rule-based dispatch
+
+**Q52. Rule threshold?**  
+Short: 75th percentile of daily load.  
+Evidence: Exp 033.
+
+**Q53. Simultaneous charge/discharge in rule?**  
+Short: **Prevented** in code logic.  
+Evidence: Exp 034 rule audit.
+
+**Q54. Why rule peak % flat in sensitivity heatmap?**  
+Short: Shave needs little energy; saturated by threshold logic.  
+Evidence: Exp 034 sensitivity audit.
+
+**Q55. Rule vs MILP on C0?**  
+Short: **13.27%** vs **26.69%** peak reduction.  
+Evidence: Exp 035.
+
+---
+
+## L. LP and MILP
+
+**Q56. What does Exp 033 LP minimise?**  
+Short: **Peak** grid import (offline full-day knowledge).  
+Evidence: Exp 033 formulation.
+
+**Q57. LP vs MILP difference?**  
+Short: LP relaxed sum-power bound; MILP **binary exclusivity**.  
+Evidence: Exp 035 lp_exclusivity doc.
+
+**Q58. Why binary variables for exclusivity?**  
+Short: Continuous LP can mathematically allow both >0; binaries forbid.  
+Evidence: Big-M vs `scipy.optimize.milp`.
+
+**Q59. What is curtailment in LP?**  
+Short: Negative implicit export clipped to zero (**36** scenarios).  
+Evidence: Exp 035 energy audit.
+
+**Q60. Does MILP match relaxed LP on medoids?**  
+Short: **Yes** on peaks when no curtail.  
+Evidence: Exp 035 comparison.
+
+**Q61. Is MILP real-time implementable?**  
+Short: **Offline benchmark** only (full-day foresight).  
+Evidence: Exp 033 limitations.
+
+---
+
+## M. Results and engineering limitations
+
+**Q62. Conversion loss magnitude?**  
+Short: ~**0.03–0.12 kWh/day** on medoids (audit formula).  
+Evidence: Exp 035 table; not Exp 033 `loss_kwh`.
+
+**Q63. Transformer relief?**  
+Short: **Not claimed**—no network data.  
+Evidence: Traceability + limitations.
+
+**Q64. Voltage improvement?**  
+Short: **Not claimed**.  
+Evidence: Same.
+
+**Q65. Bill savings?**  
+Short: **Not claimed**—no tariffs.  
+Evidence: Exp 033/035.
+
+**Q66. 320-scenario audit meaning?**  
+Short: Parameter sweep verified; unclipped identity holds.  
+Evidence: Exp 035 `energy_balance_all_scenarios.csv`.
+
+---
+
+## N. Synopsis and completion
+
+**Q67. What is demonstrated vs partial?**  
+Short: 3 demonstrated, 5 partial, 3 not (see matrix).  
+Evidence: `01_synopsis_traceability.md`.
+
+**Q68. CER status?**  
+Short: **Pending access**; package prepared Exp 023.  
+Evidence: CER_ACCESS_PROCEDURE.md.
+
+**Q69. GoiEner status?**  
+Short: Audit + 15-profile pilot; not full synopsis.  
+Evidence: Exp 019–021.
+
+**Q70. What would you do with six more months?**  
+Short: CER ingest; multi-day BESS; causal dispatch; revisit SLP with new categories.  
+Evidence: Report future scope.
+
+**Q71. Strongest slide in presentation?**  
+Short: Baseline MAE + BESS dispatch comparison (honest negative + engineering positive).  
+Evidence: Slides 9 & 13.
+
+**Q72. Biggest mistake avoided?**  
+Short: Exp 030 data audit before trusting SVR gains; Exp 034 before using `loss_kwh`.  
+Evidence: DEC registers.

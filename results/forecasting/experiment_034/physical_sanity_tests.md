@@ -1,0 +1,66 @@
+{
+  "n_tests": 12,
+  "n_pass": 11,
+  "tests": [
+    {
+      "test": "zero_capacity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "zero_power",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "load_below_threshold",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "load_above_threshold",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "single_peak",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "empty_soc_bounds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "full_soc_bounds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "no_export",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "no_simultaneous_rule",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "opt_cyclic_soc",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "energy_balance",
+      "pass": false,
+      "detail": "1.8973665961010275"
+    },
+    {
+      "test": "energy_balance_rule",
+      "pass": true,
+      "detail": "0.0"
+    }
+  ]
+}

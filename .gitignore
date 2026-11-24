@@ -1,0 +1,42 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# IDE / agent
+.cursor/
+*.tmp
+
+# Secrets
+.env
+.env.*
+*.pem
+*credentials*
+
+# Large raw / external data (reproduce from manifests + public sources)
+data/raw/
+data/external/norwegian_residential/raw/
+data/external/norwegian_residential/processed/
+**/*.npy
+data/external/goiener/raw/
+data/external/cer/raw/
+data/external/energybench/raw/
+**/*.tar.zst
+**/*.csv.zst
+
+# Large interim caches (regenerate from scripts)
+data/interim/*.parquet
+
+# Heavy prediction artifacts
+results/forecasting/predictions/
+results/forecasting/supervised_frame.parquet
+results/forecasting/experiment_018/experiment_018_centroid_history.csv
+results/forecasting/experiment_028/predictions/
+**/*.csv.gz
+
+# OS
+.DS_Store
+Thumbs.db

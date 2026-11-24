@@ -1,0 +1,22 @@
+# Experiment 020B validation
+
+- [x] Experiment 020 outputs unchanged (read-only inputs)
+- [x] Experiment 020A outputs unchanged (read-only inputs)
+- [x] CEEW experiments not modified by 020B script
+- [x] All model comparisons on declared aligned population
+- [x] Actual values match across model rows at (file_id, timestamp)
+- [x] No duplicate (file_id, timestamp, model) records (n=0)
+- [x] 020B aligned micro MAE matches 020A micro within 1e-4
+- [x] MAPE denom max(|y|, 1.0) preserved
+- [x] WAPE uses standard formula
+- [x] Flag semantics documented with ambiguity (`flag_semantics_audit.md`)
+- [x] Imputation sensitivity uses operational flag tiers only
+- [x] SLP train-only template documented (`slp_leakage_audit.md`)
+- [x] No test-set model tuning
+- [x] Wilcoxon on paired per-profile MAE diffs
+- [x] Bootstrap CI reproducible (seed 202, n=5000)
+- [x] 12 figures written with non-zero size
+- [x] FIG-095–106 unique in FIGURE_INDEX
+- [x] README and research_log updated
+- [x] submit/ pack updated (54–56_*)
+- [x] Reproduction: `python3 scripts/run_experiment_020b.py`

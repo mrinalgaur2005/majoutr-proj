@@ -1,0 +1,14 @@
+{
+  "n_rows_input": 266220,
+  "n_duplicate_profile_timestamp_model": 0,
+  "n_profiles": 15,
+  "models": [
+    "persistence",
+    "seasonal_lag24",
+    "arima_101",
+    "svr_no_slp",
+    "svr_category_slp"
+  ],
+  "intersection_equals_full_set_all_profiles": true,
+  "actual_mismatch_timestamps": 0
+}

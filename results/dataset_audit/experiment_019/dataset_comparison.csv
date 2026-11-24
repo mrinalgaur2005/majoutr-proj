@@ -1,0 +1,5 @@
+dataset,access,n_units,category_system,residential_verified,agricultural_verified,native_interval,license,role,agriculture_n_div01
+CEEW_project_frozen,local,84,none,False,False,15min,Harvard Dataverse,supplementary_india,
+GoiEner_v7.1,open,28900,CNAE_division,False,True,hourly_matrix; profiles variable,CC-BY-4.0,primary_slp_svr_categories,100.0
+CER_ISSDA,PENDING_ACCESS,"{'residential_approx': 5000, 'sme_approx': 650, 'source': 'ISSDA/CESSDA abstract, not audited'}",utility_trial_code,pending_file_audit,False,30min,ISSDA_terms,primary_residential_when_obtained,
+EnergyBench,open_partial,varies_by_subset,building_use,subset_dependent,False,mixed,CC-4.0,catalog_supplementary,

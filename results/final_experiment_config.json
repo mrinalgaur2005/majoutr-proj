@@ -1,0 +1,30 @@
+{
+  "dataset": "SYNTHETIC: IndianFeederTelemetryGenerator",
+  "seed": 42,
+  "test_fraction": 0.15,
+  "forecast_definition": "one-step ahead at 15 minutes",
+  "known_at_forecast_origin": "lags through t-1; contemporaneous synthetic weather assumed known",
+  "imputation": "global cubic spline (non-causal; limitation)",
+  "SLP_fit_period": "raw training period only",
+  "canonical_model": {
+    "C": 100.0,
+    "epsilon": 0.2,
+    "gamma": 0.01,
+    "CV_RMSE_kW": 0.4155210817453403,
+    "scoring": "neg_root_mean_squared_error",
+    "cv": "TimeSeriesSplit(n_splits=3)",
+    "random_seed": 42,
+    "feature_set": [
+      "lag_1",
+      "lag_2",
+      "lag_96",
+      "sin_time",
+      "cos_time",
+      "temperature",
+      "solar_irradiance",
+      "is_weekend",
+      "is_holiday",
+      "slp_anchor"
+    ]
+  }
+}

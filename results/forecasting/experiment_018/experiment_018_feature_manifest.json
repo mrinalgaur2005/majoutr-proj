@@ -1,0 +1,15 @@
+{
+  "primary_slp_features": [
+    "slp_nearest_dist",
+    "slp_nearest_centroid (diagnostic categorical)",
+    "slp_trailing_corr (ablation arm)"
+  ],
+  "conventional_features": [
+    "delta_lags",
+    "calendar_cycles"
+  ],
+  "K": 2,
+  "normalization": "peak",
+  "centroid_scope": "population profiles before cutoff date",
+  "definition_file": "/home/mrinalgaur/Desktop/majou-proj/results/forecasting/experiment_018/preimplementation/slp_feature_definition.md"
+}

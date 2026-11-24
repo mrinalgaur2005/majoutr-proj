@@ -1,0 +1,15 @@
+{
+  "code_constants": {
+    "ORIGIN_TRAIN_START": "2019-01-01",
+    "TRAIN_END_exclusive": "2020-07-01",
+    "VAL_END_exclusive": "2021-01-01",
+    "split_on": "forecast origin timestamp t (not target t+15m)",
+    "train_origins": "2019-01-01 <= t < 2020-07-01",
+    "validation_origins": "2020-07-01 <= t < 2021-01-01",
+    "test_origins": "t >= 2021-01-01"
+  },
+  "eligible_meters_audit": 68,
+  "all_eligibility_matches_exp015": true,
+  "any_origin_overlap_between_splits": false,
+  "note_target_time": "Target for H=1 is t+15m; a test origin can have target in validation calendar only if origin is mis-split \u2014 checked via target_time mins"
+}
