@@ -4,16 +4,17 @@
 
 **Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
 
-The project investigates **two connected research questions**:
+The project has **three connected contributions**:
 
-1. **Contribution A — Load characterization:** Can Standard Load Profiles (SLPs) represent recurring electricity consumption patterns, distinguish daily load behaviours, and support structured analysis of heterogeneous demand?
-2. **Contribution B — SLP-informed forecasting:** Can SLP-derived information be integrated into support-vector regression (SVR) for short-term load forecasting, and how does that framework compare with conventional baselines?
+1. **Contribution A — SLP construction and characterization** (including Experiment 036 out-of-sample validation).
+2. **Contribution B — SLP-informed SVR short-term forecasting** (distinct predictive evaluation; Experiment 031 baselines).
+3. **Contribution C — Supplementary energy management:** Time-of-Day **illustrative** tariff exposure and BESS procurement economics (**Experiment 037**), building on ToD statistics (032) and validated battery physics (033–035). **BESS is not the central project.**
 
-**Supplementary applications (supporting, not central):** Time-of-Day (ToD) demand analysis and behind-the-meter BESS peak-shaving simulation (Experiments 032–035). These illustrate downstream use of characterized profiles; they do **not** define the project identity.
+Conceptual flow: `07_slp_research_framework.md`.
 
 **Original synopsis:** `Major Project Synopsis SVR LoadForecasting.pdf` (repository root; **byte-for-byte unchanged**).
 
-**Experimental record:** Experiments **001–036** (full metrics preserved under `results/`).
+**Experimental record:** Experiments **001–037** (full metrics preserved under `results/`).
 
 ## Contents
 
@@ -25,7 +26,9 @@ The project investigates **two connected research questions**:
 | `04_viva_preparation.md` | Oral examination Q&A |
 | `05_figure_and_evidence_index.md` | Figures + claim-to-evidence map |
 | `06_executive_summary.md` | One-page evaluation summary |
+| `07_slp_research_framework.md` | SLP → forecasting / ToD / BESS diagram |
 | `FINAL_CONSISTENCY_AUDIT.md` | Post-refactor narrative audit |
+| `EXPERIMENT_037_NARRATIVE_AUDIT.md` | Exp 037 integration audit |
 | `figures/` | Key plots for printing |
 | `tables/` | Summary tables |
 | `references/` | Bibliography pointers |

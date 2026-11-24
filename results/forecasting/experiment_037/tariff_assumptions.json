@@ -1,0 +1,45 @@
+{
+  "status": "illustrative_sensitivity_only",
+  "currency_label": "INR (illustrative — not an actual utility tariff)",
+  "unit": "per_kWh",
+  "dt_h": 0.25,
+  "n_slots": 96,
+  "flat_reference_scenario": "flat",
+  "period_slot_ranges": {
+    "off_peak": [[0, 24], [88, 96]],
+    "shoulder": [[24, 36], [72, 88]],
+    "peak": [[36, 72]]
+  },
+  "scenarios": {
+    "flat": {
+      "off_peak": 8.0,
+      "shoulder": 8.0,
+      "peak": 8.0,
+      "label": "Flat reference (no ToD spread)"
+    },
+    "low_spread": {
+      "off_peak": 6.0,
+      "shoulder": 8.0,
+      "peak": 10.0,
+      "label": "Illustrative low peak/off-peak spread"
+    },
+    "moderate_spread": {
+      "off_peak": 5.0,
+      "shoulder": 8.0,
+      "peak": 12.0,
+      "label": "Illustrative moderate spread"
+    },
+    "high_spread": {
+      "off_peak": 4.0,
+      "shoulder": 8.0,
+      "peak": 16.0,
+      "label": "Illustrative high spread"
+    }
+  },
+  "load_shift_hypothesis": {
+    "enabled": true,
+    "max_shiftable_frac_peak_energy": 0.1,
+    "shift_power_kw": 2.0,
+    "note": "Hypothetical flexibility — not observed consumer behaviour"
+  }
+}

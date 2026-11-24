@@ -325,6 +325,211 @@ def optimize_dispatch_exclusive(load: np.ndarray, batt: BatteryParams) -> dict:
     return optimize_bigM_relaxed(load, batt)
 
 
+def rule_tod_arbitrage(
+    load: np.ndarray,
+    prices: np.ndarray,
+    batt: BatteryParams,
+    soc_tol: float = SOC_TOL,
+) -> dict:
+    """Rule dispatch: charge in low-price intervals, discharge in high-price (no export)."""
+    load = np.asarray(load, dtype=np.float64)
+    prices = np.asarray(prices, dtype=np.float64)
+    n = len(load)
+    if n != len(prices):
+        raise ValueError("load and prices length mismatch")
+    p_lo = float(np.quantile(prices, 0.33))
+    p_hi = float(np.quantile(prices, 0.67))
+    p_ch = np.zeros(n)
+    p_dis = np.zeros(n)
+    for t in range(n):
+        lt = float(load[t])
+        soc = propagate_soc(p_ch[:t], p_dis[:t], batt)[-1] if t else batt.soc0
+        if prices[t] >= p_hi and soc > batt.soc_min and lt > 1e-9:
+            need = lt
+            e_avail = (soc - batt.soc_min) * batt.energy_kwh
+            pmax = min(batt.p_max_kw, e_avail / (batt.dt_h / batt.eta_d))
+            p_dis[t] = min(need, pmax)
+        elif prices[t] <= p_lo and soc < batt.soc_max:
+            room = batt.p_max_kw
+            e_room = (batt.soc_max - soc) * batt.energy_kwh
+            pmax = min(batt.p_max_kw, e_room / (batt.dt_h * batt.eta_c))
+            p_ch[t] = min(room, pmax)
+    for _ in range(4 * n):
+        soc = propagate_soc(p_ch, p_dis, batt)
+        gap = batt.soc0 - soc[-1]
+        if abs(gap) <= soc_tol:
+            break
+        improved = False
+        order = np.argsort(prices) if gap > 0 else np.argsort(-prices)
+        for t in order:
+            soc_t = propagate_soc(p_ch[:t], p_dis[:t], batt)[-1] if t else batt.soc0
+            lt = float(load[t])
+            if gap > 0 and prices[t] <= p_lo and soc_t < batt.soc_max:
+                e_room = (batt.soc_max - soc_t) * batt.energy_kwh
+                pmax = min(batt.p_max_kw - p_ch[t], e_room / (batt.dt_h * batt.eta_c))
+                if pmax <= 1e-9:
+                    continue
+                pc = min(pmax, (gap * batt.energy_kwh) / (batt.dt_h * batt.eta_c))
+                p_ch[t] += pc
+                improved = True
+                break
+            if gap < 0 and prices[t] >= p_hi and soc_t > batt.soc_min:
+                e_av = (soc_t - batt.soc_min) * batt.energy_kwh
+                pmax = min(batt.p_max_kw - p_dis[t], e_av / (batt.dt_h / batt.eta_d))
+                if pmax <= 1e-9:
+                    continue
+                pd_ = min(pmax, (-gap * batt.energy_kwh * batt.eta_d) / batt.dt_h)
+                if lt - p_dis[t] - pd_ >= -1e-9:
+                    p_dis[t] += pd_
+                    improved = True
+                    break
+        if not improved:
+            break
+    soc = propagate_soc(p_ch, p_dis, batt)
+    grid = grid_import(load, p_ch, p_dis)
+    return {
+        "method": "rule_tod_arbitrage",
+        "p_charge_kw": p_ch,
+        "p_discharge_kw": p_dis,
+        "soc": soc,
+        "grid_kw": grid,
+        "load_kw": load,
+        "soc_final": float(soc[-1]),
+        "cyclic_soc_satisfied": cyclic_soc_ok(soc[-1], batt.soc0, soc_tol),
+    }
+
+
+def _zero_bess_dispatch(
+    load: np.ndarray,
+    prices: np.ndarray,
+    batt: BatteryParams,
+    base_cost: float,
+    reason: str,
+) -> dict:
+    n = len(load)
+    p_ch = np.zeros(n)
+    p_dis = np.zeros(n)
+    soc = np.full(n + 1, batt.soc0)
+    grid = np.asarray(load, dtype=np.float64)
+    return {
+        "method": "no_bess_optimal",
+        "reason": reason,
+        "exclusivity_guaranteed": True,
+        "solver_success": True,
+        "p_charge_kw": p_ch,
+        "p_discharge_kw": p_dis,
+        "soc": soc,
+        "grid_kw": grid,
+        "load_kw": load,
+        "soc_final": batt.soc0,
+        "procurement_cost": base_cost,
+    }
+
+
+def optimize_milp_cost(
+    load: np.ndarray,
+    prices: np.ndarray,
+    batt: BatteryParams,
+) -> dict:
+    """MILP minimize grid energy procurement cost; exclusive ch/dis; no export; cyclic SOC."""
+    load = np.asarray(load, dtype=np.float64)
+    prices = np.asarray(prices, dtype=np.float64)
+    n = len(load)
+    M = batt.p_max_kw
+    nvar = 3 * n + n + 2
+    idx_pc = lambda t: t
+    idx_pd = lambda t: n + t
+    idx_z = lambda t: 2 * n + t
+    idx_soc = lambda t: 3 * n + t
+
+    c = np.zeros(nvar)
+    for t in range(n):
+        c[idx_pc(t)] = prices[t] * batt.dt_h
+        c[idx_pd(t)] = -prices[t] * batt.dt_h
+
+    constraints = []
+    lb = np.zeros(nvar)
+    ub = np.full(nvar, np.inf)
+    lb[2 * n : 3 * n] = 0.0
+    ub[2 * n : 3 * n] = 1.0
+    integrality = np.zeros(nvar, dtype=np.int32)
+    integrality[2 * n : 3 * n] = 1
+
+    for t in range(n):
+        ub[idx_pc(t)] = batt.p_max_kw
+        ub[idx_pd(t)] = batt.p_max_kw
+
+    for t in range(n):
+        row = np.zeros(nvar)
+        row[idx_pc(t)] = 1
+        row[idx_z(t)] = -M
+        constraints.append(LinearConstraint(row, -np.inf, 0.0))
+        row = np.zeros(nvar)
+        row[idx_pd(t)] = 1
+        row[idx_z(t)] = M
+        constraints.append(LinearConstraint(row, -np.inf, M))
+
+    for t in range(n):
+        row = np.zeros(nvar)
+        row[idx_pc(t)] = 1
+        row[idx_pd(t)] = 1
+        constraints.append(LinearConstraint(row, -np.inf, batt.p_max_kw))
+        row2 = np.zeros(nvar)
+        row2[idx_pc(t)] = 1
+        row2[idx_pd(t)] = -1
+        constraints.append(LinearConstraint(row2, -np.inf, load[t]))
+
+    for t in range(n):
+        row = np.zeros(nvar)
+        row[idx_soc(t + 1)] = 1
+        row[idx_soc(t)] = -1
+        row[idx_pc(t)] = -(batt.dt_h * batt.eta_c) / batt.energy_kwh
+        row[idx_pd(t)] = (batt.dt_h) / (batt.energy_kwh * batt.eta_d)
+        constraints.append(LinearConstraint(row, 0.0, 0.0))
+
+    row = np.zeros(nvar)
+    row[idx_soc(0)] = 1
+    constraints.append(LinearConstraint(row, batt.soc0, batt.soc0))
+    row = np.zeros(nvar)
+    row[idx_soc(n)] = 1
+    constraints.append(LinearConstraint(row, batt.soc0, batt.soc0))
+
+    for t in range(n + 1):
+        lb[idx_soc(t)] = batt.soc_min
+        ub[idx_soc(t)] = batt.soc_max
+
+    res = milp(c=c, integrality=integrality, bounds=Bounds(lb, ub), constraints=constraints)
+    base_cost = float((load * prices).sum() * batt.dt_h)
+    if not res.success:
+        out = rule_tod_arbitrage(load, prices, batt)
+        out["procurement_cost"] = float((out["grid_kw"] * prices).sum() * batt.dt_h)
+        if out["procurement_cost"] > base_cost + 1e-6:
+            return _zero_bess_dispatch(load, prices, batt, base_cost, reason="rule_fallback_worse_than_no_bess")
+        return out
+
+    x = res.x
+    p_ch = x[:n]
+    p_dis = x[n : 2 * n]
+    soc = propagate_soc(p_ch, p_dis, batt)
+    grid = grid_import(load, p_ch, p_dis)
+    cost = float((grid * prices).sum() * batt.dt_h)
+    if cost > base_cost + 1e-4:
+        return _zero_bess_dispatch(load, prices, batt, base_cost, reason="milp_worse_than_no_bess")
+    return {
+        "method": "optimized_milp_cost",
+        "exclusivity_guaranteed": True,
+        "solver_success": bool(res.success),
+        "solver_message": str(res.message),
+        "p_charge_kw": p_ch,
+        "p_discharge_kw": p_dis,
+        "soc": soc,
+        "grid_kw": grid,
+        "load_kw": load,
+        "soc_final": float(soc[-1]),
+        "procurement_cost": cost,
+    }
+
+
 def optimize_milp_peak(load: np.ndarray, batt: BatteryParams) -> dict:
     """MILP minimize peak grid import; binary charge/discharge exclusivity; no grid export."""
     load = np.asarray(load, dtype=np.float64)

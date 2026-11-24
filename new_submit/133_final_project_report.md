@@ -4,7 +4,7 @@
 
 **Title:** Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting
 
-**Subtitle:** Daily load-profile construction, out-of-sample SLP validation, SLP-informed SVR evaluation, and supplementary ToD / BESS studies
+**Subtitle:** SLP characterization, out-of-sample validation, SLP-informed SVR evaluation, and integrated ToD / BESS energy-management analysis
 
 **Degree:** B.Tech, Electrical Engineering (Major Project)
 
@@ -20,7 +20,7 @@
 
 ## Abstract
 
-Electricity consumption is heterogeneous across meters and days. This project develops **Standard Load Profile (SLP)** representations from 15-minute smart-meter data, validates their **descriptive usefulness** through rigorous out-of-sample testing, and evaluates **SLP-informed support-vector regression (SVR)** against strong forecasting baselines. On the CEEW Mathura–Bareilly dataset (84 meters, 43,555 complete daily profiles), peak-normalized K=2 clustering identifies two recurring **daily pattern regimes** (not verified consumer categories). **Experiment 036** shows that training-frozen centroids assign held-out meter-days to groups with distinguishable load factor, energy, peakiness, and diurnal structure (13/13 metrics: median Benjamini–Hochberg q < 0.05; median Cliff's δ up to 0.98 for load factor; centroid stability correlation ≈ 0.983). Forecasting evaluation on a corrected Norwegian residential cohort (1,136 households) yields test macro MAE **persistence 0.4361**, **SVR tuned 0.4457**, **SVR+SLP features 0.4537**—**comparable performance** with **limited incremental benefit** from the tested SLP encodings. Supplementary ToD analysis (Experiment 032) and audited BESS simulations on representative physical days (Experiments 033–035) demonstrate downstream applications. The original Ireland–Spain residential/agricultural synopsis comparison was not completed at full protocol scale; traceability is documented without altering stored metrics or the synopsis PDF.
+Electricity consumption is heterogeneous across meters and days. This project develops **Standard Load Profile (SLP)** representations from 15-minute smart-meter data, validates their **descriptive usefulness** through rigorous out-of-sample testing, and evaluates **SLP-informed support-vector regression (SVR)** against strong forecasting baselines. On the CEEW Mathura–Bareilly dataset (84 meters, 43,555 complete daily profiles), peak-normalized K=2 clustering identifies two recurring **daily pattern regimes** (not verified consumer categories). **Experiment 036** shows that training-frozen centroids assign held-out meter-days to groups with distinguishable load factor, energy, peakiness, and diurnal structure (13/13 metrics: median Benjamini–Hochberg q < 0.05; median Cliff's δ up to 0.98 for load factor; centroid stability correlation ≈ 0.983). Forecasting evaluation on a corrected Norwegian residential cohort (1,136 households) yields test macro MAE **persistence 0.4361**, **SVR tuned 0.4457**, **SVR+SLP features 0.4537**—**comparable performance** with **limited incremental benefit** from the tested SLP encodings. **Experiment 037** links SLP groups to **illustrative** Time-of-Day tariff exposure and BESS procurement-cost analysis (building on Exp 032 ToD statistics and Exp 035 battery physics). Supplementary peak-shaving simulations (Experiments 033–035) remain distinct from tariff economics. The original Ireland–Spain residential/agricultural synopsis comparison was not completed at full protocol scale; traceability is documented without altering stored metrics or the synopsis PDF.
 
 **Keywords:** standard load profiles, load characterization, clustering, support vector regression, short-term forecasting, smart metering, time-of-day analysis, battery energy storage
 
@@ -30,7 +30,7 @@ Electricity consumption is heterogeneous across meters and days. This project de
 
 Distribution planning and demand response depend on understanding **how** electricity is consumed across the day, not only **how much**. Standard Load Profiles compress high-dimensional daily curves into interpretable patterns. Machine-learning forecasters such as SVR can ingest calendar, lag, and profile-derived features—but whether SLP information **helps prediction** is an empirical question distinct from whether SLPs **describe** consumption well.
 
-This project therefore pursues two linked contributions: **(A)** SLP-based load characterization and **(B)** SLP-informed SVR forecasting evaluation.
+This project pursues **(A)** SLP-based load characterization, **(B)** SLP-informed SVR forecasting evaluation, and **(C)** supplementary energy-management analysis (ToD tariff exposure and BESS economics) grounded in the same profiles. See `07_slp_research_framework.md`.
 
 ## 2. Problem statement
 
@@ -48,7 +48,8 @@ This project therefore pursues two linked contributions: **(A)** SLP-based load 
 | O2 | Peak-normalized clustering and SLP centroids | A |
 | O3 | Out-of-sample SLP assignment and statistical validation | A (Exp 036) |
 | O4 | SLP-informed SVR pipeline and baseline zoo | B |
-| O5 | ToD / BESS as supplementary applications | Supporting |
+| O5 | ToD statistics and peak-shaving physics (032–035) | Supporting |
+| O6 | Integrated SLP → ToD → BESS economic evaluation (037) | Supporting |
 
 Original synopsis objectives (dual geography, CER/GoiEner categories) are mapped in `01_synopsis_traceability.md`.
 
@@ -146,21 +147,94 @@ Train-only centroids; past-day profile distances; causality rules per Experiment
 - **Shape vs magnitude:** Peak normalization drives clustering; energy and LF differences are measured on raw kWh/kW curves.
 - **Synopsis gap:** Dual-category Ireland–Spain experiment not completed; CEEW/Norway chain documented transparently.
 
-## 15. Supplementary: Time-of-Day analysis
+## 15. Foundational ToD statistics (Experiment 032)
 
-Experiment 032: peak timing distributions, weekend/weekday stacks, cluster-conditional ToD statistics—links profile regimes to **when** demand occurs.
+Before tariff economics, Experiment 032 quantifies **when** energy is consumed: peak timing, weekend/weekday stacks, load-factor and peak-to-average distributions by cluster. This descriptive layer shows that SLP groups differ in **temporal structure**—a prerequisite for asking how the same groups would interact with **time-dependent prices**.
 
-## 16. Supplementary: BESS applications
+## 16. SLP-based Time-of-Use tariff analysis and battery energy storage evaluation (Experiment 037)
 
-Behind-the-meter 5 kWh / 2 kW simulation on physical medoid meter-days (BR29, MH31); rule, LP, MILP dispatch; energy accounting per Experiments 034–035. Medoid peak reductions at baseline sizing: cluster 0 **13.3%** (cyclic rule) / **26.7%** (MILP); cluster 1 **51.2%** / **58.3%**. Illustrative only—not population-wide or network claims.
+Integrated supplementary chapter linking **SLP characterization → illustrative ToD exposure → BESS procurement economics**. Peak-shaving physics from Experiments 033–035 is reused; Experiment 037 adds **energy-cost** objectives and explicit tariff windows. Conceptual flow: `07_slp_research_framework.md`.
 
-## 17. Limitations
+### 16.1 Motivation
 
-Incomplete synopsis geographies; clusters ≠ tariff classes; BESS not field-validated; no network/tariff models; GoiEner pilot scale; forecasting cohort ≠ CEEW population.
+Once recurring daily patterns are identified (Sections 8–10), engineers can ask how those patterns interact with **time-varying electricity prices** and **behind-the-meter storage**. Different shapes place different fractions of daily energy in off-peak, shoulder, and peak periods. A BESS can shift grid purchases across those periods—but profitability depends on price spread, efficiency, power/energy limits, and cycling constraints. This is an **application of temporal information in load profiles**, not a separate optimisation project.
+
+### 16.2 Relationship between SLPs and ToD tariffs
+
+Time-of-Day (ToD) tariffs assign a price per kWh to each interval. For a fixed daily profile, the **procurement cost** is \(\sum_t P_t \cdot \Delta t \cdot \pi_t\) where \(\pi_t\) is the illustrative price. Two SLP groups with different diurnal shapes will accumulate different shares of energy in expensive periods even under the **same** tariff table.
+
+### 16.3 Tariff scenarios and methodology
+
+**No actual utility tariff** exists in the repository. `configs/experiment_037_tariff.json` defines **illustrative** INR/kWh scenarios (sensitivity only; **not** CEEW/Indian utility rates).
+
+**Moderate spread (example):** off-peak **₹5**, shoulder **₹8**, peak **₹12** per kWh. Slot windows partition 96 × 15-minute intervals (off-peak: 00:00–06:00 and 22:00–24:00; shoulder: 06:00–09:00 and 18:00–22:00; peak: 09:00–18:00—see config for exact slot indices).
+
+**Stage A:** Compute flat-reference bill and ToD bill per profile; period energy (off/shoulder/peak); optional **hypothetical** load-shift (not observed behaviour). Sample: 30 meter-days per SLP group plus medoids **BR29** (group 0) and **MH31** (group 1).
+
+### 16.4 Results: differential tariff exposure
+
+**Moderate spread, medoids (illustrative INR, single representative days):**
+
+| SLP group | Medoid | Flat bill (₹) | ToD bill (₹) | Relative change (ToD vs flat) |
+|-----------|--------|--------------:|-------------:|------------------------------:|
+| 0 | BR29 | 108.24 | 108.91 | **+0.6%** (ToD higher) |
+| 1 | MH31 | 20.06 | 23.80 | **+18.6%** (ToD higher) |
+
+**Interpretation:** Group 0 has **higher absolute** illustrative bills (larger daily energy). Group 1's representative day incurs a **larger relative** ToD penalty because a greater share of its energy falls in peak-priced intervals. This demonstrates **differential tariff exposure** from different consumption patterns—not verified consumer categories or population-wide bills.
+
+Sample means (moderate spread, n=30/group): group 0 mean ToD **₹69.36**/day; group 1 **₹39.46**/day (`tables/stage_a_tariff_bills.csv`).
+
+### 16.5 Relationship between ToD tariffs and BESS
+
+A battery can **charge** when \(\pi_t\) is low and **discharge** to reduce grid imports when \(\pi_t\) is high, subject to SOC, power, efficiency, no-export, and exclusive charge/discharge rules (Experiment 035 MILP formulation, adapted to **cost** objective in Experiment 037).
+
+### 16.6 BESS optimization methodology
+
+- **Physics:** Round-trip efficiency **90%**, SOC **10–90%**, initial SOC **50%**, cyclic final SOC, Δt = 15 min, no grid export.
+- **Configurations:** 1–15 kWh capacity × 0.5–3 kW power (**240** scenario rows on two medoids × three ToD spreads × rule/MILP).
+- **Methods:** No BESS baseline; rule-based ToD arbitrage; **MILP** procurement-cost minimization with binary exclusivity. If dispatch would **increase** cost vs no-BESS (losses + cycling), **`no_bess_optimal`** safeguard selects zero operation (documented).
+
+### 16.7 Results: BESS economics
+
+Under tested illustrative spreads (low/moderate/high), **no positive incremental procurement savings** on medoids across the capacity/power grid.
+
+**Moderate spread, 5 kWh / 2 kW, MILP (from `experiment_037_summary.json`):**
+
+| Group | ToD bill without BESS (₹) | With BESS (₹) | Incremental savings (₹) | Peak reduction |
+|-------|--------------------------:|--------------:|------------------------:|----------------|
+| 0 | 108.906 | 108.906 | **0** | **0%** |
+| 1 | 23.804 | 23.804 | **0** | **0%** |
+
+**Why the optimizer does not operate the battery:**
+
+1. **Conversion losses** (≈0.04 kWh/day on aggressive cycles) add grid energy.
+2. **Cyclic SOC** requires net zero stored-energy change; arbitrage cannot leave “free” energy in the pack.
+3. Illustrative **peak/off-peak spreads** (up to 4/16 INR/kWh in high scenario) are **insufficient** vs 10% round-trip loss for these medoid shapes.
+4. **No demand charges** — reducing peak kW does not add a separate monetary term.
+
+### 16.8 Engineering interpretation
+
+Experiment 037 shows that **SLP-based characterization supports structured energy-management questions**: (i) which pattern groups face higher **relative** ToD exposure; (ii) whether BESS **could** theoretically arbitrage under stated physics. The **negative/null economic outcome** is a valid engineering result: peak shaving (Exp 035) and bill reduction (Exp 037) decouple when only **energy** prices apply.
+
+### 16.9 Limitations
+
+Illustrative tariffs only; two medoids for BESS economics; no demand charges; no network/tariff reality; hypothetical load-shift not behavioural; **not** population-wide savings claims.
+
+### 16.10 Conclusion (Chapter 16)
+
+Experiment 037 **applies** validated SLP groups to ToD exposure and BESS procurement analysis without claiming guaranteed bill savings. It completes the narrative: **profiles → temporal structure → tariff exposure → storage economics**.
+
+### Prior BESS peak-shaving context (Experiments 033–035)
+
+Separate from tariff cost, medoid **peak reduction** at 5 kWh / 2 kW: group 0 **13.3%** (cyclic rule) / **26.7%** (MILP peak objective); group 1 **51.2%** / **58.3%** (MILP). These are **physical grid-import peak** metrics, not Exp 037 energy bills.
+
+## 17. Limitations (project-wide)
+
+Incomplete synopsis geographies; clusters ≠ tariff classes; illustrative tariff and BESS economics; forecasting cohort ≠ CEEW population. See traceability matrix and Exp 037 `limitations.md`.
 
 ## 18. Conclusion
 
-The project delivers credible **SLP construction**, **in-sample and out-of-sample characterization** (Experiment 036), and a full **SLP-informed SVR investigation** with preserved metrics. Load characterization—including frozen-centroid assignment to unseen meters—is the strongest demonstrated engineering thread. Forecasting evaluation shows **comparable** SVR/SLP performance versus persistence, with **limited** demonstrated improvement from tested profile features.
+The project delivers: **(A)** credible SLP construction and **out-of-sample validation** (Experiment 036); **(B)** transparent **SLP-informed SVR evaluation** with strong persistence baselines; **(C)** supplementary **ToD/BESS energy-management analysis** grounded in the same profiles (Experiment 037). **Standard Load Profiles provide a structured representation that supports forecasting research, temporal demand analysis, and evaluation of storage strategies under explicit assumptions**—without implying universal economic benefit.
 
 ## 19. Future scope
 

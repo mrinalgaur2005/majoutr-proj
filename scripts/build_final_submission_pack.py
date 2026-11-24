@@ -14,6 +14,8 @@ MAP = [
     (FS / "04_viva_preparation.md", "135_viva_preparation.md"),
     (FS / "05_figure_and_evidence_index.md", "136_figure_evidence_index.md"),
     (FS / "06_executive_summary.md", "137_executive_summary.md"),
+    (FS / "07_slp_research_framework.md", "148_slp_research_framework.md"),
+    (FS / "EXPERIMENT_037_NARRATIVE_AUDIT.md", "149_exp037_narrative_audit.md"),
 ]
 for src, name in MAP:
     if src.exists():

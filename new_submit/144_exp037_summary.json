@@ -1,0 +1,41 @@
+{
+  "experiment": "037",
+  "tariff_status": "illustrative_sensitivity_only",
+  "n_stage_a_profiles": 62,
+  "n_sample_days_per_group": 30,
+  "n_medoids": 2,
+  "n_bess_rows": 240,
+  "battery_capacities_kwh": [
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    15.0
+  ],
+  "battery_powers_kw": [
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "validation_all_pass": true,
+  "group_summary_moderate_milp_5_2": [
+    {
+      "profile_id": "group0_medoid",
+      "slp_group": 0,
+      "bill_tod_no_bess_inr": 108.906,
+      "bill_tod_with_bess_inr": 108.906,
+      "savings_vs_no_bess_inr": 0.0,
+      "peak_reduction_pct": 0.0
+    },
+    {
+      "profile_id": "group1_medoid",
+      "slp_group": 1,
+      "bill_tod_no_bess_inr": 23.804000000000002,
+      "bill_tod_with_bess_inr": 23.804000000000002,
+      "savings_vs_no_bess_inr": 0.0,
+      "peak_reduction_pct": 0.0
+    }
+  ],
+  "elapsed_sec": 11.765199460998701
+}

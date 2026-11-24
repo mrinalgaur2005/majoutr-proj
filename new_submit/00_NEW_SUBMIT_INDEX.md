@@ -56,7 +56,7 @@ Artifacts `109_*`–`123_*` preserved unchanged.
 | `136_figure_evidence_index.md` | Figure map + claim index |
 | `137_executive_summary.md` | One-page SLP characterization + SVR narrative |
 
-Folder: `final_submission/` (figures include `exp036_*`). Consistency audit: `final_submission/FINAL_CONSISTENCY_AUDIT.md`.
+Folder: `final_submission/` (figures include `exp036_*`, `exp037_*`). Audits: `FINAL_CONSISTENCY_AUDIT.md`, `EXPERIMENT_037_NARRATIVE_AUDIT.md`. Framework: `07_slp_research_framework.md` (in pack after sync).
 
 Narrative refocus (2026-11-25): prior submission text archived under `internal_research_archive/narrative_pre_reframe_2026-11-25/`. **Integrated Experiment 036** in final pack (same date).
 ## Experiment 036 (SLP out-of-sample)
@@ -68,6 +68,18 @@ Narrative refocus (2026-11-25): prior submission text archived under `internal_r
 | `140_exp036_slp_centroids.png` | Train-derived centroids |
 | `141_exp036_heldout_profiles.png` | Held-out profile bands |
 | `142_exp036_limitations.md` | Limitations |
+
+## Experiment 037 (ToD + BESS economics)
+
+| File | Purpose |
+|------|---------|
+| `144_exp037_summary.json` | Integrated ToD/BESS study summary |
+| `145_exp037_results.md` | Results (illustrative tariffs) |
+| `146_exp037_tariff_schedule.png` | ToD schedule figure |
+| `147_exp037_limitations.md` | Tariff/BESS limitations |
+
+| `148_slp_research_framework.md` | Mermaid: SLP → forecasting / ToD / BESS |
+| `149_exp037_narrative_audit.md` | Exp 037 documentation integration audit |
 
 ## Narrative integration (2026-11-25)
 

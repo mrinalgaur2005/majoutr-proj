@@ -195,3 +195,7 @@ Curated copies and map: `final_submission/05_figure_and_evidence_index.md`.
 ## Experiment 036
 
 `exp036_*` in `results/forecasting/experiment_036/figures/`.
+
+## Experiment 037
+
+`exp037_*` in `results/forecasting/experiment_037/figures/` (illustrative ToD / BESS economics).

@@ -343,8 +343,8 @@ Short: **Not claimed**.
 Evidence: Same.
 
 **Q65. Bill savings?**  
-Short: **Not claimed**—no tariffs.  
-Evidence: Exp 033/035.
+Short: **Illustrative ToD only (Exp 037)** — **no** positive BESS procurement savings on medoids; **not** real consumer bills.  
+Evidence: `experiment_037_summary.json`, `145_exp037_results.md`.
 
 **Q66. 320-scenario audit meaning?**  
 Short: Parameter sweep verified; unclipped identity holds.  
@@ -377,3 +377,63 @@ Evidence: `03_final_presentation.md`.
 **Q72. Biggest mistake avoided?**  
 Short: Exp 030 data audit before trusting SVR gains; Exp 034 before using `loss_kwh`.  
 Evidence: DEC registers.
+
+---
+
+## O. Experiment 037 — SLP, ToD tariffs, and BESS economics
+
+**Q73. Why is ToD analysis connected to SLP characterization?**  
+Short: SLPs summarize **when** energy is consumed; ToD tariffs price intervals differently — same tariff, different shapes → different bills.  
+Evidence: Report §16.2; Exp 032 + 037.
+
+**Q74. What is a Time-of-Day tariff?**  
+Short: Energy price \(\pi_t\) varies by clock time; bill = \(\sum_t P_t \Delta t \pi_t\).  
+Evidence: `configs/experiment_037_tariff.json`.
+
+**Q75. Off-peak, shoulder, peak?**  
+Short: Illustrative moderate spread: **₹5 / ₹8 / ₹12** per kWh on defined 15-min slot windows.  
+Evidence: Exp 037 tariff figure; **not** real utility tariffs.
+
+**Q76. Why do SLP groups differ in tariff exposure?**  
+Short: Different diurnal energy shares in expensive periods (e.g. group 1 medoid **+18.6%** ToD vs flat vs group 0 **+0.6%**).  
+Evidence: `stage_a_tariff_bills.csv`.
+
+**Q77. How is a ToD bill calculated?**  
+Short: Multiply grid import (here: load without BESS) by interval price; sum over 96 slots.  
+Evidence: `run_experiment_037.py` procurement_cost.
+
+**Q78. Why can BESS charge off-peak?**  
+Short: Lower \(\pi_t\); physics allows charging if SOC and power limits permit.  
+Evidence: Exp 037 Stage B; Exp 035 constraints.
+
+**Q79. How does efficiency affect arbitrage?**  
+Short: Round-trip **90%** means extra grid energy for same delivered load — must overcome price spread.  
+Evidence: `bess_physics.py`; Exp 037 results §16.7.
+
+**Q80. What is cyclic SOC?**  
+Short: Final SOC = initial (**50%**); no “free” stored energy across the day.  
+Evidence: Exp 035 MILP; Exp 037.
+
+**Q81. Why no battery operation in Exp 037 results?**  
+Short: Cost-minimizing dispatch **worse** than no-BESS after losses + cycling → **`no_bess_optimal`** safeguard (₹0 savings).  
+Evidence: `experiment_037_summary.json`.
+
+**Q82. Peak reduction vs bill savings?**  
+Short: Exp 035 reduces **peak kW**; Exp 037 **energy** bill unchanged without demand charges.  
+Evidence: Report §16.7–16.8.
+
+**Q83. Why illustrative tariffs?**  
+Short: **No** actual tariff dataset in repository; sensitivity analysis only.  
+Evidence: `tariff_assumptions.md`, status `illustrative_sensitivity_only`.
+
+**Q84. Can Exp 037 prove real consumer savings?**  
+Short: **No** — medoids, illustrative prices, no demand charges.  
+Evidence: `limitations.md`.
+
+**Q85. How would demand charges change results?**  
+Short: Peak reduction (Exp 035) could gain **monetary** value if \(\pi^{demand}\) applied — **not modelled** in Exp 037.  
+Evidence: Report §16.7 item 4.
+
+**Q86. How does SLP link forecasting and energy management?**  
+Short: Same profile construction; **different questions** — predict next step (SVR) vs bill/storage (037).  
+Evidence: `07_slp_research_framework.md`.

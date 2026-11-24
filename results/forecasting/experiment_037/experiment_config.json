@@ -1,0 +1,12 @@
+{
+  "experiment": "037",
+  "tariff_config": "configs/experiment_037_tariff.json",
+  "medoids": [
+    {"meter_id": "BR29", "date": "2020-09-06", "slp_group": 0},
+    {"meter_id": "MH31", "date": "2019-11-07", "slp_group": 1}
+  ],
+  "battery_capacities_kwh": [1, 2, 5, 10, 15],
+  "battery_powers_kw": [0.5, 1, 2, 3],
+  "sample_per_group": 30,
+  "dispatch_methods": ["rule", "milp"]
+}

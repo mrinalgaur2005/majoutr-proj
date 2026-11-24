@@ -33,6 +33,18 @@ All F1–F14 paths exist in repository; Exp 036 copies present in `final_submiss
 | `new_submit/131–137` | `scripts/build_final_submission_pack.py` |
 | `new_submit/138–142` | Experiment 036 run + manual copy |
 
+## Experiment 037 integration (2026-11-25)
+
+| Check | Status |
+|-------|--------|
+| SLP → ToD → BESS progression in report Ch. 16 | Pass |
+| Illustrative tariffs labelled all docs | Pass |
+| ₹0 BESS savings stated accurately | Pass |
+| Peak reduction (035) ≠ bill savings (037) | Pass |
+| `07_slp_research_framework.md` | Pass |
+
+See `EXPERIMENT_037_NARRATIVE_AUDIT.md`.
+
 ## Residual issues
 
 - Institution/student name placeholders remain in report title page (intentional).
@@ -41,4 +53,4 @@ All F1–F14 paths exist in repository; Exp 036 copies present in `final_submiss
 
 ## Auditor conclusion
 
-**Pass** — one consistent SLP characterization + SVR forecasting narrative suitable for submission and GitHub.
+**Pass** — SLP characterization + SVR forecasting + supplementary ToD/BESS narrative aligned across submission pack.

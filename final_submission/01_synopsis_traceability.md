@@ -96,12 +96,12 @@
 | Field | Detail |
 |-------|--------|
 | **Original objective** | BESS or microgrid stability study downstream of forecasts. |
-| **Work undertaken** | Behind-meter BESS peak shaving Exp 033–035; microgrid UC design-only in protocol. |
-| **Experiments** | 033, 034, 035 |
-| **Evidence** | Medoids BR29 / MH31; MILP peaks **26.69%** (C0), **58.32%** (C1); cyclic rule C0 feasible, C1 infeasible. |
-| **Status** | **Partially demonstrated** (simulation on representative days). |
-| **Limitations** | No network model, tariffs, or population-wide claims. |
-| **Presentation** | Before/after + dispatch comparison bar chart. |
+| **Work undertaken** | Peak-shaving simulation Exp 033–035; **integrated illustrative ToD + BESS economics Exp 037** (SLP-linked). |
+| **Experiments** | 033, 034, 035, **037** |
+| **Evidence** | Peak % reductions (035); Exp 037: **₹0** incremental procurement savings on medoids under illustrative ToD (no demand charges). |
+| **Status** | **Partially demonstrated** (physics + economic framing; **not** guaranteed savings). |
+| **Limitations** | Illustrative tariffs; two medoids; no network model. |
+| **Presentation** | Framework slide + `exp037_tariff_schedule.png`; distinguish peak shave vs bill. |
 
 ## 9. Ireland–Spain comparative study
 

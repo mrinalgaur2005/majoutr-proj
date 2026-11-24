@@ -19,7 +19,13 @@ Authoritative sources under `results/`; **copies** in `final_submission/figures/
 | F11 | `results/figures/experiment_035/exp035_dispatch_comparison.png` | Yes | 035 | BESS method peak % | 16 | 17 |
 | F12 | `results/figures/experiment_033/exp033_soc_trajectory.png` | Yes | 033 | SOC trajectory | 16 | 17 |
 | F13 | `results/figures/experiment_033/exp033_cluster0_before_after.png` | Yes | 033 | C0 medoid | 16 | — |
-| F14 | `results/figures/experiment_034/exp034_conversion_loss.png` | Yes | 034 | Energy accounting | 16 | 18 |
+| F14 | `results/figures/experiment_034/exp034_conversion_loss.png` | Yes | 034 | Energy accounting | 16 | — |
+| F15 | `results/forecasting/experiment_037/figures/exp037_tariff_schedule.png` | Yes | 037 | Illustrative ToD schedule | 16.3 | 9 |
+| F16 | `results/forecasting/experiment_037/figures/exp037_period_energy_by_group.png` | Yes | 037 | Period energy by SLP group | 16.4 | 10 |
+| F17 | `results/forecasting/experiment_037/figures/exp037_flat_vs_tod_bills.png` | Yes | 037 | Medoid ToD vs flat bills | 16.4 | 11 |
+| F18 | `results/forecasting/experiment_037/figures/exp037_spread_sensitivity.png` | Yes | 037 | BESS savings vs spread | 16.7 | 14 |
+
+**Captions (Exp 037):** All monetary axes are **illustrative INR/kWh** scenarios — not utility tariffs. Source: Experiment 037 Stage A/B; medoids BR29 / MH31.
 
 ## Claim-to-evidence index
 
@@ -39,6 +45,9 @@ Authoritative sources under `results/`; **copies** in `final_submission/figures/
 | SVR+SLP 0.4537 | 031 | same | Norwegian test | F0 features |
 | BESS C0 MILP peak −26.69% | 035 | `final_bess_medoid_comparison.csv` | BR29 medoid | 5 kWh/2 kW |
 | Clusters ≠ ag/res | 032, DEC | `01_synopsis_traceability.md` | — | No category labels |
+| Group 1 medoid ToD +18.6% vs flat | 037 | `stage_a_tariff_bills.csv` | MH31 moderate | Illustrative |
+| BESS ₹0 incremental (5/2 moderate) | 037 | `experiment_037_summary.json` | medoids | MILP cost |
+| Illustrative tariffs only | 037 | `experiment_037_tariff.json` | — | Not utility data |
 
 ## Tables
 

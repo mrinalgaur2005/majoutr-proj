@@ -4,7 +4,7 @@
 
 **Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**
 
-**Contribution A (characterization):** construction, clustering, and **out-of-sample validation** of Standard Load Profiles (Experiments 001–018, 032, **036**). **Contribution B (forecasting):** SLP-informed **SVR** evaluation vs baselines (Experiments 010–018, 024–031). **Supporting:** Time-of-Day analysis and BESS simulation (032–035)—not the central project identity.
+**Contribution A (characterization):** SLP construction, clustering, out-of-sample validation (001–018, 032, **036**). **Contribution B (forecasting):** SLP-informed **SVR** vs baselines (010–018, 024–031). **Contribution C (energy management, supplementary):** SLP-linked **illustrative ToD tariff exposure** and **BESS procurement economics** (**037**); peak-shaving physics (033–035). Framework: `final_submission/07_slp_research_framework.md`. BESS is **not** the project centre.
 
 **Submission pack:** `final_submission/` (report, presentation, viva, executive summary). **Full experiment evidence** remains in `results/` and in the chronological diary below.
 
@@ -1150,8 +1150,12 @@ Final BESS validation and project consolidation.
 
 ## Final submission pack (2026-11-24)
 
-Experimental record **001–036**. Evaluation materials: `final_submission/` (report, presentation, viva, traceability, Experiment 036 figures). Indexed in `new_submit/131_*`–`142_*`. Original synopsis PDF unchanged.
+Experimental record **001–037**. Evaluation materials: `final_submission/` (report, presentation, viva, traceability, framework diagram). Indexed in `new_submit/131_*`–`147_*`. Original synopsis PDF unchanged.
 
 ## Experiment 036 (2026-11-24)
 
 Out-of-sample validation of K=2 peak-normalized SLPs (`results/forecasting/experiment_036/`).
+
+## Experiment 037 (2026-11-25)
+
+Integrated **illustrative** ToD tariff exposure by SLP group + BESS procurement-cost study (`results/forecasting/experiment_037/`). Supplementary to SLP+SVR core; **not** actual tariff savings claims.

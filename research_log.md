@@ -720,6 +720,20 @@ Deliverables under `final_submission/`; synopsis traceability documents partial 
 
 **Artifacts:** `results/forecasting/experiment_036/`; `experiments/036_slp_out_of_sample_characterization/`; `new_submit/138_*`–`142_*`. Command: `.venv/bin/python scripts/run_experiment_036.py --verify-repro`.
 
+## Experiment 037 — SLP ToD tariff + BESS economics (2026-11-25)
+
+**Question:** Can SLP groups inform illustrative ToD bill exposure and BESS procurement-cost optimization?
+
+**Design:** Stage A ToD bills (illustrative INR/kWh scenarios); Stage B 20 battery configs × rule/MILP cost dispatch (Exp 035 physics). Medoids BR29/MH31; 30-day sample per SLP group.
+
+**Tariff:** No real utility data — `configs/experiment_037_tariff.json` (illustrative only).
+
+**Results:** Group 1 medoid more ToD-penalized vs flat than group 0 (−18.6% vs −0.6% moderate spread). Under cyclic SOC + 90% η, **no positive BESS procurement savings** on medoids (safeguard `no_bess_optimal`). Validation pass; Exp 035 physics subset pass.
+
+**Artifacts:** `results/forecasting/experiment_037/`; `experiments/037_slp_tod_bess/`; `tests/test_experiment_037_tariff.py`. Command: `.venv/bin/python scripts/run_experiment_037.py`.
+
+**Narrative integration (2026-11-25):** Final submission pack rewritten for SLP → illustrative ToD → BESS procurement storyline (`07_slp_research_framework.md`, report Ch. 16, presentation slides 8–16). Distinct from peak-shaving objective (033–035). `EXPERIMENT_037_NARRATIVE_AUDIT.md`.
+
 ## Final narrative refactor (2026-11-25)
 
 Unified submission narrative: **Standard Load Profile-Based Characterization and SVR-Based Short-Term Electricity Load Forecasting**. Rewrote `final_submission/` report, presentation, viva, executive summary, figure/claim index; integrated Exp 036 as central characterization evidence. `FINAL_CONSISTENCY_AUDIT.md`; synced `new_submit/131–137` + `143_*`. Synopsis PDF unchanged.
